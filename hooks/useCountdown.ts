@@ -6,6 +6,7 @@ export type Countdown = {
   days: number;
   hours: number;
   minutes: number;
+  isExpired: boolean;
 };
 
 function calc(target: string): Countdown {
@@ -17,7 +18,7 @@ function calc(target: string): Countdown {
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
 
-  return { days, hours, minutes };
+  return { days, hours, minutes, isExpired: diff <= 0 };  // ← thêm isExpired
 }
 
 export function useCountdown(

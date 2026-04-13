@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useHistoryStep } from "@/hooks/useHistoryStep";
 
@@ -16,28 +16,11 @@ import RaceSection from "@/components/sections/RaceSection";
 import AnonymitySection from "@/components/sections/AnonymitySection";
 import Timeline from "@/components/sections/Timeline";
 import CtaFinal from "@/components/sections/CtaFinal";
-
-// export default function Page() {
-//   const { step, advance, isReady } = useHistoryStep();
-
-//   const handleSplashComplete = useCallback(() => {
-//     advance("main");
-//   }, [advance]);
-
-//   const handleGateClick = useCallback(() => {
-//     advance("gate");
-//   }, [advance]);
-
-// const handleGateBack = useCallback(() => {
-//   window.history.back();
-// }, []);
-
-// const handleGateComplete = useCallback((_groupId: string) => {
-//   window.history.back();
-// }, []);
+import GroupSchedulePopup from "@/components/sections/GroupSchedulePopup";
+import UrgencyBar from "@/components/layout/UrgencyBar";
 export default function Page() {
   const { step, advance, isReady } = useHistoryStep();
-
+const [scheduleOpen, setScheduleOpen] = useState(false);
 const handleSplashComplete = useCallback(() => {
   // Không truyền true, mặc định sẽ là pushState
   // Lịch sử sẽ là: [splash] -> [main]
@@ -115,6 +98,8 @@ const handleGateClick = useCallback(() => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
+           <UrgencyBar onScheduleClick={() => setScheduleOpen(true)} />   
+
           <Navbar onGateClick={handleGateClick} />
           <TickerStrip />
           <main>
@@ -127,6 +112,10 @@ const handleGateClick = useCallback(() => {
             <CtaFinal />
           </main>
           <Footer />
+            <GroupSchedulePopup
+              open={scheduleOpen}
+              onClose={() => setScheduleOpen(false)}
+            />
         </motion.div>
       )}
     </AnimatePresence>
