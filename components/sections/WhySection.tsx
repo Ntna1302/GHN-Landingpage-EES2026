@@ -1,0 +1,231 @@
+"use client";
+
+import { useState } from "react";
+import { motion } from "framer-motion";
+import ScrollReveal from "@/components/ScrollReveal";
+
+const EES_2025_RESULTS = [
+  "Tăng ngân sách đào tạo lên 35% cho frontline",
+  "Ra mắt chương trình HRBP toàn quốc 2025",
+  "Cải thiện quy trình onboarding kho — giảm 40% thời gian",
+  "Chính sách thưởng hiệu suất tài xế mới",
+  "Cải thiện chế độ phúc lợi y tế cho gia đình",
+];
+
+const EES_2026_USAGE = [
+  "Định hướng chiến lược nhân sự 2026–2028",
+  "Ưu tiên ngân sách L&D theo nhóm thực tế",
+  "Thiết kế lại môi trường làm việc kho",
+  "Điều chỉnh KPI đánh giá quản lý tuyến đầu",
+  "Báo cáo lên Ban lãnh đạo và HĐQT GHN",
+];
+
+// Warm → cool gradient across items
+const WARM_COLORS = ["#FF5200", "#F67700", "#F8B200", "#FF5200", "#F67700"];
+const COOL_COLORS = ["#0055F4", "#006FAD", "#009BE0", "#0055F4", "#006FAD"];
+
+// hex → rgba with alpha
+function tint(hex: string, a: number) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  return `rgba(${r},${g},${b},${a})`;
+}
+
+interface InteractiveListProps {
+  title: string;
+  items: string[];
+  colors: string[];
+}
+
+function InteractiveList({ title, items, colors }: InteractiveListProps) {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+  return (
+    <div>
+      {/* Column header */}
+      <div
+        style={{
+          fontSize: "0.72rem",
+          fontWeight: 700,
+          letterSpacing: "0.12em",
+          textTransform: "uppercase",
+          marginBottom: "1.2rem",
+          paddingBottom: "0.6rem",
+          borderBottom: "2px solid #0A1F44",
+          color: "#0A1F44",
+        }}
+      >
+        {title}
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        {items.map((item, i) => {
+          const color = colors[i % colors.length];
+          const isActive = activeIndex === i;
+
+          return (
+            <motion.div
+              key={i}
+              onHoverStart={() => setActiveIndex(i)}
+              onHoverEnd={() => setActiveIndex(null)}
+              onClick={() => setActiveIndex(isActive ? null : i)}
+              animate={{
+                backgroundColor: isActive ? tint(color, 0.07) : "rgba(0,0,0,0)",
+              }}
+              transition={{ duration: 0.18 }}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "2.5rem 1fr",
+                gap: "0.75rem",
+                alignItems: "center",
+                padding: "0.7rem 0.5rem 0.7rem 0.5rem",
+                borderBottom: "1px solid #E0DDD6",
+                cursor: "pointer",
+                position: "relative",
+              }}
+            >
+              {/* Accent bar — per-item color */}
+              <motion.div
+                animate={{ scaleY: isActive ? 1 : 0, opacity: isActive ? 1 : 0 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                style={{
+                  position: "absolute",
+                  left: 0,
+                  top: "15%",
+                  bottom: "15%",
+                  width: "3px",
+                  background: color,
+                  transformOrigin: "top",
+                }}
+              />
+
+              {/* Number — colored by item */}
+              <motion.span
+                animate={{
+                  color: isActive ? color : tint(color, 0.35),
+                  scale: isActive ? 1.15 : 1,
+                  x: isActive ? 4 : 0,
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                style={{
+                  fontFamily: "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
+                  fontWeight: 900,
+                  fontSize: "1.3rem",
+                  letterSpacing: "-0.03em",
+                  lineHeight: 1,
+                  transformOrigin: "left center",
+                  display: "block",
+                  color: tint(color, 0.35),
+                }}
+              >
+                {String(i + 1).padStart(2, "0")}
+              </motion.span>
+
+              {/* Text */}
+              <motion.span
+                animate={{
+                  color: isActive ? "#0A1F44" : "#666",
+                  x: isActive ? 4 : 0,
+                }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                style={{
+                  fontSize: "0.88rem",
+                  lineHeight: 1.45,
+                  fontWeight: isActive ? 600 : 400,
+                }}
+              >
+                {item}
+              </motion.span>
+            </motion.div>
+          );
+        })}
+      </div>
+
+      {/* Footer counter */}
+      <div
+        style={{
+          marginTop: "1rem",
+          fontSize: "0.7rem",
+          color: activeIndex !== null ? colors[activeIndex % colors.length] : "#aaa",
+          letterSpacing: "0.05em",
+          fontWeight: 500,
+          transition: "color 0.2s",
+        }}
+      >
+        {activeIndex !== null
+          ? `${String(activeIndex + 1).padStart(2, "0")} / ${String(items.length).padStart(2, "0")}`
+          : `${String(items.length).padStart(2, "0")} hành động`}
+      </div>
+    </div>
+  );
+}
+
+export default function WhySection() {
+  return (
+    <section
+      id="why"
+      style={{ borderBottom: "1px solid #E0DDD6", background: "#fff" }}
+    >
+      <div className="section-label" style={{ padding: "2.5rem 2.5rem 0" }}>
+        Vì sao tham gia?
+      </div>
+
+      <div className="ghn-grid-3col" style={{ borderTop: "1px solid #E0DDD6" }}>
+        {/* Col 1 — Big statement */}
+        <div style={{ padding: "3rem 2.5rem", borderRight: "1px solid #E0DDD6" }}>
+          <ScrollReveal>
+            <div
+              style={{
+                fontFamily: "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
+                fontWeight: 900,
+                fontSize: "var(--fs-xl)",
+                textTransform: "uppercase",
+                letterSpacing: "-0.04em",
+                lineHeight: 1.0,
+                marginBottom: "1.75rem",
+              }}
+            >
+              <div style={{ color: "#0A1F44" }}>GHN</div>
+              <div style={{ color: "#0A1F44" }}>Nghe</div>
+              <div style={{ color: "#FF5200" }}>Thật</div>
+            </div>
+            <p style={{ fontSize: "1.05rem", color: "#444", lineHeight: 1.7, maxWidth: "1000px" }}>
+              EES không phải khảo sát hình thức. Kết quả năm 2025 trực tiếp
+              tạo ra 5 hành động cụ thể — từ cải tiến App Tài xế đến chương
+              trình giữ chân nhân sự Miền Bắc.{" "}
+              <strong style={{ color: "#0A1F44" }}>
+                Với hơn 78% nhân viên đã tham gia trên toàn quốc.
+              </strong>
+              <br /><br />
+              <strong style={{ color: "#0A1F44" }}>Năm 2026</strong> — GHN
+              muốn đi sâu hơn. Và điều đó bắt đầu từ tiếng nói của bạn.
+            </p>
+          </ScrollReveal>
+        </div>
+
+        {/* Col 2 — Past results: warm palette */}
+        <div style={{ padding: "3rem 2rem", borderRight: "1px solid #E0DDD6" }}>
+          <ScrollReveal delay={0.1}>
+            <InteractiveList
+              title="Kết quả EES 2025"
+              items={EES_2025_RESULTS}
+              colors={WARM_COLORS}
+            />
+          </ScrollReveal>
+        </div>
+
+        {/* Col 3 — 2026 usage: cool palette */}
+        <div style={{ padding: "3rem 2rem" }}>
+          <ScrollReveal delay={0.2}>
+            <InteractiveList
+              title="Kết quả EES 2026 sẽ dùng để"
+              items={EES_2026_USAGE}
+              colors={COOL_COLORS}
+            />
+          </ScrollReveal>
+        </div>
+      </div>
+    </section>
+  );
+}
