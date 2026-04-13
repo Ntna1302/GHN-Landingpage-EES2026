@@ -160,10 +160,10 @@ export default function GroupsSection() {
                       display: "inline-block",
                       background: group.targetHigh ? "#FF5200" : "#0A1F44",
                       color: "#fff",
-                      fontSize: "0.68rem",
+                      fontSize: "0.8rem",
                       fontWeight: 700,
                       letterSpacing: "0.05em",
-                      padding: "0.2rem 0.5rem",
+                      padding: "0.3rem 1.5rem",
                       borderRadius: "2px",
                     }}
                   >

@@ -282,7 +282,7 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            background: "#FF5200",
+            background: "#ff5d11",
             padding: "5rem 3.5rem",
             display: "flex",
             flexDirection: "column",

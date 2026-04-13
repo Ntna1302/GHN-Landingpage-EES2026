@@ -94,6 +94,6 @@ export const surveyGroups: SurveyGroup[] = [
 ];
 
 export const groupPasswords: Record<string, string> = {
-  "3A": "EES3A2026",
-  "3B": "EES3B2026",
+  "3A": "3A@2026",
+  "3B": "3B@2026",
 };

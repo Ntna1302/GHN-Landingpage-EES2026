@@ -20,7 +20,7 @@ export default function RoleGate({ onComplete, onBack }: RoleGateProps) {
     if (entering) return;
     setSelected(group);
     setError("");
-    setPassword("");
+    setPassword(""); // TEST PURPOSES ONLY
 
     if (!group.requiresPassword) {
       setEntering(true);
@@ -37,7 +37,7 @@ export default function RoleGate({ onComplete, onBack }: RoleGateProps) {
       setEntering(true);
       setTimeout(() => onComplete(selected.id), 400);
     } else {
-      setError("Mật khẩu không đúng. Vui lòng kiểm tra email cá nhân hóa.");
+      setError("Mật khẩu không đúng. Vui lòng nhập lại.");
     }
   };
 
@@ -338,8 +338,8 @@ export default function RoleGate({ onComplete, onBack }: RoleGateProps) {
                   lineHeight: 1.65,
                 }}
               >
-                Nhập mật khẩu được gửi trong{" "}
-                <strong>email cá nhân hóa EES 2026</strong> của bạn.
+                Nhập mật khẩu để tham gia {" "}
+                <strong>khảo sát</strong> EES 2026.
               </p>
 
               <form
