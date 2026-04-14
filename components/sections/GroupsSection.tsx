@@ -25,8 +25,8 @@ export default function GroupsSection() {
           <h2
             style={{
               fontFamily:
-                "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-              fontWeight: 900,
+                "var(--font-heading)",
+              fontWeight: 700,
               fontSize: "var(--fs-xl)",
               textTransform: "uppercase",
               letterSpacing: "-0.04em",
@@ -89,9 +89,9 @@ export default function GroupsSection() {
                 <div
                   style={{
                     fontSize: "3rem",
-                    fontWeight: 900,
+                    fontWeight: 700,
                     fontFamily:
-                      "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
+                      "var(--font-heading)",
                     color: "#E0DDD6",
                     lineHeight: 1,
                     marginBottom: "0.5rem",
@@ -105,8 +105,8 @@ export default function GroupsSection() {
                 <div
                   style={{
                     fontFamily:
-                      "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-                    fontWeight: 900,
+                      "var(--font-heading)",
+                    fontWeight: 700,
                     fontSize: "1.1rem",
                     textTransform: "uppercase",
                     letterSpacing: "-0.02em",

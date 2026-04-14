@@ -60,8 +60,8 @@ export default function AnonymitySection() {
             <div
               style={{
                 fontFamily:
-                  "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-                fontWeight: 900,
+                  "var(--font-heading)",
+                fontWeight: 700,
                 fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)",
                 textTransform: "uppercase",
                 letterSpacing: "-0.03em",
@@ -79,8 +79,8 @@ export default function AnonymitySection() {
             <div
               style={{
                 fontFamily:
-                  "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-                fontWeight: 900,
+                  "var(--font-heading)",
+                fontWeight: 700,
                 fontSize: "2.5rem",
                 textTransform: "uppercase",
                 letterSpacing: "-0.04em",
@@ -157,8 +157,8 @@ export default function AnonymitySection() {
                 <div
                   style={{
                     fontFamily:
-                      "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-                    fontWeight: 900,
+                      "var(--font-heading)",
+                    fontWeight: 700,
                     fontSize: "3rem",
                     letterSpacing: "-0.04em",
                     color: "#FF5200",
@@ -175,8 +175,8 @@ export default function AnonymitySection() {
                   <div
                     style={{
                       fontFamily:
-                        "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-                      fontWeight: 900,
+                        "var(--font-heading)",
+                      fontWeight: 700,
                       fontSize: "1rem",
                       textTransform: "uppercase",
                       letterSpacing: "-0.01em",

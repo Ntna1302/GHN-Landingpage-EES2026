@@ -56,8 +56,8 @@ export default function CtaFinal() {
           <h2
             style={{
               fontFamily:
-                "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-              fontWeight: 900,
+                "var(--font-heading)",
+              fontWeight: 700,
               fontSize: "clamp(2rem, 5vw, 4rem)",
               textTransform: "uppercase",
               letterSpacing: "-0.04em",
@@ -99,7 +99,7 @@ export default function CtaFinal() {
                 color: "#fff",
                 padding: "1.1rem 2.25rem",
                 fontFamily:
-                  "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
+                  "var(--font-heading)",
                 fontWeight: 700,
                 fontSize: "1rem",
                 textTransform: "uppercase",

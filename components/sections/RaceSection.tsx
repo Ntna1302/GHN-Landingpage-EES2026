@@ -96,8 +96,8 @@ export default function RaceSection() {
               <div
                 style={{
                   fontFamily:
-                    "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-                  fontWeight: 900,
+                    "var(--font-heading)",
+                  fontWeight: 700,
                   textTransform: "uppercase",
                   letterSpacing: "-0.05em",
                   lineHeight: 0.85,
@@ -162,8 +162,8 @@ export default function RaceSection() {
                 <div
                   style={{
                     fontFamily:
-                      "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-                    fontWeight: 900,
+                      "var(--font-heading)",
+                    fontWeight: 700,
                     fontSize: "2.5rem",
                     letterSpacing: "-0.04em",
                     color: "#fff",
@@ -177,7 +177,7 @@ export default function RaceSection() {
                     color: "rgba(255,255,255,0.4)",
                     textTransform: "uppercase",
                     letterSpacing: "0.08em",
-                    fontWeight: 600,
+                    fontWeight: 500,
                   }}
                 >
                   {label}
@@ -242,8 +242,8 @@ export default function RaceSection() {
                       alignItems: "center",
                       justifyContent: "center",
                       fontFamily:
-                        "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-                      fontWeight: 900,
+                        "var(--font-heading)",
+                      fontWeight: 700,
                       fontSize: "1.1rem",
                       color: board.filled ? "#fff" : "#0A1F44",
                       flexShrink: 0,
@@ -280,8 +280,8 @@ export default function RaceSection() {
                   <div
                     style={{
                       fontFamily:
-                        "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-                      fontWeight: 900,
+                        "var(--font-heading)",
+                      fontWeight: 700,
                       fontSize: "1rem",
                       letterSpacing: "-0.02em",
                       color: "#FF5200",
@@ -319,8 +319,8 @@ export default function RaceSection() {
               <span
                 style={{
                   fontFamily:
-                    "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-                  fontWeight: 900,
+                    "var(--font-heading)",
+                  fontWeight: 700,
                   fontSize: "1.1rem",
                   letterSpacing: "-0.02em",
                   color: "#fff",

@@ -5,19 +5,23 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useHistoryStep } from "@/hooks/useHistoryStep";
 
 import SplashScreen from "@/components/sections/SplashScreen";
-import RoleGate from "@/components/sections/RoleGate";
+// import RoleGate from "@/components/sections/RoleGate";
 import Navbar from "@/components/layout/Navbar";
 import TickerStrip from "@/components/layout/TickerStrip";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/sections/Hero";
 import WhySection from "@/components/sections/WhySection";
-import GroupsSection from "@/components/sections/GroupsSection";
+// import GroupsSection from "@/components/sections/GroupsSection";
 import RaceSection from "@/components/sections/RaceSection";
 import AnonymitySection from "@/components/sections/AnonymitySection";
 import Timeline from "@/components/sections/Timeline";
 import CtaFinal from "@/components/sections/CtaFinal";
 import GroupSchedulePopup from "@/components/sections/GroupSchedulePopup";
 import UrgencyBar from "@/components/layout/UrgencyBar";
+import QuoteSection from "@/components/sections/QuoteSection";
+import GroupFinder from "@/components/sections/GroupFinder";
+import HowSection from "@/components/sections/HowSection";
+
 export default function Page() {
   const { step, advance, isReady } = useHistoryStep();
 const [scheduleOpen, setScheduleOpen] = useState(false);
@@ -77,21 +81,22 @@ const handleGateClick = useCallback(() => {
           transition={{ duration: 0.4 }}
         >
           <SplashScreen onComplete={handleSplashComplete} />
-        </motion.div>
-      ) : step === "gate" ? (
-        <motion.div
-          key="gate"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
-        >
-          <RoleGate
-            onComplete={handleGateComplete}
-            onBack={handleGateBack}
-          />
-        </motion.div>
-      ) : (
+        </motion.div> )
+      // ) : step === "gate" ? (
+      //   // <motion.div
+      //   //   key="gate"
+      //   //   initial={{ opacity: 0 }}
+      //   //   animate={{ opacity: 1 }}
+      //   //   exit={{ opacity: 0 }}
+      //   //   transition={{ duration: 0.4 }}
+      //   // >
+      //   //   <RoleGate
+      //   //     onComplete={handleGateComplete}
+      //   //     onBack={handleGateBack}
+      //   //   />
+      //   // </motion.div>
+      // ) 
+      : (
         <motion.div
           key="main"
           initial={{ opacity: 0 }}
@@ -105,9 +110,12 @@ const handleGateClick = useCallback(() => {
           <main>
             <Hero />
             <WhySection />
-            <GroupsSection />
-            <RaceSection />
+            <QuoteSection />
             <AnonymitySection />
+            {/* <GroupsSection /> */}
+            <GroupFinder /> 
+            <HowSection />
+            <RaceSection />
             <Timeline />
             <CtaFinal />
           </main>

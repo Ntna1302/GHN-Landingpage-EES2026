@@ -1,3 +1,27 @@
+@font-face {
+  font-family: 'SVN-Helvetica Now';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/SVN-HelveticaNowDisplay-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SVN-Helvetica Now';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/SVN-HelveticaNowDisplay-Medium.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'SVN-Helvetica Now';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/SVN-HelveticaNowDisplay-Bold.ttf') format('truetype');
+}
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -79,6 +103,11 @@
 
 /* ── GHN CSS variables (accessible via var() in inline styles) ── */
 :root {
+  /* Font families */
+  --font-heading: 'SVN-Helvetica Now', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-body: 'SVN-Helvetica Now', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-sans: 'SVN-Helvetica Now', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
   /* GHN brand */
   --color-ghn-primary: #FF5200;
   --color-ghn-accent: #F8B200;
@@ -145,7 +174,7 @@
   }
 
   body {
-    font-family: var(--font-body, 'Inter', sans-serif);
+    font-family: var(--font-body);
     color: var(--color-dark);
     background: #fff;
     -webkit-font-smoothing: antialiased;
@@ -154,8 +183,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading, 'Be Vietnam Pro', sans-serif);
-    font-weight: 900;
+    font-family: var(--font-heading);
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: -0.03em;
     line-height: 1;

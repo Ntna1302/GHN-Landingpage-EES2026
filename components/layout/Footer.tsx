@@ -7,7 +7,7 @@ export default function Footer() {
       style={{
         borderTop: "1px solid #E0DDD6",
         background: "#fff",
-        fontFamily: "var(--font-body, 'Inter', sans-serif)",
+        fontFamily: "var(--font-body)",
       }}
     >
       {/* Main grid */}
@@ -19,8 +19,8 @@ export default function Footer() {
         <div style={{ paddingRight: "3rem" }}>
           <div
             style={{
-              fontFamily: "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-              fontWeight: 900,
+              fontFamily: "var(--font-heading)",
+              fontWeight: 700,
               fontSize: "1.1rem",
               textTransform: "uppercase",
               letterSpacing: "-0.02em",
@@ -111,7 +111,7 @@ export default function Footer() {
                 style={{
                   fontSize: "0.85rem",
                   color: "#0A1F44",
-                  fontWeight: 600,
+                  fontWeight: 500,
                 }}
               >
                 {value}

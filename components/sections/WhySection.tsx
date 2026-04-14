@@ -109,8 +109,8 @@ function InteractiveList({ title, items, colors }: InteractiveListProps) {
                 }}
                 transition={{ duration: 0.2, ease: "easeOut" }}
                 style={{
-                  fontFamily: "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-                  fontWeight: 900,
+                  fontFamily: "var(--font-heading)",
+                  fontWeight: 700,
                   fontSize: "1.3rem",
                   letterSpacing: "-0.03em",
                   lineHeight: 1,
@@ -177,8 +177,8 @@ export default function WhySection() {
           <ScrollReveal>
             <div
               style={{
-                fontFamily: "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-                fontWeight: 900,
+                fontFamily: "var(--font-heading)",
+                fontWeight: 700,
                 fontSize: "var(--fs-xl)",
                 textTransform: "uppercase",
                 letterSpacing: "-0.04em",

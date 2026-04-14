@@ -56,9 +56,14 @@ Adapted from the new design's red/dark palette → GHN brand colors:
 
 ### Typography
 
+- Font: `SVN-Helvetica Now` (local, 3 weights: 400/500/700)
+- Fallback: `'Helvetica Neue', Helvetica, Arial, sans-serif`
+- Heading và body dùng cùng font family, phân biệt bằng weight và size
+- Max weight: 700 (bold) — không có 800/900
+
 ```css
---font-heading: 'Be Vietnam Pro', sans-serif;   /* all headings, uppercase, tight tracking */
---font-body: 'Inter', sans-serif;                /* body text, labels */
+--font-heading: 'SVN-Helvetica Now', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+--font-body: 'SVN-Helvetica Now', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 /* ── Fluid type scale ── */
 --fs-hero: clamp(2.8rem, 8vw, 7rem);     /* hero headlines */
@@ -69,10 +74,10 @@ Adapted from the new design's red/dark palette → GHN brand colors:
 ```
 
 **Typography conventions:**
-- All headings: **UPPERCASE**, `font-weight: 900`, negative letter-spacing (`-0.03em` to `-0.05em`)
+- All headings: **UPPERCASE**, `font-weight: 700`, negative letter-spacing (`-0.03em` to `-0.05em`)
 - Section labels: `0.7rem`, `font-weight: 700`, `letter-spacing: 0.14em`, uppercase, GHN orange, with trailing `1px` line (`::after` pseudo-element)
 - Body text: `color: var(--color-mid)`, `line-height: 1.65`
-- Stat numbers: `font-weight: 900`, `2rem–3.5rem`, negative tracking
+- Stat numbers: `font-weight: 700`, `2rem–3.5rem`, negative tracking
 - Outline text effect: `-webkit-text-stroke: 2px var(--color-dark); color: transparent` for hollow letterforms
 
 ### Layout Principles

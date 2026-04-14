@@ -40,8 +40,8 @@ export default function Navbar({ onGateClick }: NavbarProps) {
     display: "flex",
     alignItems: "center",
     gap: "0.4rem",
-    fontFamily: "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-    fontWeight: 900,
+    fontFamily: "var(--font-heading)",
+    fontWeight: 700,
     fontSize: "1.8rem",
     letterSpacing: "-0.02em",
     textTransform: "uppercase",
@@ -94,7 +94,11 @@ export default function Navbar({ onGateClick }: NavbarProps) {
 
       {/* CTA */}
       <button
-        onClick={onGateClick}
+        onClick={() => {
+  document.getElementById("groups")?.scrollIntoView({
+    behavior: "smooth",
+  });
+}}
         style={{
           background: "#FF5200",
           color: "#fff",
@@ -105,7 +109,7 @@ export default function Navbar({ onGateClick }: NavbarProps) {
           letterSpacing: "0.06em",
           border: "none",
           borderRadius: "2px",
-          fontFamily: "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
+          fontFamily: "var(--font-heading)",
           transition: "background 0.2s",
           whiteSpace: "nowrap",
           cursor: "pointer",

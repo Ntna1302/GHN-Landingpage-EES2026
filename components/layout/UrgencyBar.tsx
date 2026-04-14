@@ -89,7 +89,7 @@ export default function UrgencyBar({ onScheduleClick }: Props) {
           color: "#fff",
           padding: "0.3rem 0.9rem",
           fontSize: "0.65rem",
-          fontWeight: 800,
+          fontWeight: 700,
           letterSpacing: "0.08em",
           textTransform: "uppercase",
           border: "none",
@@ -99,7 +99,7 @@ export default function UrgencyBar({ onScheduleClick }: Props) {
           display: "flex",
           alignItems: "center",
           gap: "0.4rem",
-          fontFamily: "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
+          fontFamily: "var(--font-heading)",
         }}
       >
         Xem Lịch Nhóm

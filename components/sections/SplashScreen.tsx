@@ -58,7 +58,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
             textTransform: "uppercase",
             color: "#FF5200",
             marginBottom: "3.5rem",
-            fontFamily: "var(--font-body, 'Inter', sans-serif)",
+            fontFamily: "var(--font-body)",
           }}
         >
           GiaoHangNhanh · Employee Engagement Survey
@@ -69,8 +69,8 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
           style={{
             position: "relative",
             display: "inline-block",
-            fontFamily: "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-            fontWeight: 900,
+            fontFamily: "var(--font-heading)",
+            fontWeight: 700,
             textTransform: "uppercase",
           }}
         >
@@ -137,7 +137,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
               color: "#fff",
               letterSpacing: "0.02em",
               marginTop: "1.5rem",
-              fontFamily: "var(--font-body, 'Inter', sans-serif)",
+              fontFamily: "var(--font-body)",
               fontWeight: 400,
             }}
           >
@@ -204,12 +204,12 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
                   border: "none",
                   padding: "14px 44px",
                   fontSize: "clamp(0.8rem, 1.5vw, 1rem)",
-                  fontWeight: 800,
+                  fontWeight: 700,
                   borderRadius: "6px",
                   cursor: "pointer",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
-                  fontFamily: "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
+                  fontFamily: "var(--font-heading)",
                 }}
               >
                 Khám phá ngay

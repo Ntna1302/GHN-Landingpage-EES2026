@@ -235,7 +235,7 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
                   <div
                     style={{
                       fontFamily: 'SVN-Helvetica Now',
-                      fontWeight: 900,
+                      fontWeight: 700,
                       fontSize: "clamp(1.4rem, 4vw, 1.8rem)",
                       color: "#fff",
                       textTransform: "uppercase",
@@ -310,8 +310,8 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
                         >
                           <div
                             style={{
-                              fontFamily: "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-                              fontWeight: 900,
+                              fontFamily: "var(--font-heading)",
+                              fontWeight: 700,
                               fontSize: "1.3rem",
                               color: "#fff",
                               lineHeight: 1,
@@ -322,7 +322,7 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
                           <div
                             style={{
                               fontSize: "0.55rem",
-                              fontWeight: 600,
+                              fontWeight: 500,
                               color: "rgba(255,255,255,0.4)",
                               textTransform: "uppercase",
                               letterSpacing: "0.08em",
@@ -401,7 +401,7 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
                           top: "8px",
                           left: "10px",
                           fontSize: "0.85rem",
-                          fontWeight: 800,
+                          fontWeight: 700,
                           color: "#fff",
                           background: g.color,
                           padding: "0.2rem 0.5rem",
@@ -415,8 +415,8 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
 
                     <div
                       style={{
-                        fontFamily: "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-                        fontWeight: 900,
+                        fontFamily: "var(--font-heading)",
+                        fontWeight: 700,
                         fontSize: "1.6rem",
                         color: g.color,
                         letterSpacing: "-0.04em",
@@ -430,7 +430,7 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
                     <div>
                       <div
                         style={{
-                          fontWeight: 900,
+                          fontWeight: 700,
                           fontSize: "1.2rem",
                           color: "#0A1F44",
                           marginBottom: "0.25rem",
@@ -480,7 +480,7 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
                       <div
                         style={{
                           fontSize: "0.6rem",
-                          fontWeight: 800,
+                          fontWeight: 700,
                           letterSpacing: "0.08em",
                           textTransform: "uppercase",
                           color: "#fff",
@@ -493,7 +493,7 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
                       </div>
                       <div
                         style={{
-                          fontWeight: 900,
+                          fontWeight: 700,
                           fontSize: "1rem",
                           color: "#0A1F44",
                         }}
@@ -503,7 +503,7 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
                       <div
                         style={{
                           fontSize: "0.6rem",
-                          fontWeight: 800,
+                          fontWeight: 700,
                           letterSpacing: "0.08em",
                           textTransform: "uppercase",
                           color: "#fff",
@@ -516,7 +516,7 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
                       </div>
                       <div
                         style={{
-                          fontWeight: 900,
+                          fontWeight: 700,
                           fontSize: "1rem",
                           color: "#f85306",
                         }}
@@ -567,8 +567,8 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
               </div>
               <div
                 style={{
-                  fontFamily: "var(--font-heading, 'Be Vietnam Pro', sans-serif)",
-                  fontWeight: 900,
+                  fontFamily: "var(--font-heading)",
+                  fontWeight: 700,
                   fontSize: "0.75rem",
                   color: "#FF5200",
                   letterSpacing: "-0.01em",

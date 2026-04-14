@@ -29,7 +29,7 @@ export default function TickerStrip() {
         background: "#0A1F44",
         borderBottom: "1px solid rgba(255,255,255,0.08)",
         overflow: "hidden",
-        height: "50px",
+        height: "35px",
         display: "flex",
         alignItems: "center",
       }}
@@ -62,7 +62,7 @@ export default function TickerStrip() {
                   padding: (item as { isSep?: boolean }).isSep
                     ? "0 0.75rem"
                     : "0 0.5rem",
-                  fontFamily: "var(--font-body, 'Inter', sans-serif)",
+                  fontFamily: "var(--font-body)",
                 }}
               >
                 {item.text}
