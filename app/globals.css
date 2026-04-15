@@ -350,6 +350,7 @@
   height: calc(100dvh - var(--header-height));
   max-height: 820px;
   min-height: 480px;
+  container-type: size; /* cqh/cqw now = % of hero container, not viewport */
 }
 
 @media (max-width: 900px) {
@@ -357,8 +358,19 @@
     height: auto !important;
     max-height: none !important;
     min-height: auto !important;
+    container-type: normal !important; /* disable cqh on mobile — falls back to rem mins */
   }
   .ghn-hero-pad { padding: clamp(1.5rem, 4vw, 2.5rem) !important; }
+  /* Mobile fallback: restore spacing since cqh resolves to 0 with container-type:normal */
+  #hero .ghn-badge-wrap    { margin-bottom: 1.25rem !important; }
+  #hero .ghn-headline-row  { margin-bottom: 0.75rem !important; }
+  #hero .ghn-headline-line { padding-bottom: 0.75rem !important; }
+  #hero .ghn-stats-row     { padding-top: 1rem !important; margin-top: 1rem !important; }
+  #hero .ghn-date-label    { margin-bottom: 1rem !important; }
+  #hero .ghn-race-title    { margin-bottom: 1.25rem !important; }
+  #hero .ghn-countdown-wrap { margin-bottom: 1rem !important; }
+  #hero .ghn-countdown-desc { margin-bottom: 0.75rem !important; }
+  #hero .ghn-countdown-item { padding: 0.75rem 0.5rem !important; }
 }
 @media (max-width: 640px) {
   .ghn-hero-stats { grid-template-columns: 1fr 1fr !important; }
