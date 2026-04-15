@@ -9,8 +9,8 @@ const PHASES = [
     name: "Đóng khảo sát",
     bullets: [
       "Thông báo cảm ơn toàn công ty",
-      "Công bố đơn vị thắng EES Race",
-      "Trao giải 25 triệu",
+      "Công bố kết quả EES Race (cá nhân, tập thể)",
+      "Trao giải ",
     ],
     startDate: new Date("2026-05-20"),
     endDate: new Date("2026-05-31"),
@@ -20,10 +20,10 @@ const PHASES = [
     month: "Tháng 6/2026",
     name: "Phân tích & Báo cáo",
     bullets: [
-      "Tính Engagement Index",
-      "Thematic analysis câu hỏi mở",
-      "Báo cáo riêng từng Khối",
-      "Trình CPO/BOD ngày 20/06",
+      "Tính các chỉ số gắn kết",
+      "Phân loại và phân tích theo nhóm chủ đề",
+      "Báo cáo kết quả theo Khối, phòng ban",
+      "Kế hoạch và hành động cụ thể",
     ],
     startDate: new Date("2026-06-01"),
     endDate: new Date("2026-06-30"),
@@ -34,9 +34,9 @@ const PHASES = [
     name: "Chia sẻ toàn công ty",
     bullets: [
       "Công bố kết quả tổng quan",
-      "Top 3 điểm mạnh GHN",
-      "3 cam kết cải tiến từ lãnh đạo",
-      "Họp riêng từng Khối",
+      "Những điểm mà GHN đang làm tốt",
+      "Các hành động dự kiến cải tiến từ GHN",
+      "Trao đổi cụ thể đối với từng Khối/Phòng ban",
     ],
     startDate: new Date("2026-07-01"),
     endDate: new Date("2026-07-31"),
@@ -44,11 +44,11 @@ const PHASES = [
   {
     num: "04",
     month: "T8 – T9/2026",
-    name: "Theo dõi & Pulse Check",
+    name: "Theo dõi và Đo lường hành động",
     bullets: [
-      "Triển khai Action Plan",
-      "Báo cáo tiến độ hàng tháng",
-      "Pulse Check Q3 — đo lường nhanh",
+      "Triển khai kế hoạch hành động",
+      "Báo cáo tiến độ cải tiến hàng tháng",
+      "Đo lường tiến độ cải tiến",
     ],
     startDate: new Date("2026-08-01"),
     endDate: new Date("2026-09-30"),
@@ -56,7 +56,7 @@ const PHASES = [
 ];
 
 function getActivePhase(): number {
-  const now = new Date(2026,5,15);
+  const now = new Date(2026,4,30);
   for (let i = 0; i < PHASES.length; i++) {
     if (now >= PHASES[i].startDate && now <= PHASES[i].endDate) return i;
   }

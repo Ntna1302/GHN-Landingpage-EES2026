@@ -73,27 +73,19 @@ export default function Hero() {
 
   return (
     <section id="hero" style={{ borderBottom: "1px solid #E0DDD6"
- }}>      <div className="ghn-grid-2col"
-          style={{  
-    height: "calc(100dvh - 140px)",  // 100dvh trừ urgency + navbar + ticker
-    maxHeight: "800px",               // không cho quá cao trên monitor lớn
-    minHeight: "500px",               // không cho quá nhỏ
-  }}>
+ }}>      <div className="ghn-grid-2col">
 
         {/* ── LEFT PANEL ── */}
         <div
           className="ghn-hero-pad"
           style={{
-            // padding: "2.5rem 2.5rem",
-            paddingTop: "2.5rem",
-            paddingBottom: "2.5rem",
-            paddingLeft: "2.5rem",
-            paddingRight: "2.5rem",
+            padding: "clamp(1rem, 2.5vh, 2rem) clamp(1.5rem, 3vw, 2.5rem)",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-start",
+            justifyContent: "space-between",
             background: "#fff",
             borderRight: "1px solid #E0DDD6",
+            overflow: "hidden",
           }}
         >
           <div>
@@ -107,7 +99,7 @@ export default function Hero() {
                 fontWeight: 600,
                 alignItems: "center",
                 gap: "0.75rem",
-                marginBottom: "2.5rem",
+                marginBottom: "clamp(0.4rem, 3.5vh, 2rem)",
               }}
             >
               <div
@@ -132,7 +124,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Headline + Image row */}
-            <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", marginBottom: "1.25rem" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", marginBottom: "clamp(0.4rem, 1.5vh, 1rem)" }}>
               <motion.div
                 variants={headlineContainer}
                 initial="hidden"
@@ -161,9 +153,9 @@ export default function Hero() {
                     <motion.div
                       variants={headlineLine}
                       style={{
-                        fontSize: "119px",
+                        fontSize: "clamp(2.5rem, 9vw, 7rem)",
                         paddingTop: "0.2em",
-                        paddingBottom: "35px",
+                        paddingBottom: "clamp(0.3rem, 4.5vh, 2.5rem)",
                         color:
                           style === "solid"
                             ? "#006FAD"
@@ -188,7 +180,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               style={{
-                fontSize: "1.05rem",
+                fontSize: "clamp(0.82rem, 1.2vw, 1.05rem)",
                 color: "#444444",
                 lineHeight: 1.7,
                 maxWidth: "720px",
@@ -208,8 +200,8 @@ export default function Hero() {
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",
               borderTop: "1px solid #E0DDD6",
-              paddingTop: "1.25rem",
-              marginTop: "1.25rem",
+              paddingTop: "clamp(0.5rem, 1.5vh, 1.25rem)",
+              marginTop: "clamp(0.5rem, 1.5vh, 1.25rem)",
             }}
           >
             {STATS.map(({ value, label }, i) => (
@@ -258,7 +250,7 @@ export default function Hero() {
           transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           style={{
             background: "#ff5d11",
-            padding: "2.5rem 2.5rem",
+            padding: "clamp(1rem, 2.5vh, 2rem) clamp(1.5rem, 3vw, 2.5rem)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
@@ -279,7 +271,7 @@ export default function Hero() {
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
                 color: "rgba(255,255,255,0.65)",
-                marginBottom: "1.5rem",
+                marginBottom: "clamp(0.4rem, 4.5vh, 1.5rem)",
               }}
             >
               Khai mạc 01/05/2026 — Kết thúc 20/05/2026
@@ -295,8 +287,8 @@ export default function Hero() {
                 fontWeight: 700,
                 textTransform: "uppercase",
                 letterSpacing: "-0.05em",
-                lineHeight: 0.85,
-                marginBottom: "1.5rem",
+                lineHeight: 0.95,
+                marginBottom: "clamp(0.4rem, 4.5vh, 3.5rem)",
               }}
             >
               {RACE_TITLE_LINES.map((line) => (
@@ -304,7 +296,7 @@ export default function Hero() {
                   key={line}
                   variants={raceTitleLine}
                   style={{
-                    fontSize: "clamp(3rem, 10vw, 10rem)",
+                    fontSize: "clamp(2.5rem, 9vw, 8.5rem)",
                     color: "#fff",
                     display: "block",
                   }}
@@ -315,18 +307,18 @@ export default function Hero() {
             </motion.div>
 
             {/* Countdown */}
-            <div style={{ marginBottom: "2.5rem" }}>
+            <div style={{ marginBottom: "clamp(0.4rem, 1.5vh, 1.5rem)" }}>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.85, duration: 0.4 }}
                 style={{
-                  fontSize: "0.75rem",
+                  fontSize: "clamp(0.6rem, 0.9vw, 0.75rem)",
                   fontWeight: 700,
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
                   color: "#fff",
-                  marginBottom: "2rem",
+                  marginBottom: "clamp(0.3rem, 2vh, 2rem)",
                   lineHeight: 1.5,
                 }}
               >
@@ -378,7 +370,7 @@ export default function Hero() {
                   style={{
                     display: "grid",
                     gridTemplateColumns: "repeat(3, 1fr)",
-                    gap: "1rem"
+                    gap: "clamp(0.3rem, 0.8vw, 1rem)"
                   }}
                 >
                   {[
@@ -391,7 +383,7 @@ export default function Hero() {
                       variants={countdownItem}
                       style={{
                         background: "rgba(255,255,255,0.12)",
-                        padding: "1.5rem 0.4rem",
+                        padding: "clamp(0.3rem, 2.7vh, 2.5rem) clamp(0.3rem, 0.5vw, 0.4rem)",
                         textAlign: "center",
                         borderRadius: "2px",
                       }}
@@ -400,7 +392,7 @@ export default function Hero() {
                         style={{
                           fontFamily: "var(--font-heading)",
                           fontWeight: 700,
-                          fontSize: "clamp(1.3rem, 2.5vw, 2.25rem)",
+                          fontSize: "clamp(1.2rem, 2.2vw, 2rem)",
                           letterSpacing: "-0.03em",
                           color: "#fff",
                           lineHeight: 1,
@@ -456,10 +448,10 @@ export default function Hero() {
               gap: "0.6rem",
               background: "#fff",
               color: "#FF5200",
-              padding: "0.8rem 1.5rem",
+              padding: "clamp(0.5rem, 1vh, 0.8rem) clamp(1rem, 2vw, 1.5rem)",
               fontFamily: "var(--font-heading)",
               fontWeight: 700,
-              fontSize: "0.85rem",
+              fontSize: "clamp(0.72rem, 1vw, 0.85rem)",
               textTransform: "uppercase",
               letterSpacing: "0.06em",
               textDecoration: "none",

@@ -4,7 +4,7 @@ const ITEMS = [
   { text: "EES RACE 2026", accent: false },
   { text: "01/05 – 20/05/2026", accent: true },
   { text: "TỔNG GIẢI THƯỞNG", accent: false },
-  { text: "25.000.000 VNĐ", accent: true },
+  { text: "30.000.000 VNĐ", accent: true },
   { text: "20.000+ NHÂN VIÊN GHN", accent: false },
   { text: "MỤC TIÊU ≥75%", accent: true },
   { text: "6 NHÓM THAM GIA", accent: false },

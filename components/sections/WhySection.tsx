@@ -1,23 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { color, motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const EES_2025_RESULTS = [
-  "Tăng ngân sách đào tạo lên 35% cho frontline",
-  "Ra mắt chương trình HRBP toàn quốc 2025",
-  "Cải thiện quy trình onboarding kho — giảm 40% thời gian",
-  "Chính sách thưởng hiệu suất tài xế mới",
-  "Cải thiện chế độ phúc lợi y tế cho gia đình",
+  "App Tài xế — nâng cấp giao diện.",
+  "Quy trình chụp POD — bớt 2 bước phức tạp.",
+  "Miền Bắc — chương trình giữ chân nhân sự đã chạy.",
+  "Cải thiện suất ăn và hỗ trợ thêm chi phí cho NV tại KTC.",
+  "Nâng cao sức khỏe tinh thần - thể chất cho nhóm NV gặp bất ổn về Sức khỏe.",
+  "Quy trình cấp thiết bị IT — đã có rà soát cùng Mua hàng & Tài chính.",
 ];
 
 const EES_2026_USAGE = [
-  "Định hướng chiến lược nhân sự 2026–2028",
-  "Ưu tiên ngân sách L&D theo nhóm thực tế",
-  "Thiết kế lại môi trường làm việc kho",
-  "Điều chỉnh KPI đánh giá quản lý tuyến đầu",
-  "Báo cáo lên Ban lãnh đạo và HĐQT GHN",
+  "Cải thiện công cụ và quy trình thực tế",
+  "Chính sách phù hợp đối với từng nhóm nhân viên",
+  "Trình bày kế hoạch hành động năm 2026 cho Ban Lãnh Đạo",
+  "Chia sẻ kết quả tới toàn Công ty",
+  "Đo lường tiến độ cải tiến sau các hành động đã triển khai",
 ];
 
 // Warm → cool gradient across items
@@ -190,10 +191,22 @@ export default function WhySection() {
         <div style={{ padding: "3rem 2.5rem", borderRight: "1px solid #E0DDD6" }}>
           <ScrollReveal>
             <div
+            style={{
+                fontFamily: "var(--font-heading)",
+                fontWeight: 700,
+                fontSize: "50px",
+                textTransform: "uppercase",
+                letterSpacing: "-0.04em",
+                lineHeight: 1.0,
+                marginBottom: "1.75rem",
+              }}>
+              <span style={{color:"#FF5200"}}>EES</span> <span style={{color:"#006FAD"}}>- Khảo sát gắn kết nhân viên.</span>
+            </div>
+            <div
               style={{
                 fontFamily: "var(--font-heading)",
                 fontWeight: 700,
-                fontSize: "var(--fs-xl)",
+                fontSize: "30px",
                 textTransform: "uppercase",
                 letterSpacing: "-0.04em",
                 lineHeight: 1.0,
@@ -203,15 +216,21 @@ export default function WhySection() {
               <div style={{ color: "#006FAD" }}>GHN</div>
               <div style={{ color: "#006FAD" }}>Nghe</div>
               <div style={{ color: "#FF5200" }}>Thật</div>
+              <div style={{ color: "#006FAD" }}>Làm Thật</div>
             </div>
+            <p style={{ fontSize: "1.05rem", color: "#444", lineHeight: 1.7, maxWidth: "1000px" }}> 
+              Khảo sát đẻ lắng nghe tâm tư anh chị em đang cảm thấy thế nào khi làm việc tại GHN.
+              Không phải để đánh giá ai mà để hiểu điều gì đang ổn và điều gì cần tốt hơn.
+            </p>
+            <br />
             <p style={{ fontSize: "1.05rem", color: "#444", lineHeight: 1.7, maxWidth: "1000px" }}>
               EES không phải khảo sát hình thức. Kết quả năm 2025 trực tiếp
               tạo ra 5 hành động cụ thể — từ cải tiến App Tài xế đến chương
               trình giữ chân nhân sự Miền Bắc.{" "}
               <strong style={{ color: "#0A1F44" }}>
-                Với hơn 78% nhân viên đã tham gia trên toàn quốc.
+                Với hơn 78% nhân viên đã tham gia trên toàn quốc. <br />
               </strong>
-              <br /><br />
+              
               <strong style={{ color: "#0A1F44" }}>Năm 2026</strong> — GHN
               muốn đi sâu hơn. Và điều đó bắt đầu từ tiếng nói của bạn.
             </p>

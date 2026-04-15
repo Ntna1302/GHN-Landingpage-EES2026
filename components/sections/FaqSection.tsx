@@ -5,20 +5,20 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const FAQ_LEFT = [
   {
-    q: "Câu trả lời của tôi có bị lộ không?",
-    a: "Không. Hệ thống không lưu tên hay mã nhân viên cùng với câu trả lời. Kết quả chỉ được tổng hợp và báo cáo theo nhóm — tối thiểu 5 người — để đảm bảo không ai bị nhận diện cá nhân.",
+    q: "Câu trả lời của tôi có bị tiết lộ không?",
+    a: "Không. Hệ thống không lưu tên hay mã nhân viên cùng với câu trả lời. Kết quả chỉ được tổng hợp và báo cáo theo nhóm, tối thiểu 5 người để đảm bảo không ai bị nhận diện cá nhân.",
   },
   {
-    q: "Nếu tôi điền thấp thì có ảnh hưởng gì không?",
-    a: "Hoàn toàn không. EES là khảo sát ẩn danh — không ai biết bạn chấm mấy điểm. Điền thấp ở những điểm bạn thực sự chưa hài lòng là thông tin quan trọng nhất để GHN cải thiện đúng chỗ.",
+    q: "Nếu tôi cho điểm thấp hay đánh giá tệ thì có bị ảnh hưởng gì không?",
+    a: "Hoàn toàn không. EES là khảo sát ẩn danh/bảo mậtkhông ai, biết bạn chấm mấy điểm. Điền thấp ở những điểm bạn thực sự chưa hài lòng là thông tin quan trọng nhất để GHN cải thiện đúng chỗ.",
   },
   {
     q: "Tôi không có điện thoại thông minh thì làm sao?",
-    a: "EX Team sẽ on-site trực tiếp tại các KTC và bưu cục lớn — mang theo tablet để hỗ trợ. Bạn cũng có thể nhờ Admin/HRBP tại đơn vị hỗ trợ truy cập link từ máy tính chung.",
+    a: "EX Team/HRBP sẽ on-site trực tiếp tại các KTC và bưu cục lớn — mang theo tablet để hỗ trợ. Bạn cũng có thể nhờ quản lý/HRBP tại đơn vị hỗ trợ truy cập link từ máy tính để thực hiện khảo sát.",
   },
   {
     q: "Tôi bỏ giữa chừng có sao không?",
-    a: "Khảo sát lưu tự động. Bạn có thể quay lại từ cùng thiết bị trong vòng 24 giờ. Nếu quá 24 giờ, cần mở link mới từ đầu — nhưng chỉ mất thêm 10 phút.",
+    a: "Khảo sát lưu tự động. Bạn có thể quay lại để tiếp tục làm khảo sát. Nếu thoát ra, bạn cần mở link mới từ đầu — nhưng chỉ mất thêm 10 phút.",
   },
 ];
 

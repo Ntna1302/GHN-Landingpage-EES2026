@@ -138,8 +138,9 @@ export default function RaceSection() {
                   maxWidth: "340px",
                 }}
               >
-                Nhóm đạt tỷ lệ tham gia cao nhất trong bảng sẽ nhận thưởng.
-                Cùng nhau tạo nên sự khác biệt — mỗi phiếu đều có giá trị.
+                KhốI phòng ban đạt tỉ lệ tham gia cao nhất và làm khảo sát nhanh nhất sẽ có cơ hội nhận thưởng.
+                Cùng nhau tạo nên sự khác biệt – mỗi phiếu khảo sát đều có giá trị. 
+
               </p>
             </ScrollReveal>
           </div>

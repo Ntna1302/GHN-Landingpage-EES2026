@@ -315,10 +315,10 @@
 
 /* ── Header height token ── */
 :root {
-  --header-height: 106px; /* 68px navbar + 38px urgency bar */
+  --header-height: 140px; /* 38px urgency + 68px navbar + 34px ticker */
 }
 @media (max-width: 900px) {
-  :root { --header-height: 68px; }
+  :root { --header-height: 60px; } /* mobile: only navbar, ticker hidden */
 }
 @media (max-width: 640px) {
   :root { --header-height: 56px; }
@@ -345,10 +345,19 @@
 }
 
 /* ── Hero ── */
-#hero .ghn-grid-2col { min-height: min(calc(100dvh - var(--header-height)), 900px); }
+#hero .ghn-grid-2col {
+  height: calc(100vh - var(--header-height));
+  height: calc(100dvh - var(--header-height));
+  max-height: 820px;
+  min-height: 480px;
+}
 
 @media (max-width: 900px) {
-  #hero .ghn-grid-2col { min-height: auto !important; }
+  #hero .ghn-grid-2col {
+    height: auto !important;
+    max-height: none !important;
+    min-height: auto !important;
+  }
   .ghn-hero-pad { padding: clamp(1.5rem, 4vw, 2.5rem) !important; }
 }
 @media (max-width: 640px) {

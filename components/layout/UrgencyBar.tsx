@@ -72,7 +72,7 @@ export default function UrgencyBar({ onScheduleClick }: Props) {
 
         <span className="ghn-urgency-long" style={{ color: "rgba(255,255,255,0.2)" }}>·</span>
         <span className="ghn-urgency-long" style={{ color: "rgba(255,255,255,0.4)" }}>
-          Giải thưởng 25.000.000 VNĐ
+          Giải thưởng 30.000.000 VNĐ
         </span>
         {/* <span className="ghn-urgency-long" style={{ color: "rgba(255,255,255,0.2)" }}>·</span>
         <span className="ghn-urgency-long" style={{ color: "rgba(255,255,255,0.4)" }}>

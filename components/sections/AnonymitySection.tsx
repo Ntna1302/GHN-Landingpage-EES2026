@@ -104,9 +104,7 @@ export default function AnonymitySection() {
                 maxWidth: "380px",
               }}
             >
-              Tất cả câu trả lời đều được mã hóa và không liên kết với danh
-              tính cá nhân. GHN chỉ nhận báo cáo tổng hợp theo nhóm — không
-              có cá nhân, không có tên, không có mã nhân viên.
+              Câu trả lời được ẩn danh hoàn toàn ngay từ lúc gửi. Không tên, không mã NV. Dữ liệu chỉ báo cáo theo nhóm — tối thiểu 5 người — để không ai bị nhận diện cá nhân. Kể cả HR cũng không thấy câu trả lời của từng người.
             </p>
 
             {/* Pills */}
