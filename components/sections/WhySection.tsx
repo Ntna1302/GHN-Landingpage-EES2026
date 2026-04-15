@@ -167,11 +167,25 @@ export default function WhySection() {
       id="why"
       style={{ borderBottom: "1px solid #E0DDD6", background: "#fff" }}
     >
-      <div className="section-label" style={{ padding: "2.5rem 2.5rem 0" }}>
-        Vì sao tham gia?
+      <div
+        style={{
+          fontSize: "0.75rem",
+          fontWeight: 900,
+          letterSpacing: "0.18em",
+          textTransform: "uppercase",
+          color: "#FF5200",
+          display: "flex",
+          alignItems: "center",
+          gap: "0.7rem",
+          paddingTop: "2.5rem",
+          paddingLeft: "2.5rem",
+        }}
+      >
+        Vì sao tham gia ?
+        <span style={{ flex: 1, height: "1px", background: "#E0DDD6" }} />
       </div>
 
-      <div className="ghn-grid-3col" style={{ borderTop: "1px solid #E0DDD6" }}>
+      <div className="ghn-grid-3col" >
         {/* Col 1 — Big statement */}
         <div style={{ padding: "3rem 2.5rem", borderRight: "1px solid #E0DDD6" }}>
           <ScrollReveal>
@@ -186,8 +200,8 @@ export default function WhySection() {
                 marginBottom: "1.75rem",
               }}
             >
-              <div style={{ color: "#0A1F44" }}>GHN</div>
-              <div style={{ color: "#0A1F44" }}>Nghe</div>
+              <div style={{ color: "#006FAD" }}>GHN</div>
+              <div style={{ color: "#006FAD" }}>Nghe</div>
               <div style={{ color: "#FF5200" }}>Thật</div>
             </div>
             <p style={{ fontSize: "1.05rem", color: "#444", lineHeight: 1.7, maxWidth: "1000px" }}>

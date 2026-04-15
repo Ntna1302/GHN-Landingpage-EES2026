@@ -40,28 +40,89 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         }}
       />
 
+      {/* LEFT SHIPPER GROUP */}
+      <motion.div
+        initial={{ opacity: 0, x: -60 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.8, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        style={{
+          position: "absolute",
+          left: -70,
+          right: 20,
+          bottom: 0,
+          zIndex: 2,
+          pointerEvents: "none",
+        }}
+      >
+        <img
+          src="/img/12.png"
+          alt="GHN Team"
+          style={{
+            height: "clamp(200px, 45vh, 500px)",
+            width: "auto",
+            objectFit: "contain",
+            display: "block",
+          }}
+        />
+      </motion.div>
+
+      {/* RIGHT SHIPPER */}
+      <motion.div
+        initial={{ opacity: 0, x: 60 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.9, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+        style={{
+          position: "absolute",
+          right: 0,
+          bottom: 0,
+          zIndex: 2,
+          pointerEvents: "none",
+        }}
+      >
+        <img
+          src="/img/11.png"
+          alt="GHN Shipper"
+          style={{
+            height: "clamp(200px, 100vh, 900px)",
+            width: "auto",
+            objectFit: "contain",
+            display: "block",
+          }}
+        />
+      </motion.div>
+
+      {/* CENTER CONTENT */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        style={{ textAlign: "center", position: "relative", zIndex: 1 }}
+        style={{
+          textAlign: "center",
+          position: "relative",
+          zIndex: 3,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
       >
-        {/* TOP LABEL */}
+        {/* GHN LOGO */}
         <motion.div
-          initial={{ opacity: 0, y: -10 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          style={{
-            fontSize: "clamp(0.6rem, 1.2vw, 0.8rem)",
-            fontWeight: 700,
-            letterSpacing: "0.22em",
-            textTransform: "uppercase",
-            color: "#FF5200",
-            marginBottom: "3.5rem",
-            fontFamily: "var(--font-body)",
-          }}
+          transition={{ delay: 0.25, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          style={{ marginBottom: "clamp(1.5rem, 3vw, 2.5rem)" }}
         >
-          GiaoHangNhanh · Employee Engagement Survey
+          <img
+            src="/img/GHN_2.png"
+            alt="GiaoHangNhanh"
+            style={{
+              height: "clamp(50px, 10vw, 115px)",
+              width: "100%",
+              objectFit: "contain",
+              display: "block",
+              borderRadius: "20px",
+            }}
+          />
         </motion.div>
 
         {/* MAIN TITLE BLOCK */}
@@ -89,7 +150,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
           >
             EES
 
-            {/* LOGO — góc trên phải chữ S */}
+            {/* CHAT ICON — top right */}
             <motion.img
               src="/img/logo.png"
               alt="logo"
@@ -105,7 +166,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
                 position: "absolute",
                 top: "-33%",
                 right: "-15%",
-                width: "clamp(2.5rem, 15vw, 10rem)",
+                width: "clamp(2.5rem, 10vw, 15rem)",
                 height: "auto",
                 objectFit: "contain",
               }}
@@ -127,18 +188,20 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
           >
             2026
           </motion.div>
-          {/* SUBTEXT — thêm lại */}
+
+          {/* SUBTEXT */}
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.8 }}
+            animate={{ opacity: 0.7 }}
             transition={{ delay: 0.6, duration: 0.8 }}
             style={{
-              fontSize: "clamp(0.8rem, 2vw, 1.1rem)",
+              fontSize: "clamp(0.75rem, 1.8vw, 1.1rem)",
               color: "#fff",
-              letterSpacing: "0.02em",
-              marginTop: "1.5rem",
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              marginTop: "clamp(1rem, 2vw, 1.5rem)",
               fontFamily: "var(--font-body)",
-              fontWeight: 400,
+              fontWeight: 500,
             }}
           >
             Khảo sát mức độ gắn kết nhân viên
@@ -148,7 +211,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
         {/* BUTTON / LOADING */}
         <div
           style={{
-            marginTop: "3rem",
+            marginTop: "clamp(1.5rem, 3vw, 3rem)",
             height: "60px",
             display: "flex",
             alignItems: "center",
@@ -202,7 +265,7 @@ export default function SplashScreen({ onComplete }: SplashScreenProps) {
                   background: "#FF5200",
                   color: "#fff",
                   border: "none",
-                  padding: "14px 44px",
+                  padding: "14px 52px",
                   fontSize: "clamp(0.8rem, 1.5vw, 1rem)",
                   fontWeight: 700,
                   borderRadius: "6px",

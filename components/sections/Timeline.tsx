@@ -56,7 +56,7 @@ const PHASES = [
 ];
 
 function getActivePhase(): number {
-  const now = new Date();
+  const now = new Date(2026,5,15);
   for (let i = 0; i < PHASES.length; i++) {
     if (now >= PHASES[i].startDate && now <= PHASES[i].endDate) return i;
   }
@@ -78,8 +78,8 @@ export default function AfterSection() {
       {/* Label */}
       <div
         style={{
-          fontSize: "0.65rem",
-          fontWeight: 700,
+          fontSize: "0.75rem",
+          fontWeight: 900,
           letterSpacing: "0.18em",
           textTransform: "uppercase",
           color: "#FF5200",
@@ -94,14 +94,7 @@ export default function AfterSection() {
       </div>
 
       {/* 4-col grid */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          border: "1px solid #E0DDD6",
-          marginTop: "2rem",
-        }}
-      >
+      <div className="ghn-after-grid">
         {PHASES.map((phase, i) => {
           const isActive = i === activeIdx;
 
@@ -120,20 +113,21 @@ export default function AfterSection() {
                 padding: "1.5rem",
                 borderRight: i < 3 ? "1px solid #E0DDD6" : "none",
                 position: "relative",
-                background: isActive ? "#FF5200" : "#fff",
+                background: isActive ? "#f75d16fd"  : "#fff",
                 transition: "background 0.3s",
               }}
             >
               {/* Arrow connector */}
               {i < 3 && (
                 <div
+                  className="ghn-after-arrow"
                   style={{
                     position: "absolute",
                     right: "-10px",
                     top: "1.5rem",
                     width: "18px",
                     height: "18px",
-                    background: isActive ? "#FF5200" : "#E0DDD6",
+                    background: isActive ? "#ff5e00"  : "#E0DDD6",
                     clipPath: "polygon(0 0, 100% 50%, 0 100%)",
                     zIndex: 1,
                     transition: "background 0.3s",
@@ -143,6 +137,7 @@ export default function AfterSection() {
 
               {/* Big number */}
               <motion.div
+                className="ghn-phase-num"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
@@ -152,7 +147,7 @@ export default function AfterSection() {
                   fontSize: "3rem",
                   fontWeight: 700,
                   letterSpacing: "-0.05em",
-                  color: isActive ? "rgba(255,255,255,0.2)" : "#E0DDD6",
+                  color: isActive ? "rgb(255, 255, 255)" : "#E0DDD6",
                   lineHeight: 1,
                 }}
               >
@@ -176,7 +171,7 @@ export default function AfterSection() {
               {/* Name */}
               <div
                 style={{
-                  fontSize: "1rem",
+                  fontSize: "1.25rem",
                   fontWeight: 700,
                   letterSpacing: "-0.01em",
                   color: isActive ? "#fff" : "#0A1F44",
@@ -226,7 +221,7 @@ export default function AfterSection() {
                     marginTop: "1rem",
                     display: "inline-block",
                     background: "rgba(255,255,255,0.2)",
-                    color: "#fff",
+                    color: "#ffffff",
                     fontSize: "0.62rem",
                     fontWeight: 700,
                     letterSpacing: "0.1em",
@@ -235,7 +230,7 @@ export default function AfterSection() {
                     borderRadius: "2px",
                   }}
                 >
-                  ● Hiện tại
+                  ● Đang diễn ra
                 </motion.div>
               )}
             </motion.div>

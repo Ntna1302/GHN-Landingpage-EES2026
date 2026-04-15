@@ -25,6 +25,7 @@ export default function TickerStrip() {
 
   return (
     <div
+      className="ghn-ticker-wrap"
       style={{
         background: "#0A1F44",
         borderBottom: "1px solid rgba(255,255,255,0.08)",

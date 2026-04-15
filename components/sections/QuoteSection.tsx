@@ -19,15 +19,7 @@ const STATS = [
 
 export default function QuoteSection() {
   return (
-    <section
-      style={{
-        background: "#0A1F44",
-        display: "grid",
-        gridTemplateColumns: "1fr 1fr",
-        borderBottom: "1px solid rgba(255,255,255,0.08)",
-        minHeight: "500px",
-      }}
-    >
+    <section className="ghn-quote-section">
       {/* LEFT */}
       <div
         style={{
@@ -156,12 +148,12 @@ export default function QuoteSection() {
 
         {/* IMAGE */}
         <div
+          className="ghn-quote-img-wrap"
           style={{
             position: "absolute",
             right: "20%",
             bottom: 0,
             zIndex: 1,
-            
             pointerEvents: "none",
           }}
         >

@@ -72,17 +72,26 @@ export default function Hero() {
   const isExpired = new Date() >= new Date("2026-05-01T00:00:00");
 
   return (
-    <section id="hero" style={{ borderBottom: "1px solid #E0DDD6" }}>
-      <div className="ghn-grid-2col" style={{ minHeight: "min(100dvh, 900px)" }}>
+    <section id="hero" style={{ borderBottom: "1px solid #E0DDD6"
+ }}>      <div className="ghn-grid-2col"
+          style={{  
+    height: "calc(100dvh - 140px)",  // 100dvh trừ urgency + navbar + ticker
+    maxHeight: "800px",               // không cho quá cao trên monitor lớn
+    minHeight: "500px",               // không cho quá nhỏ
+  }}>
 
         {/* ── LEFT PANEL ── */}
         <div
           className="ghn-hero-pad"
           style={{
-            padding: "2rem 2.5rem",
+            // padding: "2.5rem 2.5rem",
+            paddingTop: "2.5rem",
+            paddingBottom: "2.5rem",
+            paddingLeft: "2.5rem",
+            paddingRight: "2.5rem",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between",
+            justifyContent: "flex-start",
             background: "#fff",
             borderRight: "1px solid #E0DDD6",
           }}
@@ -98,7 +107,7 @@ export default function Hero() {
                 fontWeight: 600,
                 alignItems: "center",
                 gap: "0.75rem",
-                marginBottom: "1.5rem",
+                marginBottom: "2.5rem",
               }}
             >
               <div
@@ -111,7 +120,7 @@ export default function Hero() {
               />
               <span
                 style={{
-                  fontSize: "0.8rem",
+                  fontSize: "0.9rem",
                   fontWeight: 900,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
@@ -134,7 +143,7 @@ export default function Hero() {
                   textTransform: "uppercase",
                   lineHeight: 0.75,
                   letterSpacing: "-0.24em",
-                  marginBottom: "-0.7rem",
+                  marginBottom: "-0.8rem",
                   flex: 1,
                   minWidth: 0,
                 }}
@@ -152,17 +161,17 @@ export default function Hero() {
                     <motion.div
                       variants={headlineLine}
                       style={{
-                        fontSize: "var(--fs-hero)",
+                        fontSize: "119px",
                         paddingTop: "0.2em",
                         paddingBottom: "35px",
                         color:
                           style === "solid"
-                            ? "#0A1F44"
+                            ? "#006FAD"
                             : style === "accent"
-                            ? "#FF5200"
+                            ? "#F67700"
                             : "transparent",
                         WebkitTextStroke:
-                          style === "outline" ? "4px #0A1F44" : undefined,
+                          style === "outline" ? "4px #006FAD" : undefined,
                         display: "block",
                       }}
                     >
@@ -191,6 +200,7 @@ export default function Hero() {
 
           {/* Stats row */}
           <motion.div
+            className="ghn-hero-stats"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
@@ -248,7 +258,7 @@ export default function Hero() {
           transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           style={{
             background: "#ff5d11",
-            padding: "2rem 2.5rem",
+            padding: "2.5rem 2.5rem",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
@@ -305,7 +315,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Countdown */}
-            <div style={{ marginBottom: "1.5rem" }}>
+            <div style={{ marginBottom: "2.5rem" }}>
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -316,13 +326,13 @@ export default function Hero() {
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
                   color: "#fff",
-                  marginBottom: "1rem",
+                  marginBottom: "2rem",
                   lineHeight: 1.5,
                 }}
               >
                 {isExpired
                   ? "Trạng thái"
-                  : "Cuộc đua tham gia khảo sát — Đơn vị nào về đích đầu tiên? Tổng giải thưởng 25 triệu đồng."}
+                  :  <>Cuộc đua tham gia khảo sát — Đơn vị nào về đích đầu tiên ?<br />Tổng giải thưởng 25 triệu đồng.</>}
               </motion.div>
 
               {isExpired ? (
@@ -368,7 +378,7 @@ export default function Hero() {
                   style={{
                     display: "grid",
                     gridTemplateColumns: "repeat(3, 1fr)",
-                    gap: "0.5rem",
+                    gap: "1rem"
                   }}
                 >
                   {[
@@ -381,7 +391,7 @@ export default function Hero() {
                       variants={countdownItem}
                       style={{
                         background: "rgba(255,255,255,0.12)",
-                        padding: "0.5rem 0.4rem",
+                        padding: "1.5rem 0.4rem",
                         textAlign: "center",
                         borderRadius: "2px",
                       }}
@@ -390,7 +400,7 @@ export default function Hero() {
                         style={{
                           fontFamily: "var(--font-heading)",
                           fontWeight: 700,
-                          fontSize: "clamp(1.3rem, 2.5vw, 2rem)",
+                          fontSize: "clamp(1.3rem, 2.5vw, 2.25rem)",
                           letterSpacing: "-0.03em",
                           color: "#fff",
                           lineHeight: 1,
@@ -433,6 +443,7 @@ export default function Hero() {
 
           {/* CTA button */}
           <motion.a
+            className="ghn-hero-cta"
             href="#groups"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

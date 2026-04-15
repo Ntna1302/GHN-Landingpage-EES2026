@@ -26,18 +26,7 @@ export default function CtaFinal() {
         }}
       />
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr auto",
-          alignItems: "center",
-          gap: "3rem",
-          padding: "5rem 3.5rem",
-          position: "relative",
-          maxWidth: "1200px",
-          margin: "0 auto",
-        }}
-      >
+      <div className="ghn-cta-inner">
         {/* Left — headline */}
         <ScrollReveal>
           <div
@@ -88,6 +77,7 @@ export default function CtaFinal() {
         <ScrollReveal delay={0.15}>
           <div style={{ textAlign: "center" }}>
             <motion.a
+              className="ghn-cta-btn"
               href="#groups"
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.98 }}

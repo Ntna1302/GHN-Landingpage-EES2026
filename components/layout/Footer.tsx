@@ -12,7 +12,7 @@ export default function Footer() {
     >
       {/* Main grid */}
       <div
-        className="ghn-grid-footer"
+        className="ghn-grid-footer ghn-footer-grid"
         style={{ padding: "3rem 2.5rem", gap: 0 }}
       >
         {/* Brand col */}
@@ -171,6 +171,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div
+        className="ghn-footer-bottom"
         style={{
           borderTop: "1px solid #E0DDD6",
           padding: "1rem 2.5rem",

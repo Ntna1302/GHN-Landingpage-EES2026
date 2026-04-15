@@ -12,6 +12,7 @@ export default function UrgencyBar({ onScheduleClick }: Props) {
 
   return (
     <div
+      className="ghn-urgency-bar"
       style={{
         background: "#0A1F44",
         color: "#fff",
@@ -69,18 +70,19 @@ export default function UrgencyBar({ onScheduleClick }: Props) {
           </>
         )}
 
-        <span style={{ color: "rgba(255,255,255,0.2)" }}>·</span>
-        <span style={{ color: "rgba(255,255,255,0.4)" }}>
+        <span className="ghn-urgency-long" style={{ color: "rgba(255,255,255,0.2)" }}>·</span>
+        <span className="ghn-urgency-long" style={{ color: "rgba(255,255,255,0.4)" }}>
           Giải thưởng 25.000.000 VNĐ
         </span>
-        <span style={{ color: "rgba(255,255,255,0.2)" }}>·</span>
-        <span style={{ color: "rgba(255,255,255,0.4)" }}>
+        {/* <span className="ghn-urgency-long" style={{ color: "rgba(255,255,255,0.2)" }}>·</span>
+        <span className="ghn-urgency-long" style={{ color: "rgba(255,255,255,0.4)" }}>
           20.000+ nhân viên GHN
-        </span>
+        </span> */}
       </div>
 
       {/* Right — CTA */}
       <motion.button
+        className="ghn-urgency-btn"
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
         onClick={onScheduleClick}

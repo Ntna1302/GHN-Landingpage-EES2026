@@ -368,21 +368,17 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
                 return (
                   <motion.div
                     key={g.id}
+                    className="ghn-sched-card"
                     custom={i}
                     variants={cardVariants}
                     initial="hidden"
                     animate="visible"
                     whileHover={{ x: isDimmed ? 0 : 4 }}
                     style={{
-                      position: "relative",
-                      display: "grid",
-                      gridTemplateColumns: "5rem 1fr 140px",
-                      gap: "1rem",
-                      alignItems: "center",
                       padding: "1.25rem 1.75rem",
                       border: isActive
                         ? `4px solid ${g.color}`
-                        : "px solid #E0DDD6",
+                        : "1px solid #E0DDD6",
                       borderRadius: "14px",
                       background: isActive ? `${g.color}10` : "#fff",
                       boxShadow: isActive
@@ -470,6 +466,7 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
                     </div>
 
                     <div
+                      className="ghn-sched-dates"
                       style={{
                         display: "flex",
                         flexDirection: "column",

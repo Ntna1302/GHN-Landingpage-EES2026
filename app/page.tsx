@@ -21,6 +21,7 @@ import UrgencyBar from "@/components/layout/UrgencyBar";
 import QuoteSection from "@/components/sections/QuoteSection";
 import GroupFinder from "@/components/sections/GroupFinder";
 import HowSection from "@/components/sections/HowSection";
+import FaqSection from "@/components/sections/FaqSection";
 
 export default function Page() {
   const { step, advance, isReady } = useHistoryStep();
@@ -116,7 +117,9 @@ const handleGateClick = useCallback(() => {
             <GroupFinder /> 
             <HowSection />
             <RaceSection />
+
             <Timeline />
+            <FaqSection />
             <CtaFinal />
           </main>
           <Footer />

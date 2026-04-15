@@ -31,29 +31,34 @@ export default function AnonymitySection() {
   return (
     <section
       id="anonymity"
-      style={{ borderBottom: "1px solid #E0DDD6" }}
+      style={{ borderBottom: "1px solid #E0DDD6" 
+      }}
     >
       <div className="ghn-grid-2col">
         {/* Left — warm bg */}
         <div
           style={{
-            background: "#F5F4F0",
-            padding: "5rem 3.5rem",
+            background: "#fff",
+            padding: "3rem 3.5rem",
             borderRight: "1px solid #E0DDD6",
           }}
         >
           <ScrollReveal>
             <div
               style={{
-                fontSize: "0.7rem",
+                fontSize: "0.75rem",
                 fontWeight: 700,
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
-                color: "#888",
+                color: "#f55e07",
                 marginBottom: "1.5rem",
-              }}
-            >
-              Câu hỏi thường gặp
+                display: "flex",          // ← thêm dòng này
+                alignItems: "center",    // ← thêm dòng này
+                gap: "0.7rem",            // ← thêm dòng này
+                }}
+                > 
+                Bảo Mật
+                <span style={{ flex: 1, height: "1px", background: "#E0DDD6" }} />
             </div>
 
             {/* Big question */}
@@ -62,17 +67,16 @@ export default function AnonymitySection() {
                 fontFamily:
                   "var(--font-heading)",
                 fontWeight: 700,
-                fontSize: "clamp(1.3rem, 2.5vw, 1.8rem)",
+                fontSize: "clamp(1.3rem, 2.5vw, 2.25rem)",
                 textTransform: "uppercase",
                 letterSpacing: "-0.03em",
-                color: "#0A1F44",
+                color: "#006FAD",
                 marginBottom: "0.75rem",
                 lineHeight: 1.2,
               }}
             >
-              Sếp có biết tôi
-              <br />
-              điền gì không?
+              "Sếp có biết tôi
+              điền gì không ?"
             </div>
 
             {/* Big answer */}
@@ -81,7 +85,7 @@ export default function AnonymitySection() {
                 fontFamily:
                   "var(--font-heading)",
                 fontWeight: 700,
-                fontSize: "2.5rem",
+                fontSize: "4.75rem",
                 textTransform: "uppercase",
                 letterSpacing: "-0.04em",
                 color: "#FF5200",
@@ -117,7 +121,7 @@ export default function AnonymitySection() {
                 <span
                   key={pill}
                   style={{
-                    background: "#0A1F44",
+                    background: "#006FAD",
                     color: "#fff",
                     fontSize: "0.72rem",
                     fontWeight: 700,
@@ -135,9 +139,24 @@ export default function AnonymitySection() {
         </div>
 
         {/* Right — white */}
-        <div style={{ background: "#fff", padding: "5rem 3.5rem" }}>
+        <div style={{ background: "#F5F4F0", padding: "3rem 3.5rem" }}>
           <ScrollReveal delay={0.1}>
-            <div className="section-label">3 sự thật về EES 2026</div>
+                  <div
+                  style={{
+                    fontSize: "0.75rem",
+                    fontWeight: 900,
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: "#FF5200",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.7rem",
+                    marginBottom: "1.5rem",
+                  }}
+                >
+                  3 Điều cần biết
+                  <span style={{ flex: 1, height: "1px", background: "#E0DDD6" }} />
+                </div>
 
             {FACTS.map(({ value, title, body }, i) => (
               <div
@@ -155,11 +174,12 @@ export default function AnonymitySection() {
               >
                 {/* Big value */}
                 <div
+                  className="ghn-fact-val"
                   style={{
                     fontFamily:
                       "var(--font-heading)",
                     fontWeight: 700,
-                    fontSize: "3rem",
+                    fontSize: "4.5rem",
                     letterSpacing: "-0.04em",
                     color: "#FF5200",
                     lineHeight: 1,

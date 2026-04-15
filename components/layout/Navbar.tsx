@@ -19,6 +19,7 @@ export default function Navbar({ onGateClick }: NavbarProps) {
 
   return (
     <nav
+      className="ghn-navbar"
       style={{
         position: "sticky",
         top: 0,
@@ -49,6 +50,7 @@ export default function Navbar({ onGateClick }: NavbarProps) {
   }}
 >
   <img
+    className="ghn-logo-img"
     src="/img/GHN_logo.png"
     alt="GHN"
     style={{
@@ -59,7 +61,7 @@ export default function Navbar({ onGateClick }: NavbarProps) {
       display: "block",
     }}
   />
-  <span style={{ color: "#0A1F44", fontSize: "1.45rem" }}>× EES RACE 2026</span>
+  <span className="ghn-logo-text" style={{ color: "#006FAD", fontSize: "1.45rem" }}>× EES RACE <span style={{ color: "#FF5200", fontSize: "1.45rem" }}>2026</span></span>
 </div>
 
       {/* Nav links — hidden on mobile */}
@@ -94,6 +96,7 @@ export default function Navbar({ onGateClick }: NavbarProps) {
 
       {/* CTA */}
       <button
+        className="ghn-nav-cta"
         onClick={() => {
   document.getElementById("groups")?.scrollIntoView({
     behavior: "smooth",

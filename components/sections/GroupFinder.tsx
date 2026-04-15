@@ -114,7 +114,7 @@ export default function GroupFinder() {
       {/* Label */}
       <div
         style={{
-          fontSize: "0.65rem",
+          fontSize: "0.75rem",
           fontWeight: 700,
           letterSpacing: "0.18em",
           textTransform: "uppercase",
@@ -130,15 +130,7 @@ export default function GroupFinder() {
       </div>
 
       {/* Intro */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: "3rem",
-          alignItems: "end",
-          marginBottom: "2.5rem",
-        }}
-      >
+      <div className="ghn-finder-intro">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -151,7 +143,7 @@ export default function GroupFinder() {
             lineHeight: 0.95,
             letterSpacing: "-0.03em",
             textTransform: "uppercase",
-            color: "#0A1F44",
+            color: "#006FAD",
           }}
         >
           Tìm
@@ -178,13 +170,7 @@ export default function GroupFinder() {
       </div>
 
       {/* Group tabs */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(4, 1fr)",
-          border: "1px solid #E0DDD6",
-        }}
-      >
+      <div className="ghn-finder-tabs">
         {GROUPS.map((g, i) => {
           const isSel = selected === i;
           return (
@@ -251,19 +237,9 @@ export default function GroupFinder() {
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
             style={{ overflow: "hidden" }}
           >
-            <div
-              style={{
-                marginTop: "1.5rem",
-                display: "grid",
-                gridTemplateColumns: "auto 1fr auto",
-                gap: "1.5rem",
-                alignItems: "center",
-                padding: "1.5rem",
-                border: "1.5px solid #0A1F44",
-                background: "#F5F4F0",
-              }}
-            >
+            <div className="ghn-finder-card">
               <div
+                className="ghn-finder-big-num"
                 style={{
                   fontFamily: "var(--font-heading)",
                   fontSize: "4rem",
@@ -309,7 +285,7 @@ export default function GroupFinder() {
                   {group.detail}
                 </div>
               </div>
-              <div style={{ textAlign: "right" }}>
+              <div className="ghn-finder-right" style={{ textAlign: "right" }}>
                 <div
                   style={{
                     fontSize: "0.68rem",
@@ -350,6 +326,7 @@ export default function GroupFinder() {
                 </div>
                 <br />
                 <motion.button
+                  className="ghn-finder-btn"
                   whileHover={{ scale: status === "active" ? 1.03 : 1 }}
                   whileTap={{ scale: status === "active" ? 0.97 : 1 }}
                   onClick={handleSurvey}

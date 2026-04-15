@@ -36,7 +36,7 @@ export default function HowSection() {
       {/* Label */}
       <div
         style={{
-          fontSize: "0.65rem",
+          fontSize: "0.75rem",
           fontWeight: 700,
           letterSpacing: "0.18em",
           textTransform: "uppercase",
@@ -47,19 +47,12 @@ export default function HowSection() {
           marginBottom: "1.5rem",
         }}
       >
-        Cách làm
+        Cách làm 
         <span style={{ flex: 1, height: "1px", background: "#E0DDD6" }} />
       </div>
 
       {/* Steps grid */}
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(3, 1fr)",
-          border: "1px solid #E0DDD6",
-          marginTop: "2rem",
-        }}
-      >
+      <div className="ghn-steps-grid">
         {STEPS.map((step, i) => (
           <motion.div
             key={step.num}
@@ -81,6 +74,7 @@ export default function HowSection() {
             {/* Arrow connector */}
             {i < 2 && (
               <div
+                className="ghn-step-arrow"
                 style={{
                   position: "absolute",
                   right: "-1px",
@@ -97,6 +91,7 @@ export default function HowSection() {
 
             {/* Big number */}
             <motion.div
+              className="ghn-step-num"
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
