@@ -13,7 +13,7 @@ const STATS = [
   },
   {
     value: "T7",
-    lines: ["Kết quả phân tích & Action Plan", "công bố toàn công ty tháng 7/2026"],
+    lines: ["Kết quả phân tích & hành động chiến lược", "công bố toàn công ty vào tháng 7/2026"],
   },
 ];
 

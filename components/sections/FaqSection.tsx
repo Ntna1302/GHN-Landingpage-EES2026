@@ -33,11 +33,11 @@ const FAQ_RIGHT = [
   },
   {
     q: "EES Race — nếu đơn vị tôi không thắng thì sao?",
-    a: "EES Race là động lực thêm, không phải bắt buộc. Mục tiêu chính vẫn là GHN lắng nghe được tiếng nói thực tế từ mọi nhân viên. Nhưng nếu đơn vị bạn về đích đầu — cả team được hưởng!",
+    a: "EES Race là sân chơi để mỗi đơn vị bứt phá, nhưng giá trị không chỉ nằm ở vị trí dẫn đầu. Mỗi phản hồi đều góp phần giúp GHN cải thiện và phát triển tốt hơn. Và nếu đơn vị bạn chạm đích đầu tiên — phần thưởng sẽ là thành quả xứng đáng cho cả team.",
   },
   {
     q: "Thắc mắc không có trong FAQ — liên hệ ai?",
-    a: "Liên hệ trực tiếp HRBP của đơn vị bạn — họ được tập huấn đầy đủ về EES 2026. Hoặc nhắn GTalk @EX_Team nếu muốn hỏi thẳng EX Team HR Division.",
+    a: "Liên hệ trực tiếp HRBP của đơn vị bạn — họ được tập huấn đầy đủ về EES 2026. Hoặc nhắn GTalk @EX_Team nếu bạn có câu hỏi cần được giải đáp.",
   },
 ];
 

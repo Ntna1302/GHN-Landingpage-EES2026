@@ -200,11 +200,29 @@
     font-family: inherit;
   }
 }
+/* ── Prevent overflow for all sections ── */
+main > section,
+main > div {
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+  clear: both;
+}
 
+/* Hero riêng — cho phép scroll khi zoom */
+#hero {
+  overflow: visible;
+  min-height: 0;
+}
+
+/* Ngăn negative margin tràn ra ngoài section */
+main {
+  overflow-x: hidden;
+}
 /* ── Responsive layout utilities ── */
 .ghn-grid-2col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
 }
 
 .ghn-grid-3col {
@@ -274,6 +292,15 @@
   .ghn-grid-4col {
     grid-template-columns: 1fr !important;
   }
+}
+@keyframes giftMarquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes giftMarqueeReverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
 
 /* ── Section label pattern ── */

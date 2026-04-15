@@ -100,7 +100,7 @@ export default function HowSection() {
                 fontFamily: "var(--font-heading)",
                 fontSize: "5rem",
                 fontWeight: 700,
-                color: "#E0DDD6",
+                color: "#ff5100",
                 lineHeight: 0.9,
                 letterSpacing: "-0.05em",
               }}

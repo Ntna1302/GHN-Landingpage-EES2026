@@ -72,20 +72,28 @@ export default function Hero() {
   const isExpired = new Date() >= new Date("2026-05-01T00:00:00");
 
   return (
-    <section id="hero" style={{ borderBottom: "1px solid #E0DDD6"
- }}>      <div className="ghn-grid-2col">
+    <section
+        id="hero"
+        style={{
+          borderBottom: "1px solid #E0DDD6",
+          minHeight: "calc(100dvh - var(--header-total, 140px))",  // ← minHeight thay height
+          // bỏ maxHeight
+          // bỏ overflow: hidden
+        }}
+      >
+      <div className="ghn-grid-2col" style={{ height: "100%" }}>
 
         {/* ── LEFT PANEL ── */}
         <div
           className="ghn-hero-pad"
           style={{
-            padding: "clamp(1rem, 2.5cqh, 2rem) clamp(1.5rem, 3vw, 2.5rem)",
+            padding: "clamp(1rem, 2vh, 2rem) clamp(1.5rem, 3vw, 2.5rem)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
             background: "#fff",
             borderRight: "1px solid #E0DDD6",
-            overflow: "hidden",
+            overflow: "visible",  // ← thay overflow: hidden để tránh cắt đứt animation
           }}
         >
           <div>
@@ -94,13 +102,12 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="ghn-badge-wrap"
               style={{
                 display: "inline-flex",
                 fontWeight: 600,
                 alignItems: "center",
                 gap: "0.75rem",
-                marginBottom: "clamp(0.4rem, 3.5cqh, 3.5rem)",
+                marginBottom: "30px",
               }}
             >
               <div
@@ -124,8 +131,15 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            {/* Headline + Image row */}
-            <div className="ghn-headline-row" style={{ display: "flex", alignItems: "center", gap: "1.5rem", marginBottom: "clamp(0.4rem, 1.5cqh, 1rem)" }}>
+            {/* Headline */}
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "1.5rem",
+                marginBottom: "clamp(0.4rem, 1vh, 1rem)",
+              }}
+            >
               <motion.div
                 variants={headlineContainer}
                 initial="hidden"
@@ -141,7 +155,7 @@ export default function Hero() {
                   minWidth: 0,
                 }}
               >
-                {HEADLINE_LINES.map(({ text, style }, i) => (
+                {HEADLINE_LINES.map(({ text, style }) => (
                   <div
                     key={text}
                     style={{
@@ -153,11 +167,10 @@ export default function Hero() {
                   >
                     <motion.div
                       variants={headlineLine}
-                      className="ghn-headline-line"
                       style={{
                         fontSize: "clamp(2.5rem, 9vw, 7rem)",
                         paddingTop: "0.2em",
-                        paddingBottom: "clamp(0.3rem, 4.5cqh, 2.5rem)",
+                        paddingBottom: "clamp(0.3rem, 4.5vh, 3.5rem)",
                         color:
                           style === "solid"
                             ? "#006FAD"
@@ -194,7 +207,6 @@ export default function Hero() {
 
           {/* Stats row */}
           <motion.div
-            className="ghn-hero-stats ghn-stats-row"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
@@ -202,8 +214,8 @@ export default function Hero() {
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",
               borderTop: "1px solid #E0DDD6",
-              paddingTop: "clamp(0.5rem, 1.5cqh, 1.25rem)",
-              marginTop: "clamp(0.5rem, 1.5cqh, 1.25rem)",
+              paddingTop: "clamp(0.5rem, 1.2vh, 1.25rem)",
+              marginTop: "clamp(0.5rem, 1.2vh, 1.25rem)",
             }}
           >
             {STATS.map(({ value, label }, i) => (
@@ -219,7 +231,7 @@ export default function Hero() {
                   style={{
                     fontFamily: "var(--font-heading)",
                     fontWeight: 700,
-                    fontSize: "clamp(1.4rem, 2.5vw, 2.2rem)",
+                    fontSize: "clamp(1.1rem, 2vw, 2rem)",
                     letterSpacing: "-0.04em",
                     color: "#0A1F44",
                     lineHeight: 1,
@@ -252,7 +264,7 @@ export default function Hero() {
           transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           style={{
             background: "#ff5d11",
-            padding: "clamp(1rem, 2.5cqh, 2rem) clamp(1.5rem, 3vw, 2.5rem)",
+            padding: "clamp(1rem, 2vh, 2rem) clamp(1.5rem, 3vw, 2.5rem)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
@@ -267,14 +279,13 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.45, duration: 0.5 }}
-              className="ghn-date-label"
               style={{
                 fontSize: "0.85rem",
                 fontWeight: 500,
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
                 color: "rgba(255,255,255,0.65)",
-                marginBottom: "clamp(0.4rem, 4.5cqh, 1.5rem)",
+                marginBottom: "clamp(0.4rem, 1.5vh, 1.5rem)",
               }}
             >
               Khai mạc 01/05/2026 — Kết thúc 20/05/2026
@@ -285,14 +296,13 @@ export default function Hero() {
               variants={raceTitleContainer}
               initial="hidden"
               animate="visible"
-              className="ghn-race-title"
               style={{
                 fontFamily: "var(--font-heading)",
                 fontWeight: 700,
                 textTransform: "uppercase",
                 letterSpacing: "-0.05em",
                 lineHeight: 0.95,
-                marginBottom: "clamp(0.4rem, 4.5cqh, 3.5rem)",
+                marginBottom: "clamp(0.4rem, 2vh, 1.5rem)",
               }}
             >
               {RACE_TITLE_LINES.map((line) => (
@@ -311,9 +321,8 @@ export default function Hero() {
             </motion.div>
 
             {/* Countdown */}
-            <div className="ghn-countdown-wrap" style={{ marginBottom: "clamp(0.4rem, 1.5cqh, 1.5rem)" }}>
+            <div style={{ marginBottom: "clamp(0.4rem, 1.2vh, 1.5rem)" }}>
               <motion.div
-                className="ghn-countdown-desc"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.85, duration: 0.4 }}
@@ -323,13 +332,13 @@ export default function Hero() {
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
                   color: "#fff",
-                  marginBottom: "clamp(0.3rem, 2cqh, 2rem)",
+                  marginBottom: "clamp(0.3rem, 1vh, 1rem)",
                   lineHeight: 1.5,
                 }}
               >
                 {isExpired
                   ? "Trạng thái"
-                  :  <>Cuộc đua tham gia khảo sát — Đơn vị nào về đích đầu tiên ?<br />Tổng giải thưởng 25 triệu đồng.</>}
+                  : <>Cuộc đua tham gia khảo sát — Đơn vị nào về đích đầu tiên?<br />Tổng giải thưởng 25 triệu đồng.</>}
               </motion.div>
 
               {isExpired ? (
@@ -375,7 +384,7 @@ export default function Hero() {
                   style={{
                     display: "grid",
                     gridTemplateColumns: "repeat(3, 1fr)",
-                    gap: "clamp(0.3rem, 0.8vw, 1rem)"
+                    gap: "clamp(0.3rem, 0.8vw, 1rem)",
                   }}
                 >
                   {[
@@ -386,10 +395,9 @@ export default function Hero() {
                     <motion.div
                       key={label}
                       variants={countdownItem}
-                      className="ghn-countdown-item"
                       style={{
                         background: "rgba(255,255,255,0.12)",
-                        padding: "clamp(0.3rem, 2.7cqh, 2.5rem) clamp(0.3rem, 0.5vw, 0.4rem)",
+                        padding: "clamp(0.3rem, 0.8vh, 0.5rem) clamp(0.3rem, 0.5vw, 0.4rem)",
                         textAlign: "center",
                         borderRadius: "2px",
                       }}
@@ -441,7 +449,6 @@ export default function Hero() {
 
           {/* CTA button */}
           <motion.a
-            className="ghn-hero-cta"
             href="#groups"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

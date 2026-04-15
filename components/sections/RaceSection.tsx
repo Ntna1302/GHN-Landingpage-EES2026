@@ -33,19 +33,29 @@ const PRIZE_BOARDS = [
   },
 ];
 
+const GIFT_IMAGES = [
+  { src: "/img/gifts/gift-01.png", alt: "Áo GHN Limited" },
+  { src: "/img/gifts/gift-02.png", alt: "Balo GHN" },
+  { src: "/img/gifts/gift-03.png", alt: "Voucher 500K" },
+  { src: "/img/gifts/gift-04.png", alt: "Cúp EES Race" },
+  { src: "/img/gifts/gift-05.png", alt: "Bình nước GHN" },
+  { src: "/img/gifts/gift-06.png", alt: "Nón GHN" },
+];
+
 export default function RaceSection() {
   return (
     <section
       id="race"
       style={{ borderBottom: "1px solid #E0DDD6" }}
     >
-      {/* Full-bleed 2-col, no wrapper padding */}
-      <div className="ghn-grid-2col">
-        {/* Left — dark */}
+      <div style={{ display: "flex" }}>
+        {/* ── LEFT — dark ── */}
         <div
           style={{
+            width: "50%",
+            flexShrink: 0,
             background: "#0A1F44",
-            padding: "5rem 3.5rem",
+            padding: "3.5rem 3rem",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
@@ -53,7 +63,7 @@ export default function RaceSection() {
             overflow: "hidden",
           }}
         >
-          {/* Background pattern */}
+          {/* Grid texture */}
           <div
             style={{
               position: "absolute",
@@ -65,9 +75,9 @@ export default function RaceSection() {
             }}
           />
 
+          {/* TOP: Label + Title */}
           <div style={{ position: "relative" }}>
             <ScrollReveal>
-              {/* Label */}
               <div
                 style={{
                   fontSize: "0.7rem",
@@ -92,245 +102,439 @@ export default function RaceSection() {
                 />
               </div>
 
-              {/* Giant title */}
               <div
                 style={{
-                  fontFamily:
-                    "var(--font-heading)",
+                  fontFamily: "var(--font-heading)",
                   fontWeight: 700,
                   textTransform: "uppercase",
                   letterSpacing: "-0.05em",
                   lineHeight: 0.85,
-                  marginBottom: "2.5rem",
+                  marginBottom: "2rem",
                 }}
               >
-                <div
-                  style={{
-                    fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
-                    color: "#fff",
-                  }}
-                >
-                  THE
-                </div>
-                <div
-                  style={{
-                    fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
-                    color: "#F8B200",
-                  }}
-                >
-                  RACE
-                </div>
-                <div
-                  style={{
-                    fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
-                    color: "#fff",
-                  }}
-                >
-                  IS ON
-                </div>
+                <div style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)", color: "#fff" }}>THE</div>
+                <div style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)", color: "#FF5200" }}>RACE</div>
+                <div style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)", color: "#fff" }}>IS ON</div>
               </div>
-
-              <p
-                style={{
-                  fontSize: "0.95rem",
-                  color: "#aaa",
-                  lineHeight: 1.7,
-                  maxWidth: "340px",
-                }}
-              >
-                KhốI phòng ban đạt tỉ lệ tham gia cao nhất và làm khảo sát nhanh nhất sẽ có cơ hội nhận thưởng.
-                Cùng nhau tạo nên sự khác biệt – mỗi phiếu khảo sát đều có giá trị. 
-
-              </p>
             </ScrollReveal>
           </div>
 
-          {/* Bottom stat */}
-          <div
-            style={{
-              position: "relative",
-              borderTop: "1px solid rgba(255,255,255,0.1)",
-              paddingTop: "2rem",
-              display: "flex",
-              gap: "3rem",
-            }}
-          >
-            {[
-              { value: "4", label: "Bảng thi đua" },
-              { value: "25M", label: "Tổng giải thưởng" },
-            ].map(({ value, label }) => (
-              <div key={value}>
+          {/* BOTTOM: 2 blocks */}
+          <div style={{ position: "relative" }}>
+            <ScrollReveal delay={0.15}>
+              {/* Block 1 — Tập thể */}
+              <div
+                style={{
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  borderRadius: "8px",
+                  padding: "1.75rem",
+                  marginBottom: "1.5rem",
+                }}
+              >
                 <div
                   style={{
-                    fontFamily:
-                      "var(--font-heading)",
+                    fontFamily: "var(--font-heading)",
                     fontWeight: 700,
-                    fontSize: "2.5rem",
-                    letterSpacing: "-0.04em",
+                    fontSize: "1.1rem",
                     color: "#fff",
+                    marginBottom: "0.75rem",
                   }}
                 >
-                  {value}
+                  Giải thưởng dành cho tập thể :
                 </div>
                 <div
                   style={{
-                    fontSize: "0.7rem",
-                    color: "rgba(255,255,255,0.4)",
-                    textTransform: "uppercase",
-                    letterSpacing: "0.08em",
-                    fontWeight: 500,
+                    display: "grid",
+                    gridTemplateColumns: "1fr auto",
+                    gap: "2rem",
+                    alignItems: "end",
                   }}
                 >
-                  {label}
+                  <p
+                    style={{
+                      fontSize: "0.9rem",
+                      color: "#aaa",
+                      lineHeight: 1.7,
+                      maxWidth: "320px",
+                    }}
+                  >
+                    Khối phòng ban đạt tỉ lệ tham gia cao nhất và làm khảo sát nhanh nhất sẽ có cơ hội nhận thưởng. <br />
+                    Cùng nhau tạo nên sự khác biệt – mỗi phiếu khảo sát đều có giá trị.
+                  </p>
+                  <div style={{ display: "flex", gap: "1.5rem" }}>
+                    {[
+                      { value: "4", label: "Bảng thi đua" },
+                      { value: "25M", label: "Tổng giải thưởng" },
+                    ].map(({ value, label }) => (
+                      <div
+                        key={value}
+                        style={{
+                          textAlign: "center",
+                          background: "rgba(255,255,255,0.06)",
+                          border: "1px solid rgba(255,255,255,0.1)",
+                          borderRadius: "6px",
+                          padding: "1rem 1.25rem",
+                        }}
+                      >
+                        <div
+                          style={{
+                            fontFamily: "var(--font-heading)",
+                            fontWeight: 700,
+                            fontSize: "2.8rem",
+                            letterSpacing: "-0.04em",
+                            color: "#fff",
+                            lineHeight: 1,
+                            textShadow: "0 0 20px rgba(248,178,0,0.3)",
+                          }}
+                        >
+                          {value}
+                        </div>
+                        <div
+                          style={{
+                            fontSize: "0.65rem",
+                            color: "rgba(255,255,255,0.4)",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.1em",
+                            fontWeight: 600,
+                            marginTop: "0.4rem",
+                          }}
+                        >
+                          {label}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            ))}
+
+              {/* Block 2 — Cá nhân */}
+              <div
+                style={{
+                  background: "rgba(255,82,0,0.08)",
+                  border: "1px solid rgba(255,82,0,0.15)",
+                  borderLeft: "3px solid #FF5200",
+                  borderRadius: "8px",
+                  padding: "1.75rem",
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    fontWeight: 700,
+                    fontSize: "1.1rem",
+                    color: "#fff",
+                    marginBottom: "0.75rem",
+                  }}
+                >
+                  Giải thưởng dành cho cá nhân :
+                </div>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "1fr",
+                    gap: "2rem",
+                    alignItems: "end",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontSize: "0.9rem",
+                      color: "#aaa",
+                      lineHeight: 1.7,
+                      maxWidth: "520px",
+                    }}
+                  >
+                    Mỗi cá nhân tham gia khảo sát không chỉ góp phần tạo nên thành công chung, mà còn có cơ hội nhận những phần quà hấp dẫn. <br />
+                    Tốc độ hoàn thành, mức độ tham gia và tinh thần đóng góp sẽ là yếu tố quyết định để ghi danh những cá nhân xuất sắc nhất.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
 
-        {/* Right — white */}
+        {/* ── RIGHT — white + strip bar ── */}
         <div
           style={{
+            width: "50%",
+            minWidth: 0,
             background: "#fff",
             borderLeft: "1px solid #E0DDD6",
-            padding: "5rem 3.5rem",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
           }}
         >
-          <ScrollReveal delay={0.1}>
-            <div
-              style={{
-                fontSize: "0.7rem",
-                fontWeight: 700,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "#888",
-                marginBottom: "1.5rem",
-              }}
-            >
-              4 Bảng Thi Đua — Tổng Giải 25.000.000 VNĐ
-            </div>
+          {/* Prize rows */}
+          <div
+            style={{
+              padding: "3.5rem 3rem",
+              flex: 1,
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <ScrollReveal delay={0.1}>
+              <div
+                style={{
+                  fontSize: "0.7rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  color: "#888",
+                  marginBottom: "1.5rem",
+                }}
+              >
+                4 Bảng Thi Đua — Tổng Giải 25.000.000 VNĐ
+              </div>
 
-            {/* Prize rows */}
-            <div style={{ marginBottom: "0" }}>
-              {PRIZE_BOARDS.map((board, i) => (
-                <div
-                  key={board.letter}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "1.25rem",
-                    padding: "1.25rem 0",
-                    borderBottom:
-                      i < PRIZE_BOARDS.length - 1
-                        ? "1px solid #E0DDD6"
-                        : "none",
-                  }}
-                >
-                  {/* Badge letter */}
+              <div style={{ background: "linear-gradient(180deg, #FAFAF8 0%, #fff 100%)", borderRadius: "4px", overflow: "hidden" }}>
+                {PRIZE_BOARDS.map((board, i) => (
                   <div
+                    key={board.letter}
                     style={{
-                      width: "42px",
-                      height: "42px",
-                      borderRadius: "2px",
-                      background: board.filled ? "#0A1F44" : "transparent",
-                      border: board.filled
-                        ? "none"
-                        : "2px solid #0A1F44",
                       display: "flex",
                       alignItems: "center",
-                      justifyContent: "center",
-                      fontFamily:
-                        "var(--font-heading)",
-                      fontWeight: 700,
-                      fontSize: "1.1rem",
-                      color: board.filled ? "#fff" : "#0A1F44",
-                      flexShrink: 0,
+                      gap: "1.25rem",
+                      padding: "1.25rem 1rem",
+                      borderBottom: i < PRIZE_BOARDS.length - 1 ? "1px solid #E0DDD6" : "none",
+                      backgroundImage: "linear-gradient(90deg, transparent 0%, rgba(255,82,0,0.03) 100%)",
+                      cursor: "pointer",
+                      transition: "transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease",
+                      borderRadius: "2px",
+                      position: "relative",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.transform = "translateX(8px)";
+                      e.currentTarget.style.background = "linear-gradient(90deg, transparent 0%, rgba(255,82,0,0.06) 100%)";
+                      e.currentTarget.style.boxShadow = "inset 3px 0 0 #FF5200";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.transform = "translateX(0)";
+                      e.currentTarget.style.background = "linear-gradient(90deg, transparent 0%, rgba(255,82,0,0.03) 100%)";
+                      e.currentTarget.style.boxShadow = "none";
                     }}
                   >
-                    {board.letter}
-                  </div>
-
-                  {/* Name + unit */}
-                  <div style={{ flex: 1 }}>
                     <div
                       style={{
+                        width: "42px",
+                        height: "42px",
+                        borderRadius: "2px",
+                        background: board.filled ? "#0A1F44" : "transparent",
+                        border: board.filled ? "none" : "2px solid #0A1F44",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        fontFamily: "var(--font-heading)",
                         fontWeight: 700,
-                        fontSize: "0.88rem",
-                        color: "#0A1F44",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.01em",
-                        marginBottom: "0.15rem",
+                        fontSize: "1.1rem",
+                        color: board.filled ? "#fff" : "#0A1F44",
+                        flexShrink: 0,
                       }}
                     >
-                      {board.name}
+                      {board.letter}
+                    </div>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div
+                        style={{
+                            fontWeight: 700,
+                            fontSize: "0.92rem",
+                            color: "#0A1F44",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.02em",
+                            marginBottom: "0.15rem",
+                            fontFamily: "var(--font-heading)",
+                        }}
+                      >
+                        {board.name}
+                      </div>
+                      <div style={{ fontSize: "0.75rem", color: "#888" }}>
+                        {board.unit}
+                      </div>
                     </div>
                     <div
                       style={{
-                        fontSize: "0.75rem",
-                        color: "#888",
+                        fontFamily: "var(--font-heading)",
+                        fontWeight: 700,
+                        fontSize: "1.05rem",
+                        letterSpacing: "-0.02em",
+                        color: "#FF5200",
+                        whiteSpace: "nowrap",
+                        background: "rgba(255,82,0,0.06)",
+                        padding: "0.4rem 0.75rem",
+                        borderRadius: "4px",
+                        border: "1px solid rgba(255,82,0,0.1)",
                       }}
                     >
-                      {board.unit}
+                      {board.prize}
                     </div>
                   </div>
+                ))}
+              </div>
 
-                  {/* Prize */}
-                  <div
-                    style={{
-                      fontFamily:
-                        "var(--font-heading)",
-                      fontWeight: 700,
-                      fontSize: "1rem",
-                      letterSpacing: "-0.02em",
-                      color: "#FF5200",
-                      whiteSpace: "nowrap",
-                    }}
-                  >
-                    {board.prize}
-                  </div>
-                </div>
-              ))}
-            </div>
+              {/* Total bar */}
+              <div
+                style={{
+                  
+                  background: "linear-gradient(90deg, #FF5200, #FF6B00)",
+                    padding: "1.1rem 1.25rem",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    marginTop: "1.5rem",
+                    borderRadius: "4px",
+                    boxShadow: "0 4px 16px rgba(255,82,0,0.25)",
+                }}
+              >
+                <span
+                  style={{
+                    fontSize: "0.75rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    color: "rgba(255,255,255,0.75)",
+                  }}
+                >
+                  Tổng giải thưởng
+                </span>
+                <span
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    fontWeight: 700,
+                    fontSize: "1.1rem",
+                    letterSpacing: "-0.02em",
+                    color: "#fff",
+                  }}
+                >
+                  25.000.000 VNĐ
+                </span>
+              </div>
+            </ScrollReveal>
+          </div>
 
-            {/* Total bar */}
+          {/* ── Giải thưởng cá nhân + Gift Strip Bar ── */}
+          <div
+            style={{
+              background: "linear-gradient(135deg, #FF5200 0%, #FF8C00 50%, #FF5200 100%)",
+              borderTop: "1px solid rgba(255,255,255,0.15)",
+              width: "100%",
+              boxShadow: "inset 0 2px 8px rgba(0,0,0,0.1)",
+            }}
+          >
+            {/* Label */}
             <div
               style={{
-                background: "#FF5200",
-                padding: "1rem 1.25rem",
+                padding: "1rem 3rem 0",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "space-between",
-                marginTop: "1.5rem",
               }}
             >
-              <span
+              <div
                 style={{
-                  fontSize: "0.75rem",
+                  fontFamily: "var(--font-heading)",
                   fontWeight: 700,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.75)",
-                }}
-              >
-                Tổng giải thưởng
-              </span>
-              <span
-                style={{
-                  fontFamily:
-                    "var(--font-heading)",
-                  fontWeight: 700,
-                  fontSize: "1.1rem",
-                  letterSpacing: "-0.02em",
+                  fontSize: "0.9rem",
                   color: "#fff",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.12em",
+                  textShadow: "0 1px 4px rgba(0,0,0,0.2)",
                 }}
               >
-                25.000.000 VNĐ
-              </span>
+                Phần quà dành cho cá nhân xuất sắc nhất
+              </div>
+              <div
+                style={{
+                  fontSize: "0.65rem",
+                  fontWeight: 600,
+                  color: "rgba(255,255,255,0.5)",
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                }}
+              >
+                Hoàn thành nhanh nhất
+              </div>
             </div>
-          </ScrollReveal>
+
+            {/* Strip */}
+            <div
+              style={{
+                padding: "1rem 0",
+                overflow: "hidden",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  gap: "2rem",
+                  animation: "giftMarquee 20s linear infinite",
+                  width: "max-content",
+                }}
+              >
+                {[...GIFT_IMAGES, ...GIFT_IMAGES, ...GIFT_IMAGES, ...GIFT_IMAGES].map((gift, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      flexShrink: 0,
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      gap: "0.4rem",
+                    }}
+                  >
+                    <div
+                      style={{
+                        width: "80px",
+                        height: "80px",
+                        borderRadius: "10px",
+                        background: "rgba(255,255,255,0.2)",
+                        border: "1px solid rgba(255,255,255,0.25)",
+                        boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        overflow: "hidden",
+                      }}
+                    >
+                      <img
+                        src={gift.src}
+                        alt={gift.alt}
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                          borderRadius: "10px",
+                        }}
+                        onError={(e) => {
+                          const el = e.currentTarget;
+                          el.style.display = "none";
+                          if (el.parentElement) {
+                            el.parentElement.innerHTML = `<span style="font-size:1.8rem">🎁</span>`;
+                          }
+                        }}
+                      />
+                    </div>
+                    <span
+                      style={{
+                        fontSize: "0.6rem",
+                        fontWeight: 700,
+                        color: "rgba(255,255,255,0.85)",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.05em",
+                        textAlign: "center",
+                        maxWidth: "80px",
+                        lineHeight: 1.2,
+                        textShadow: "0 1px 2px rgba(0,0,0,0.2)",
+                      }}
+                    >
+                      {gift.alt}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

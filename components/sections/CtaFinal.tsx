@@ -56,7 +56,7 @@ export default function CtaFinal() {
           >
             <div style={{ color: "#fff" }}>Sẵn Sàng</div>
             <div style={{ color: "#fff" }}>Nói Thật</div>
-            <div style={{ color: "#F8B200" }}>Chưa?</div>
+            <div style={{ color: "#FF5200" }}>Chưa?</div>
           </h2>
 
           <p
