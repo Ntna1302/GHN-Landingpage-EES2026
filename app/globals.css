@@ -319,9 +319,24 @@ main {
     padding: 3rem 1.5rem !important;
   }
 
+
+  
+}
+@media (max-width: 900px) {
   .ghn-hero-pad {
-    padding: 3rem 1.5rem !important;
-    min-height: auto !important;
+    padding-top: 1rem !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .ghn-hero-pad {
+    padding-top: 0.75rem !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .ghn-hero-pad {
+    padding-top: 0.5rem !important;
   }
 }
 
@@ -486,11 +501,9 @@ main {
   font-family: var(--font-heading);
   font-size: clamp(3.5rem, 10vw, 7rem);
   font-weight: 700;
-  line-height: 0.9;
   letter-spacing: -0.04em;
   text-transform: uppercase;
   margin: 0;
-  padding: 0;
 }
 
 .ghn-hero-line {
@@ -498,7 +511,9 @@ main {
   margin: 0;
   padding: 0;
 }
-
+.ghn-hero-line-2 {
+  margin-top: 25px;
+}
 /* Màu xanh GHN cho BẠN / NÓI / NGHE */
 .ghn-hero-line-solid {
   color: var(--color-ghn-b1);
@@ -517,13 +532,21 @@ main {
     font-size: clamp(3rem, 12vw, 5.5rem);
   }
 }
-
-@media (max-width: 640px) {
-  .ghn-hero-headline {
-    font-size: clamp(3rem, 15vw, 4.5rem);
+@media (max-width: 900px) {
+  .ghn-hero-line-2 {
+     margin-top: 5px;
   }
 }
-
+@media (max-width: 640px) {
+  .ghn-hero-headline {
+    font-size: clamp(2.5rem, 8vw, 7rem);
+  }
+}
+@media (max-width: 440px) {
+  .ghn-hero-line-2 {
+     margin-top: 5px;
+  }
+}
 @media (max-width: 400px) {
   .ghn-hero-headline {
     font-size: clamp(2.8rem, 17vw, 4rem);
