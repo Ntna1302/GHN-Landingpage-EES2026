@@ -16,7 +16,7 @@ export default function Footer() {
         style={{ padding: "3rem 2.5rem", gap: 0 }}
       >
         {/* Brand col */}
-        <div style={{ paddingRight: "3rem" }}>
+        <div style={{ paddingRight: "clamp(0px, 2vw, 3rem)" }}>
           <div
             style={{
               fontFamily: "var(--font-heading)",
@@ -35,7 +35,7 @@ export default function Footer() {
               fontSize: "0.82rem",
               color: "#444",
               lineHeight: 1.65,
-              maxWidth: "260px",
+              maxWidth: "100%",
               marginBottom: "1.25rem",
             }}
           >

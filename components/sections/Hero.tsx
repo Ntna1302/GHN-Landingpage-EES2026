@@ -3,13 +3,6 @@
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useCountdown } from "@/hooks/useCountdown";
 
-const HEADLINE_LINES: { text: string; style: "solid" | "outline" | "accent" }[] = [
-  { text: "TIẾNG", style: "solid" },
-  { text: "NÓI", style: "outline" },
-  { text: "CỦA", style: "accent" },
-  { text: "BẠN", style: "solid" },
-];
-
 const STATS = [
   { value: "≥ 75%", label: "Mục tiêu tham gia" },
   { value: "10 phút", label: "Thời gian điền" },
@@ -17,23 +10,6 @@ const STATS = [
 ];
 
 const RACE_TITLE_LINES = ["EES", "RACE", "2026"];
-
-const headlineContainer: Variants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.12, delayChildren: 0.35 },
-  },
-};
-
-const headlineLine: Variants = {
-  hidden: { opacity: 0, y: 60, clipPath: "inset(0 0 100% 0)" },
-  visible: {
-    opacity: 1,
-    y: 0,
-    clipPath: "inset(0 0 0% 0)",
-    transition: { duration: 0.72, ease: [0.22, 1, 0.36, 1] },
-  },
-};
 
 const raceTitleContainer: Variants = {
   hidden: {},
@@ -73,121 +49,62 @@ export default function Hero() {
 
   return (
     <section
-        id="hero"
-        style={{
-          borderBottom: "1px solid #E0DDD6",
-          minHeight: "calc(100dvh - var(--header-total, 140px))",  // ← minHeight thay height
-          // bỏ maxHeight
-          // bỏ overflow: hidden
-        }}
-      >
-      <div className="ghn-grid-2col" style={{ height: "100%" }}>
+      id="hero"
+      style={{
+        borderBottom: "1px solid #E0DDD6",
+      }}
+    >
+      <div className="ghn-grid-2col">
 
         {/* ── LEFT PANEL ── */}
         <div
           className="ghn-hero-pad"
           style={{
-            padding: "clamp(1rem, 2vh, 2rem) clamp(1.5rem, 3vw, 2.5rem)",
+            padding: "clamp(1.5rem, 3vw, 2.5rem)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
             background: "#fff",
             borderRight: "1px solid #E0DDD6",
-            overflow: "visible",  // ← thay overflow: hidden để tránh cắt đứt animation
+            overflow: "visible",
           }}
         >
           <div>
-            {/* Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              style={{
-                display: "inline-flex",
-                fontWeight: 600,
-                alignItems: "center",
-                gap: "0.75rem",
-                marginBottom: "30px",
-              }}
-            >
-              <div
-                style={{
-                  width: "0px",
-                  height: "0px",
-                  background: "#ff5100",
-                  flexShrink: 0,
-                }}
-              />
-              <span
-                style={{
-                  fontSize: "0.9rem",
-                  fontWeight: 900,
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "#FF5200",
-                }}
-              >
-              
-              </span>
-            </motion.div>
-
             {/* Headline */}
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "1.5rem",
-                marginBottom: "clamp(0.4rem, 1vh, 1rem)",
-              }}
-            >
+            <h1 className="ghn-hero-headline" style={{ margin: 0 }}>
               <motion.div
-                variants={headlineContainer}
-                initial="hidden"
-                animate="visible"
-                style={{
-                  fontFamily: "var(--font-heading)",
-                  fontWeight: 700,
-                  textTransform: "uppercase",
-                  lineHeight: 0.75,
-                  letterSpacing: "-0.24em",
-                  marginBottom: "-0.8rem",
-                  flex: 1,
-                  minWidth: 0,
-                }}
+                className="ghn-hero-line ghn-hero-line-solid"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               >
-                {HEADLINE_LINES.map(({ text, style }) => (
-                  <div
-                    key={text}
-                    style={{
-                      overflow: "hidden",
-                      overflowClipMargin: "0.4em",
-                      paddingTop: "0.15em",
-                      marginTop: "-1.5em",
-                    }}
-                  >
-                    <motion.div
-                      variants={headlineLine}
-                      style={{
-                        fontSize: "clamp(2.5rem, 9vw, 7rem)",
-                        paddingTop: "0.2em",
-                        paddingBottom: "clamp(0.3rem, 4.5vh, 3.5rem)",
-                        color:
-                          style === "solid"
-                            ? "#006FAD"
-                            : style === "accent"
-                            ? "#F67700"
-                            : "transparent",
-                        WebkitTextStroke:
-                          style === "outline" ? "4px #006FAD" : undefined,
-                        display: "block",
-                      }}
-                    >
-                      {text}
-                    </motion.div>
-                  </div>
-                ))}
+                BẠN
               </motion.div>
-            </div>
+              <motion.div
+                className="ghn-hero-line ghn-hero-line-solid"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              >
+                NÓI
+              </motion.div>
+              <motion.div
+                className="ghn-hero-line ghn-hero-line-accent"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              >
+                GHN
+              </motion.div>
+              <motion.div
+                className="ghn-hero-line ghn-hero-line-solid"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              >
+                NGHE
+              </motion.div>
+            </h1>
 
             {/* Subline */}
             <motion.p
@@ -263,12 +180,12 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            background: "#ff5d11",
-            padding: "clamp(1rem, 2vh, 2rem) clamp(1.5rem, 3vw, 2.5rem)",
+            background: "#FF5200",
+            padding: "clamp(1.5rem, 3vw, 2.5rem)",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between",
-            overflow: "hidden",
+            overflow: "visible",
             position: "relative",
           }}
         >
@@ -300,9 +217,9 @@ export default function Hero() {
                 fontFamily: "var(--font-heading)",
                 fontWeight: 700,
                 textTransform: "uppercase",
-                letterSpacing: "-0.05em",
-                lineHeight: 0.95,
-                marginBottom: "clamp(0.4rem, 2vh, 1.5rem)",
+                letterSpacing: "-0.03em",
+                lineHeight: 1,
+                marginBottom: "clamp(0.75rem, 2vw, 1.5rem)",
               }}
             >
               {RACE_TITLE_LINES.map((line) => (
@@ -310,7 +227,7 @@ export default function Hero() {
                   key={line}
                   variants={raceTitleLine}
                   style={{
-                    fontSize: "clamp(2.5rem, 9vw, 8.5rem)",
+                    fontSize: "clamp(2.5rem, 8vw, 7rem)",
                     color: "#fff",
                     display: "block",
                   }}
@@ -327,18 +244,17 @@ export default function Hero() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.85, duration: 0.4 }}
                 style={{
-                  fontSize: "clamp(0.6rem, 0.9vw, 0.75rem)",
+                  fontSize: "clamp(0.78rem, 1vw, 0.9rem)",
                   fontWeight: 400,
-                  letterSpacing: "0.1em",
-                  //textTransform: "uppercase",
-                  color: "#fff",
-                  marginBottom: "clamp(0.3rem, 1vh, 1rem)",
-                  lineHeight: 1.5,
+                  letterSpacing: "0.05em",
+                  color: "rgba(255,255,255,0.9)",
+                  marginBottom: "clamp(0.5rem, 1.5vw, 1rem)",
+                  lineHeight: 1.6,
                 }}
               >
                 {isExpired
                   ? "Trạng thái"
-                  : <>Cuộc đua tham gia khảo sát — Bộ phận nào sẽ về đích đầu tiên?<br /><span style={{ textTransform: "uppercase",fontWeight: 700, }}>Tổng giải thưởng 30 triệu đồng. </span></>}
+                  : <>Cuộc đua tham gia khảo sát — Bộ phận nào sẽ về đích đầu tiên?<br /><span style={{ textTransform: "uppercase", fontWeight: 700, }}>Tổng giải thưởng 30 triệu đồng. </span></>}
               </motion.div>
 
               {isExpired ? (
@@ -396,22 +312,22 @@ export default function Hero() {
                       key={label}
                       variants={countdownItem}
                       style={{
-                        background: "rgba(255,255,255,0.12)",
-                        padding: "clamp(0.3rem, 0.8vh, 0.5rem) clamp(0.3rem, 0.5vw, 0.4rem)",
+                        background: "rgba(255,255,255,0.15)",
+                        padding: "clamp(0.75rem, 1.5vw, 1.25rem) clamp(0.5rem, 1vw, 1rem)",
                         textAlign: "center",
-                        borderRadius: "2px",
+                        borderRadius: "4px",
                       }}
                     >
                       <div
                         style={{
                           fontFamily: "var(--font-heading)",
                           fontWeight: 700,
-                          fontSize: "clamp(1.2rem, 2.2vw, 2rem)",
+                          fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
                           letterSpacing: "-0.03em",
                           color: "#fff",
-                          lineHeight: 1,
+                          lineHeight: 1.2,
                           overflow: "hidden",
-                          height: "1.15em",
+                          minHeight: "1.2em",
                           position: "relative",
                         }}
                       >
@@ -430,12 +346,12 @@ export default function Hero() {
                       </div>
                       <div
                         style={{
-                          fontSize: "0.58rem",
+                          fontSize: "clamp(0.6rem, 0.8vw, 0.75rem)",
                           fontWeight: 700,
-                          letterSpacing: "0.1em",
+                          letterSpacing: "0.12em",
                           textTransform: "uppercase",
-                          color: "rgba(255,255,255,0.55)",
-                          marginTop: "0.2rem",
+                          color: "rgba(255,255,255,0.7)",
+                          marginTop: "0.35rem",
                         }}
                       >
                         {label}
@@ -461,14 +377,14 @@ export default function Hero() {
               gap: "0.6rem",
               background: "#fff",
               color: "#FF5200",
-              padding: "clamp(0.5rem, 1vh, 0.8rem) clamp(1rem, 2vw, 1.5rem)",
+              padding: "clamp(0.65rem, 1.2vw, 0.9rem) clamp(1.25rem, 2.5vw, 2rem)",
               fontFamily: "var(--font-heading)",
               fontWeight: 700,
-              fontSize: "clamp(0.72rem, 1vw, 0.85rem)",
+              fontSize: "clamp(0.78rem, 1vw, 0.9rem)",
               textTransform: "uppercase",
               letterSpacing: "0.06em",
               textDecoration: "none",
-              borderRadius: "2px",
+              borderRadius: "6px",
               alignSelf: "flex-start",
             }}
           >

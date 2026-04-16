@@ -189,10 +189,10 @@ export default function WhySection() {
         <div style={{ padding: "3rem 2.5rem", borderRight: "1px solid #E0DDD6" }}>
           <ScrollReveal>
             {/* Title EES */}
-            <div style={{
+            <div className="ghn-why-ees-title" style={{
               fontFamily: "var(--font-heading)",
               fontWeight: 700,
-              fontSize: "50px",
+              fontSize: "clamp(1rem, 2.8vw, 50px)",
               textTransform: "uppercase",
               letterSpacing: "-0.04em",
               lineHeight: 1.0,
@@ -203,12 +203,12 @@ export default function WhySection() {
             </div>
 
             {/* 2 cột bên trong */}
-            <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "3rem" }}>
+            <div className="ghn-why-inner-grid" style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "clamp(1.5rem, 3vw, 3rem)" }}>
               {/* Trái: GHN Nghe Thật Làm Thật */}
-              <div style={{
+              <div className="ghn-why-sidebar" style={{
                 fontFamily: "var(--font-heading)",
                 fontWeight: 700,
-                fontSize: "40px",
+                fontSize: "clamp(1.4rem, 4vw, 40px)",
                 textTransform: "uppercase",
                 letterSpacing: "-0.04em",
                 lineHeight: 1.15,

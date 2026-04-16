@@ -36,6 +36,8 @@ export default function UrgencyBar({ onScheduleClick }: Props) {
           letterSpacing: "0.08em",
           textTransform: "uppercase",
           whiteSpace: "nowrap",
+          minWidth: 0,
+          overflow: "hidden",
         }}
       >
         {/* Pulse dot */}

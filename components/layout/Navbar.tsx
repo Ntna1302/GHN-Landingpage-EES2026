@@ -43,7 +43,7 @@ export default function Navbar({ onGateClick }: NavbarProps) {
     gap: "0.4rem",
     fontFamily: "var(--font-heading)",
     fontWeight: 700,
-    fontSize: "1.8rem",
+    fontSize: "clamp(0.9rem, 2.5vw, 1.8rem)",
     letterSpacing: "-0.02em",
     textTransform: "uppercase",
     userSelect: "none",
@@ -61,7 +61,7 @@ export default function Navbar({ onGateClick }: NavbarProps) {
       display: "block",
     }}
   />
-  <span className="ghn-logo-text" style={{ color: "#006FAD", fontSize: "1.75rem" }}>× Bạn Nói, GHN Nghe <span className="ghn-logo-text" style={{ color: "#FF5200", fontSize: "1.75rem" }}>2026</span></span>
+  <span className="ghn-logo-text" style={{ color: "#006FAD", fontSize: "clamp(0.85rem, 2.5vw, 1.75rem)" }}>× Bạn Nói, GHN Nghe <span className="ghn-logo-text" style={{ color: "#FF5200", fontSize: "clamp(0.85rem, 2.5vw, 1.75rem)" }}>2026</span></span>
 </div>
 
       {/* Nav links — hidden on mobile */}

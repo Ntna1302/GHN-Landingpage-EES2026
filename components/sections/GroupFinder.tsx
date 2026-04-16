@@ -8,7 +8,7 @@ const GROUPS = [
   {
     num: "01",
     code: "Nhóm 1A & 1B",
-    name: "Shipper / Tài xế vận tải",
+    name: "NVPTTT, NVGN (GXT) & Tài xế GXT, TXXT",
     detail: "NVPTTT (Vùng), NVGN (Freight), Tài xế GXT, TXXT\nLàm khảo sát qua App Driver hoặc quét QR tại bưu cục / kho xuất phát.",
     method: "App Driver + QR tại bưu cục",
     date: "08/05 – 20/05/2026",
@@ -16,7 +16,7 @@ const GROUPS = [
     end: "2026-05-20",
     target: "Mục tiêu ≥70%",
     tabLabel: "Nhóm 1A / 1B",
-    tabName: "Shipper & Tài xế",
+    tabName: "NVPTTT, NVGN (GXT) & Tài xế GXT, TXXT",
     tabSub: "NVPTTT, NVGN, Tài xế GXT, TXXT",
     link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
   },

@@ -167,7 +167,7 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
             <div
               style={{
                 background: "#0A1F44",
-                padding: "1.75rem 1.75rem 1.5rem",
+                padding: "clamp(1rem, 3vw, 1.75rem) clamp(1rem, 3vw, 1.75rem) clamp(0.75rem, 2vw, 1.5rem)",
                 position: "relative",
                 overflow: "hidden",
                 flexShrink: 0,
@@ -404,7 +404,7 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
                       boxShadow: isActive
                         ? `0 4px 16px ${g.color}25`
                         : "none",
-                      scale: isActive ? 1.02 : 1,
+                      transform: isActive ? "scale(1.02)" : "scale(1)",
                       opacity: isDimmed ? 0.4 : 1,
                       filter: isDimmed ? "blur(1.5px)" : "none",
                       transition: "opacity 0.3s ease, filter 0.3s ease",
@@ -591,7 +591,7 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
                   letterSpacing: "-0.01em",
                 }}
               >
-                25.000.000 VNĐ
+                30.000.000 VNĐ
               </div>
             </div>
           </motion.div>

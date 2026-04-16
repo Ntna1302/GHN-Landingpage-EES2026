@@ -36,8 +36,9 @@ export default function QuoteSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            className="ghn-quote-big-mark"
             style={{
-              fontSize: "6rem",
+              fontSize: "clamp(3rem, 8vw, 6rem)",
               lineHeight: 0.8,
               color: "#fff",
               fontFamily: "Georgia, serif",
@@ -91,18 +92,23 @@ export default function QuoteSection() {
       {/* RIGHT */}
       {/* RIGHT */}
 <div
+  className="ghn-quote-right-inner"
   style={{
     position: "relative",
-    padding: "4rem 2.5rem 0 2.5rem", 
-    display: "grid",
-    gridTemplateColumns: "1fr auto",
-    gap: "2rem",
+    padding: "4rem 2.5rem 0 2.5rem",
     alignItems: "center",
     overflow: "hidden",
   }}
 >
   {/* Stats column */}
-    <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem", zIndex: 2,position: "relative", }}>
+    <div
+      className="ghn-quote-stats-col"
+      style={{
+        zIndex: 2,
+        position: "relative",
+        justifyContent: "flex-end",
+      }}
+    >
       {STATS.map((stat, i) => (
         <motion.div
           key={stat.value}
@@ -120,9 +126,10 @@ export default function QuoteSection() {
           }}
         >
           <div
+            className="ghn-quote-stat-value"
             style={{
               fontFamily: "var(--font-heading)",
-              fontSize: "3rem",
+              fontSize: "clamp(1.8rem, 4vw, 3rem)",
               fontWeight: 700,
               color: "#fff",
               letterSpacing: "-0.04em",
@@ -158,10 +165,8 @@ export default function QuoteSection() {
       viewport={{ once: true }}
       transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       style={{
-        display: "block",
         zIndex: 2,
-        alignSelf: "flex-end",
-        lineHeight: 0, // Dính chặt vào đáy
+        lineHeight: 0,
         // marginBottom: "-80px",
       }}
     >
@@ -175,7 +180,7 @@ export default function QuoteSection() {
           
           display: "block",      // ĐỔI TỪ FLEX SANG BLOCK
           marginBottom: 0,
-          paddingRight: "5rem",
+          paddingRight: "clamp(0px, 3vw, 5rem)",
           //marginBottom: "-80px",
           filter: "drop-shadow(0 10px 30px rgba(0,0,0,0.4))",
         }}
