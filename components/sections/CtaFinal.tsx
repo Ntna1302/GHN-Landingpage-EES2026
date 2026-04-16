@@ -67,9 +67,8 @@ export default function CtaFinal() {
               maxWidth: "440px",
             }}
           >
-            Mỗi phiếu khảo sát là một lá phiếu xây dựng GHN tốt hơn. Chọn
-            nhóm của bạn, hoàn thành trong 10 phút và cùng đưa GHN vào top
-            EES 2026.
+              
+            Mỗi phiếu khảo sát là một đóng góp để GHN tốt hơn mỗi ngày. Chọn nhóm của bạn, hoàn thành trong 10 phút và cùng đưa GHN bứt phá trong năm 2026.
           </p>
         </ScrollReveal>
 

@@ -19,7 +19,7 @@ const STEPS = [
     num: "03",
     chip: "Tháng 7/2026",
     title: "GHN chia sẻ lại với bạn",
-    body: 'Kết quả phân tích & Action Plan được công bố toàn công ty. GHN không "cho vào ngăn kéo" — bạn sẽ thấy GHN làm gì với tiếng nói của bạn.',
+    body: 'Kết quả phân tích và kế hoạch hành động sẽ được công bố toàn công ty. Ý kiến của bạn sẽ được chuyển thành những thay đổi cụ thể.',
   },
 ];
 

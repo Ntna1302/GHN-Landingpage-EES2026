@@ -522,14 +522,14 @@ export default function RaceSection() {
                     </div>
                     <span
                       style={{
-                        fontSize: "0.75rem",
+                        fontSize: "0.85rem",
                         fontWeight: 700,
                         color: "rgba(255, 255, 255, 0.85)",
                         textTransform: "uppercase",
                         letterSpacing: "0.05em",
                         textAlign: "center",
                         maxWidth: "80px",
-                        lineHeight: 1.2,
+                        lineHeight: 1.3,
                         textShadow: "0 1px 2px rgba(0,0,0,0.2)",
                       }}
                     >

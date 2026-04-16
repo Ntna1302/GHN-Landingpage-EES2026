@@ -357,19 +357,27 @@ main {
 }
 
 /* ── UrgencyBar ── */
-@media (max-width: 640px) {
-  .ghn-urgency-bar { padding: 0 1rem !important; height: 32px !important; }
-  .ghn-urgency-long { display: none !important; }
-  .ghn-urgency-btn { font-size: 0.58rem !important; padding: 0.2rem 0.6rem !important; }
-}
 @media (max-width: 900px) {
-  .ghn-urgency-bar {
-    padding: 0 1rem !important;
+  .ghn-urgency-days {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   
-  .ghn-urgency-bar .ghn-urgency-long,
-  .ghn-urgency-bar .ghn-urgency-days {
+  .ghn-urgency-long {
     display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .ghn-urgency-bar {
+    padding: 0 1rem !important;
   }
 
   .ghn-urgency-btn {
