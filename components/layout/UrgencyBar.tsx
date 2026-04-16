@@ -59,8 +59,9 @@ export default function UrgencyBar({ onScheduleClick }: Props) {
         ) : (
           <>
             <span style={{ color: "#fff" }}>Khai mạc 01/05</span>
-            <span style={{ color: "rgba(255,255,255,0.2)" }}>·</span>
+            <span className="ghn-urgency-days"  style={{ color: "rgba(255,255,255,0.2)" }}>·</span>
             <motion.span
+               className="ghn-urgency-days"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               style={{ color: "#F8B200" }}

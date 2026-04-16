@@ -34,12 +34,12 @@ const PRIZE_BOARDS = [
 ];
 
 const GIFT_IMAGES = [
-  { src: "/img/gifts/gift-01.png", alt: "Áo GHN Limited" },
-  { src: "/img/gifts/gift-02.png", alt: "Balo GHN" },
-  { src: "/img/gifts/gift-03.png", alt: "Voucher 500K" },
-  { src: "/img/gifts/gift-04.png", alt: "Cúp EES Race" },
-  { src: "/img/gifts/gift-05.png", alt: "Bình nước GHN" },
-  { src: "/img/gifts/gift-06.png", alt: "Nón GHN" },
+  { src: "/img/gifts/gift-01.png", alt: "Nón Bảo Hiểm" },
+  { src: "/img/gifts/gift-02.png", alt: "Áo khỉ" },
+  { src: "/img/gifts/gift-03.png", alt: "Áo Polo Tay Dài" },
+  { src: "/img/gifts/gift-04.png", alt: "Áo Polo Tay Ngắn" },
+  { src: "/img/gifts/gift-05.png", alt: "Túi Tote" },
+  { src: "/img/gifts/gift-06.png", alt: "Túi Bao Tử" },
 ];
 
 export default function RaceSection() {
@@ -296,6 +296,7 @@ export default function RaceSection() {
                 {PRIZE_BOARDS.map((board, i) => (
                   <div
                     key={board.letter}
+                    className="ghn-prize-row"
                     style={{
                       display: "flex",
                       alignItems: "center",
@@ -339,7 +340,7 @@ export default function RaceSection() {
                       {board.letter}
                     </div>
                     <div style={{ flex: 1, minWidth: 0 }}>
-                      <div
+                      <div className="ghn-prize-row"
                         style={{
                             fontWeight: 700,
                             fontSize: "0.92rem",
@@ -356,7 +357,7 @@ export default function RaceSection() {
                         {board.unit}
                       </div>
                     </div>
-                    <div
+                    <div className="ghn-prize-row"
                       style={{
                         fontFamily: "var(--font-heading)",
                         fontWeight: 700,
@@ -471,7 +472,7 @@ export default function RaceSection() {
                 style={{
                   display: "flex",
                   gap: "2rem",
-                  animation: "giftMarquee 20s linear infinite",
+                  animation: "giftMarquee 25s linear infinite",
                   width: "max-content",
                 }}
               >
@@ -486,10 +487,11 @@ export default function RaceSection() {
                       gap: "0.4rem",
                     }}
                   >
+                    
                     <div
                       style={{
-                        width: "80px",
-                        height: "80px",
+                        width: "clamp(80px, 25vw, 200px)",
+                        height: "clamp(70px, 22vw, 175px)",
                         borderRadius: "10px",
                         background: "rgba(255,255,255,0.2)",
                         border: "1px solid rgba(255,255,255,0.25)",
@@ -520,9 +522,9 @@ export default function RaceSection() {
                     </div>
                     <span
                       style={{
-                        fontSize: "0.6rem",
+                        fontSize: "0.75rem",
                         fontWeight: 700,
-                        color: "rgba(255,255,255,0.85)",
+                        color: "rgba(255, 255, 255, 0.85)",
                         textTransform: "uppercase",
                         letterSpacing: "0.05em",
                         textAlign: "center",

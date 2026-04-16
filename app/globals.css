@@ -362,7 +362,21 @@ main {
   .ghn-urgency-long { display: none !important; }
   .ghn-urgency-btn { font-size: 0.58rem !important; padding: 0.2rem 0.6rem !important; }
 }
+@media (max-width: 900px) {
+  .ghn-urgency-bar {
+    padding: 0 1rem !important;
+  }
+  
+  .ghn-urgency-bar .ghn-urgency-long,
+  .ghn-urgency-bar .ghn-urgency-days {
+    display: none !important;
+  }
 
+  .ghn-urgency-btn {
+    padding: 0.25rem 0.6rem !important;
+    font-size: 0.6rem !important;
+  }
+}
 /* ── Navbar ── */
 @media (max-width: 640px) {
   .ghn-navbar { padding: 0 1rem !important; height: 56px !important; }
@@ -558,6 +572,26 @@ main {
   
   .race-right {
     border-left: none !important;
+  }
+}
+@media (max-width: 640px) {
+  /* Prize rows — stack dọc trên mobile nhỏ */
+  .race-right .ghn-prize-row {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Prize badge nhỏ hơn */
+  .race-right .ghn-prize-row > div:first-child {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Prize amount full width */
+  .race-right .ghn-prize-row > div:last-child {
+    align-self: flex-end !important;
   }
 }
 /* ── AfterSection (Timeline) ── */
