@@ -6,7 +6,7 @@ const NAV_LINKS = [
   { href: "#why", label: "EES là gì?" },
   { href: "#groups", label: "Nhóm Tham Gia" },
   { href: "#race", label: "EES RACE 2026" },
-  { href: "#after", label: "Diễn Tiến" },
+  { href: "#after", label: "Sự kiện diễn ra" },
   { href: "#footer", label: "Q&A" },
 ];
 
@@ -61,7 +61,7 @@ export default function Navbar({ onGateClick }: NavbarProps) {
       display: "block",
     }}
   />
-  <span className="ghn-logo-text" style={{ color: "#006FAD", fontSize: "2.15rem" }}>× EES <span className="ghn-logo-text" style={{ color: "#FF5200", fontSize: "2.15rem" }}>2026</span></span>
+  <span className="ghn-logo-text" style={{ color: "#006FAD", fontSize: "2.15rem" }}>× Bạn Nói, GHN Nghe <span className="ghn-logo-text" style={{ color: "#FF5200", fontSize: "2.15rem" }}>2026</span></span>
 </div>
 
       {/* Nav links — hidden on mobile */}

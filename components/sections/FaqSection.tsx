@@ -10,7 +10,7 @@ const FAQ_LEFT = [
   },
   {
     q: "Nếu tôi cho điểm thấp hay đánh giá tệ thì có bị ảnh hưởng gì không?",
-    a: "Hoàn toàn không. EES là khảo sát ẩn danh/bảo mậtkhông ai, biết bạn chấm mấy điểm. Điền thấp ở những điểm bạn thực sự chưa hài lòng là thông tin quan trọng nhất để GHN cải thiện đúng chỗ.",
+    a: "Hoàn toàn không. EES là khảo sát ẩn danh/bảo mật không ai, biết bạn chấm mấy điểm. Điền thấp ở những điểm bạn thực sự chưa hài lòng là thông tin quan trọng nhất để GHN cải thiện đúng chỗ.",
   },
   {
     q: "Tôi không có điện thoại thông minh thì làm sao?",

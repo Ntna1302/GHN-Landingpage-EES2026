@@ -93,7 +93,7 @@ export default function QuoteSection() {
 <div
   style={{
     position: "relative",
-    padding: "4rem 2.5rem",
+    padding: "4rem 2.5rem 0 2.5rem", 
     display: "grid",
     gridTemplateColumns: "1fr auto",
     gap: "2rem",
@@ -102,81 +102,86 @@ export default function QuoteSection() {
   }}
 >
   {/* Stats column */}
-  <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem", zIndex: 2 }}>
-    {STATS.map((stat, i) => (
-      <motion.div
-        key={stat.value}
-        initial={{ opacity: 0, x: -16 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{
-          delay: 0.1 + i * 0.1,
-          duration: 0.5,
-          ease: [0.22, 1, 0.36, 1],
-        }}
-        style={{
-          borderLeft: "3px solid #FF5200",
-          paddingLeft: "1rem",
-        }}
-      >
-        <div
+    <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem", zIndex: 2,position: "relative", }}>
+      {STATS.map((stat, i) => (
+        <motion.div
+          key={stat.value}
+          initial={{ opacity: 0, x: -16 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            delay: 0.1 + i * 0.1,
+            duration: 0.5,
+            ease: [0.22, 1, 0.36, 1],
+          }}
           style={{
-            fontFamily: "var(--font-heading)",
-            fontSize: "3rem",
-            fontWeight: 700,
-            color: "#fff",
-            letterSpacing: "-0.04em",
-            lineHeight: 1,
+            borderLeft: "3px solid #FF5200",
+            paddingLeft: "1rem",
           }}
         >
-          {stat.value}
-        </div>
-        <div
-          style={{
-            fontSize: "0.78rem",
-            color: "rgba(255,255,255,0.4)",
-            marginTop: "0.3rem",
-            lineHeight: 1.4,
-          }}
-        >
-          {stat.lines.map((line, j) => (
-            <span key={j}>
-              {line}
-              {j < stat.lines.length - 1 && <br />}
-            </span>
-          ))}
-        </div>
-      </motion.div>
-    ))}
-  </div>
+          <div
+            style={{
+              fontFamily: "var(--font-heading)",
+              fontSize: "3rem",
+              fontWeight: 700,
+              color: "#fff",
+              letterSpacing: "-0.04em",
+              lineHeight: 1,
+            }}
+          >
+            {stat.value}
+          </div>
+          <div
+            style={{
+              fontSize: "0.78rem",
+              color: "rgba(255,255,255,0.4)",
+              marginTop: "0.3rem",
+              lineHeight: 1.4,
+            }}
+          >
+            {stat.lines.map((line, j) => (
+              <span key={j}>
+                {line}
+                {j < stat.lines.length - 1 && <br />}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+      ))}
+    </div>
 
-  {/* IMAGE — cùng hàng bên phải */}
-  <motion.div
-    className="ghn-quote-img-wrap"
-    initial={{ opacity: 0, x: 40 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-    style={{
-      zIndex: 2,
-      alignSelf: "end",
-      marginBottom: "-80px",
-    }}
-  >
-    <img
-      src="/img/CPO.png"
-      alt="GHN CPO"
+    {/* IMAGE — cùng hàng bên phải */}
+    <motion.div
+      className="ghn-quote-img-wrap"
+      initial={{ opacity: 0, x: 40 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       style={{
-        maxHeight: "520px",
-        width: "auto",
-        objectFit: "contain",
-        display: "flex",
-        paddingRight: "5rem",
-        filter: "drop-shadow(0 10px 30px rgba(0,0,0,0.4))",
+        display: "block",
+        zIndex: 2,
+        alignSelf: "flex-end",
+        lineHeight: 0, // Dính chặt vào đáy
+        // marginBottom: "-80px",
       }}
-    />
-  </motion.div>
-</div>
+    >
+      <img
+        src="/img/CPO.png"
+        alt="GHN CPO"
+        style={{
+          maxHeight: "520px",
+          width: "auto",
+          objectFit: "contain",
+          
+          display: "block",      // ĐỔI TỪ FLEX SANG BLOCK
+          marginBottom: 0,
+          paddingRight: "5rem",
+          //marginBottom: "-80px",
+          filter: "drop-shadow(0 10px 30px rgba(0,0,0,0.4))",
+        }}
+      />
+    </motion.div>
+  </div>
     </section>
   );
 }

@@ -154,9 +154,7 @@ function InteractiveList({ title, items, colors }: InteractiveListProps) {
           transition: "color 0.2s",
         }}
       >
-        {activeIndex !== null
-          ? `${String(activeIndex + 1).padStart(2, "0")} / ${String(items.length).padStart(2, "0")}`
-          : `${String(items.length).padStart(2, "0")} hành động`}
+
       </div>
     </div>
   );
@@ -182,7 +180,7 @@ export default function WhySection() {
           paddingLeft: "2.5rem",
         }}
       >
-        Vì sao tham gia ?
+        EES LÀ GÌ ?
         <span style={{ flex: 1, height: "1px", background: "#E0DDD6" }} />
       </div>
 
@@ -190,50 +188,58 @@ export default function WhySection() {
         {/* Col 1 — Big statement */}
         <div style={{ padding: "3rem 2.5rem", borderRight: "1px solid #E0DDD6" }}>
           <ScrollReveal>
-            <div
-            style={{
+            {/* Title EES */}
+            <div style={{
+              fontFamily: "var(--font-heading)",
+              fontWeight: 700,
+              fontSize: "50px",
+              textTransform: "uppercase",
+              letterSpacing: "-0.04em",
+              lineHeight: 1.0,
+              marginBottom: "3rem",
+            }}>
+              <span style={{ color: "#FF5200" }}>EES</span>{" "}
+              <span style={{ color: "#006FAD" }}>- Khảo sát gắn kết nhân viên.</span>
+            </div>
+
+            {/* 2 cột bên trong */}
+            <div style={{ display: "grid", gridTemplateColumns: "auto 1fr", gap: "3rem" }}>
+              {/* Trái: GHN Nghe Thật Làm Thật */}
+              <div style={{
                 fontFamily: "var(--font-heading)",
                 fontWeight: 700,
-                fontSize: "50px",
+                fontSize: "40px",
                 textTransform: "uppercase",
                 letterSpacing: "-0.04em",
-                lineHeight: 1.0,
-                marginBottom: "1.75rem",
+                lineHeight: 1.15,
+                paddingRight: "2rem",
+                borderRight: "1px solid #E0DDD6",
               }}>
-              <span style={{color:"#FF5200"}}>EES</span> <span style={{color:"#006FAD"}}>- Khảo sát gắn kết nhân viên.</span>
+                <div style={{ color: "#006FAD" }}>GHN</div>
+                <div style={{ color: "#006FAD" }}>Nghe</div>
+                <div style={{ color: "#FF5200" }}>Thật</div>
+                <div style={{ color: "#006FAD" }}>Làm Thật</div>
+              </div>
+
+              {/* Phải: text giải thích */}
+              <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: "1rem" }}>
+                <p style={{ fontSize: "1.05rem", color: "#444", lineHeight: 1.7, margin: 0 }}>
+                  Khảo sát để lắng nghe tâm tư anh chị em đang cảm thấy thế nào khi làm việc tại GHN.
+                  Không phải để đánh giá ai mà để hiểu điều gì đang ổn và điều gì cần tốt hơn.
+                </p>
+                <p style={{ fontSize: "1.05rem", color: "#444", lineHeight: 1.7, margin: 0 }}>
+                  EES không phải khảo sát hình thức. Kết quả năm 2025 trực tiếp
+                  tạo ra 5 hành động cụ thể — từ cải tiến App Tài xế đến chương
+                  trình giữ chân nhân sự Miền Bắc.{" "}
+                  <strong style={{ color: "#0A1F44" }}>
+                    Với hơn 78% nhân viên đã tham gia trên toàn quốc.
+                  </strong>
+                  <br />
+                  <strong style={{ color: "#0A1F44" }}>Năm 2026</strong> — GHN
+                  muốn đi sâu hơn. Và điều đó bắt đầu từ tiếng nói của bạn.
+                </p>
+              </div>
             </div>
-            <div
-              style={{
-                fontFamily: "var(--font-heading)",
-                fontWeight: 700,
-                fontSize: "30px",
-                textTransform: "uppercase",
-                letterSpacing: "-0.04em",
-                lineHeight: 1.0,
-                marginBottom: "1.75rem",
-              }}
-            >
-              <div style={{ color: "#006FAD" }}>GHN</div>
-              <div style={{ color: "#006FAD" }}>Nghe</div>
-              <div style={{ color: "#FF5200" }}>Thật</div>
-              <div style={{ color: "#006FAD" }}>Làm Thật</div>
-            </div>
-            <p style={{ fontSize: "1.05rem", color: "#444", lineHeight: 1.7, maxWidth: "1000px" }}> 
-              Khảo sát đẻ lắng nghe tâm tư anh chị em đang cảm thấy thế nào khi làm việc tại GHN.
-              Không phải để đánh giá ai mà để hiểu điều gì đang ổn và điều gì cần tốt hơn.
-            </p>
-            <br />
-            <p style={{ fontSize: "1.05rem", color: "#444", lineHeight: 1.7, maxWidth: "1000px" }}>
-              EES không phải khảo sát hình thức. Kết quả năm 2025 trực tiếp
-              tạo ra 5 hành động cụ thể — từ cải tiến App Tài xế đến chương
-              trình giữ chân nhân sự Miền Bắc.{" "}
-              <strong style={{ color: "#0A1F44" }}>
-                Với hơn 78% nhân viên đã tham gia trên toàn quốc. <br />
-              </strong>
-              
-              <strong style={{ color: "#0A1F44" }}>Năm 2026</strong> — GHN
-              muốn đi sâu hơn. Và điều đó bắt đầu từ tiếng nói của bạn.
-            </p>
           </ScrollReveal>
         </div>
 

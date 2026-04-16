@@ -112,8 +112,8 @@ export default function Hero() {
             >
               <div
                 style={{
-                  width: "20px",
-                  height: "2px",
+                  width: "0px",
+                  height: "0px",
                   background: "#ff5100",
                   flexShrink: 0,
                 }}
@@ -127,7 +127,7 @@ export default function Hero() {
                   color: "#FF5200",
                 }}
               >
-                EES 2026 — GiaoHangNhanh
+              
               </span>
             </motion.div>
 
@@ -198,10 +198,10 @@ export default function Hero() {
                 fontSize: "clamp(0.82rem, 1.2vw, 1.05rem)",
                 color: "#444444",
                 lineHeight: 1.7,
-                maxWidth: "720px",
+                maxWidth: "900px",
               }}
             >
-              Khảo sát gắn kết nhân viên thường niên của GHN. Ý kiến của bạn là nền tảng để chúng ta cùng xây dựng GHN tốt hơn mỗi năm.
+              Khảo sát gắn kết nhân viên được thực hiện thường niên của GHN. Ý kiến của bạn là nền tảng để chúng ta cùng xây dựng GHN tốt hơn mỗi ngày.
             </motion.p>
           </div>
 
@@ -233,7 +233,7 @@ export default function Hero() {
                     fontWeight: 700,
                     fontSize: "clamp(1.1rem, 2vw, 2rem)",
                     letterSpacing: "-0.04em",
-                    color: "#0A1F44",
+                    color: "#006FAD",
                     lineHeight: 1,
                   }}
                 >
@@ -288,7 +288,7 @@ export default function Hero() {
                 marginBottom: "clamp(0.4rem, 1.5vh, 1.5rem)",
               }}
             >
-              Khai mạc 01/05/2026 — Kết thúc 20/05/2026
+              Bắt đầu 02/05/2026 — Kết thúc 20/05/2026
             </motion.div>
 
             {/* Race title */}
@@ -328,9 +328,9 @@ export default function Hero() {
                 transition={{ delay: 0.85, duration: 0.4 }}
                 style={{
                   fontSize: "clamp(0.6rem, 0.9vw, 0.75rem)",
-                  fontWeight: 700,
+                  fontWeight: 400,
                   letterSpacing: "0.1em",
-                  textTransform: "uppercase",
+                  //textTransform: "uppercase",
                   color: "#fff",
                   marginBottom: "clamp(0.3rem, 1vh, 1rem)",
                   lineHeight: 1.5,
@@ -338,7 +338,7 @@ export default function Hero() {
               >
                 {isExpired
                   ? "Trạng thái"
-                  : <>Cuộc đua tham gia khảo sát — Đơn vị nào về đích đầu tiên?<br />Tổng giải thưởng 25 triệu đồng.</>}
+                  : <>Cuộc đua tham gia khảo sát — Bộ phận nào sẽ về đích đầu tiên?<br /><span style={{ textTransform: "uppercase",fontWeight: 700, }}>Tổng giải thưởng 30 triệu đồng. </span></>}
               </motion.div>
 
               {isExpired ? (

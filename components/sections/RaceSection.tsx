@@ -12,23 +12,23 @@ const PRIZE_BOARDS = [
   },
   {
     letter: "B",
-    name: "Bảng B — Miền Bắc + Trung",
+    name: "Bảng B — Vùng(Bao gồm 14 vùng)",
     unit: "Vùng + Freight Ops. HN",
-    prize: "8.000.000 VNĐ",
+    prize: "5.000.000 VNĐ",
     filled: false,
   },
   {
     letter: "C",
-    name: "Bảng C — Miền Nam",
+    name: "Bảng C — KTC",
     unit: "Vùng + Freight Ops. HCM",
-    prize: "8.000.000 VNĐ",
-    filled: false,
+    prize: "15.000.000 VNĐ",
+    filled: true,
   },
   {
     letter: "D",
     name: "Bảng D — VP & KTC",
     unit: "Văn phòng HO + Các nhánh Freight",
-    prize: "4.000.000 VNĐ",
+    prize: "5.000.000 VNĐ",
     filled: false,
   },
 ];
@@ -325,15 +325,15 @@ export default function RaceSection() {
                         width: "42px",
                         height: "42px",
                         borderRadius: "2px",
-                        background: board.filled ? "#0A1F44" : "transparent",
-                        border: board.filled ? "none" : "2px solid #0A1F44",
+                        background: board.filled ? "#006FAD" : "transparent",
+                        border: board.filled ? "none" : "2px solid #006FAD",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         fontFamily: "var(--font-heading)",
                         fontWeight: 700,
                         fontSize: "1.1rem",
-                        color: board.filled ? "#fff" : "#0A1F44",
+                        color: board.filled ? "#fff" : "#006FAD",
                         flexShrink: 0,
                       }}
                     >
@@ -420,7 +420,7 @@ export default function RaceSection() {
           {/* ── Giải thưởng cá nhân + Gift Strip Bar ── */}
           <div
             style={{
-              background: "linear-gradient(135deg, #FF5200 0%, #FF8C00 50%, #FF5200 100%)",
+              background: "linear-gradient(135deg, #FF5200 0%, #006FAD 50%, #FF5200 100%)",
               borderTop: "1px solid rgba(255,255,255,0.15)",
               width: "100%",
               boxShadow: "inset 0 2px 8px rgba(0,0,0,0.1)",
@@ -472,7 +472,7 @@ export default function RaceSection() {
                 style={{
                   display: "flex",
                   gap: "2rem",
-                  animation: "giftMarquee 25s linear infinite",
+                  animation: "giftMarquee 60s linear infinite",
                   width: "max-content",
                 }}
               >

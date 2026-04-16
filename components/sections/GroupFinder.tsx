@@ -159,7 +159,7 @@ export default function GroupFinder() {
             fontFamily: "var(--font-heading)",
             fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
             fontWeight: 700,
-            lineHeight: 0.95,
+            lineHeight: 1.05,
             letterSpacing: "-0.03em",
             textTransform: "uppercase",
             color: "#006FAD",
