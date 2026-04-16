@@ -54,7 +54,8 @@ export default function RaceSection() {
           style={{
             width: "50%",
             flexShrink: 0,
-            background: "#0A1F44",
+            // background: "#0A1F44",
+            background: "linear-gradient(135deg, #006FAD 0%, #006FAD 50%, #03293f83 100%)", 
             padding: "3.5rem 3rem",
             display: "flex",
             flexDirection: "column",
@@ -155,7 +156,7 @@ export default function RaceSection() {
                   <p
                     style={{
                       fontSize: "0.9rem",
-                      color: "#aaa",
+                      color: "#ffffff",
                       lineHeight: 1.7,
                       maxWidth: "320px",
                     }}
@@ -243,7 +244,7 @@ export default function RaceSection() {
                   <p
                     style={{
                       fontSize: "0.9rem",
-                      color: "#aaa",
+                      color: "#fff",
                       lineHeight: 1.7,
                       maxWidth: "520px",
                     }}
@@ -420,7 +421,7 @@ export default function RaceSection() {
           {/* ── Giải thưởng cá nhân + Gift Strip Bar ── */}
           <div
             style={{
-              background: "linear-gradient(135deg, #FF5200 0%, #006FAD 50%, #FF5200 100%)",
+              background:"linear-gradient(145deg, #03293f83 0%, #006FAD 50%, #006FAD 100%)",
               borderTop: "1px solid rgba(255,255,255,0.15)",
               width: "100%",
               boxShadow: "inset 0 2px 8px rgba(0,0,0,0.1)",

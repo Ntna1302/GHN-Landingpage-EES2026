@@ -68,7 +68,7 @@ const GROUPS = [
 ];
 
 function getStatus(start: string, end: string) {
-  const now = new Date();
+  const now = new Date(2026,5,1);
   const s = new Date(start + "T00:00:00");
   const e = new Date(end + "T23:59:59");
   if (now < s) return "upcoming";
@@ -204,7 +204,7 @@ export default function GroupFinder() {
                 padding: "1.2rem 1rem",
                 borderRight: i < 3 ? "1px solid #E0DDD6" : "none",
                 cursor: "pointer",
-                background: isSel ? "#0A1F44" : "#fff",
+                background: isSel ? "#007ED4" : "#fff",
                 transition: "background 0.2s",
                 userSelect: "none",
               }}
@@ -226,7 +226,7 @@ export default function GroupFinder() {
                   fontSize: "0.95rem",
                   fontWeight: 700,
                   lineHeight: 1.2,
-                  color: isSel ? "#fff" : "#0A1F44",
+                  color: isSel ? "#fff" : "#007ED4",
                   marginBottom: "0.2rem",
                 }}
               >
@@ -287,7 +287,7 @@ export default function GroupFinder() {
                   style={{
                     fontSize: "1.1rem",
                     fontWeight: 700,
-                    color: "#0A1F44",
+                    color: "#007ED4",
                     marginBottom: "0.4rem",
                   }}
                 >
@@ -350,7 +350,7 @@ export default function GroupFinder() {
                   whileTap={{ scale: status === "active" ? 0.97 : 1 }}
                   onClick={handleSurvey}
                   style={{
-                    background: status === "active" ? "#0A1F44" : "#aaa",
+                    background: status === "active" ? "#007ED4" : "#aaa",
                     color: "#fff",
                     border: "none",
                     padding: "0.65rem 1.3rem",

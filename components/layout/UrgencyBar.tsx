@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function UrgencyBar({ onScheduleClick }: Props) {
-  const { days, isExpired } = useCountdown("2026-05-01T00:00:00");
+  const { days, isExpired } = useCountdown("2026-05-02T00:00:00");
 
   return (
     <div

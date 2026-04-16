@@ -39,7 +39,7 @@ export default function QuoteSection() {
             style={{
               fontSize: "6rem",
               lineHeight: 0.8,
-              color: "#FF5200",
+              color: "#fff",
               fontFamily: "Georgia, serif",
               fontWeight: 900,
             }}

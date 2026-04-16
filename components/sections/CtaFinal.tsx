@@ -8,7 +8,7 @@ export default function CtaFinal() {
     <section
       id="cta"
       style={{
-        background: "#0A1F44",
+        background: "#007ED4",
         borderBottom: "1px solid rgba(255,255,255,0.08)",
         position: "relative",
         overflow: "hidden",
@@ -62,7 +62,7 @@ export default function CtaFinal() {
           <p
             style={{
               fontSize: "0.95rem",
-              color: "#aaa",
+              color: "#fff",
               lineHeight: 1.65,
               maxWidth: "440px",
             }}
@@ -105,7 +105,7 @@ export default function CtaFinal() {
             <div
               style={{
                 fontSize: "0.72rem",
-                color: "rgba(255,255,255,0.3)",
+                color: "#fff",
                 textAlign: "center",
               }}
             >

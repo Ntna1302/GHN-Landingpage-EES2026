@@ -61,7 +61,7 @@ export default function Navbar({ onGateClick }: NavbarProps) {
       display: "block",
     }}
   />
-  <span className="ghn-logo-text" style={{ color: "#006FAD", fontSize: "2.15rem" }}>× Bạn Nói, GHN Nghe <span className="ghn-logo-text" style={{ color: "#FF5200", fontSize: "2.15rem" }}>2026</span></span>
+  <span className="ghn-logo-text" style={{ color: "#006FAD", fontSize: "1.75rem" }}>× Bạn Nói, GHN Nghe <span className="ghn-logo-text" style={{ color: "#FF5200", fontSize: "1.75rem" }}>2026</span></span>
 </div>
 
       {/* Nav links — hidden on mobile */}

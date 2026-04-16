@@ -68,7 +68,7 @@ const countdownItem: Variants = {
 };
 
 export default function Hero() {
-  const { days, hours, minutes } = useCountdown("2026-05-01T00:00:00");
+  const { days, hours, minutes } = useCountdown("2026-05-02T00:00:00");
   const isExpired = new Date() >= new Date("2026-05-01T00:00:00");
 
   return (

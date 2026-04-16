@@ -2,7 +2,7 @@
 
 const ITEMS = [
   { text: "EES RACE 2026", accent: false },
-  { text: "01/05 – 20/05/2026", accent: true },
+  { text: "02/05 – 20/05/2026", accent: true },
   { text: "TỔNG GIẢI THƯỞNG", accent: false },
   { text: "30.000.000 VNĐ", accent: true },
   { text: "20.000+ NHÂN VIÊN GHN", accent: false },
@@ -39,7 +39,7 @@ export default function TickerStrip() {
         style={{
           display: "flex",
           alignItems: "center",
-          animation: "ticker 25s linear infinite",
+          animation: "ticker 35s linear infinite",
           whiteSpace: "nowrap",
           willChange: "transform",
         }}
@@ -58,7 +58,7 @@ export default function TickerStrip() {
                   color: (item as { isSep?: boolean }).isSep
                     ? "rgba(255,255,255,0.2)"
                     : item.accent
-                    ? "#F8B200"
+                    ? "#FF5200"
                     : "rgba(255,255,255,0.75)",
                   padding: (item as { isSep?: boolean }).isSep
                     ? "0 0.75rem"

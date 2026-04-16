@@ -30,7 +30,7 @@ export default function GroupsSection() {
               fontSize: "var(--fs-xl)",
               textTransform: "uppercase",
               letterSpacing: "-0.04em",
-              color: "#0A1F44",
+              color: "#007ED4",
               lineHeight: 1.2,
             }}
           >
