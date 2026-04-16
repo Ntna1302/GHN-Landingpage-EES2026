@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Portal from "@/components/Portal";
 
 const GROUPS = [
   {
@@ -102,6 +103,24 @@ export default function GroupFinder() {
     setIframeLoaded(false);
     setProgress(0);
   };
+
+  // Lock body scroll while modal is open (preserves scroll position on close)
+  useEffect(() => {
+    if (modalOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+      document.body.style.top = `-${scrollY}px`;
+      return () => {
+        document.body.style.overflow = "";
+        document.body.style.position = "";
+        document.body.style.width = "";
+        document.body.style.top = "";
+        window.scrollTo(0, scrollY);
+      };
+    }
+  }, [modalOpen]);
 
   return (
     <section
@@ -357,6 +376,7 @@ export default function GroupFinder() {
       </AnimatePresence>
 
       {/* ── Survey Modal (inline, không cần SurveyModal component) ── */}
+      <Portal>
       <AnimatePresence>
         {modalOpen && group && (
           <motion.div
@@ -368,9 +388,9 @@ export default function GroupFinder() {
             style={{
               position: "fixed",
               inset: 0,
-              background: "rgba(10, 31, 68, 0.6)",
-              backdropFilter: "blur(4px)",
-              WebkitBackdropFilter: "blur(4px)",
+              background: "rgba(10, 31, 68, 0.75)",
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -386,10 +406,11 @@ export default function GroupFinder() {
               onClick={(e) => e.stopPropagation()}
               style={{
                 background: "#fff",
-                width: "95vw",
-                maxWidth: "900px",
-                maxHeight: "90vh",
-                borderRadius: "12px",
+                width: "96vw",
+                maxWidth: "1100px",
+                height: "92vh",
+                maxHeight: "92vh",
+                borderRadius: "8px",
                 overflow: "hidden",
                 display: "flex",
                 flexDirection: "column",
@@ -499,7 +520,7 @@ export default function GroupFinder() {
               </div>
 
               {/* Iframe */}
-              <div style={{ position: "relative", background: "#F9F9FB", flex: 1 }}>
+              <div style={{ position: "relative", background: "#F9F9FB", flex: 1, minHeight: 0, overflow: "auto" }}>
                 {!iframeLoaded && (
                   <div
                     style={{
@@ -534,7 +555,8 @@ export default function GroupFinder() {
                   src={`${group.link}?embedded=true`}
                   style={{
                     width: "100%",
-                    height: "clamp(500px, 70vh, 800px)",
+                    height: "100%",
+                    minHeight: "400px",
                     border: "none",
                     display: "block",
                     opacity: iframeLoaded ? 1 : 0,
@@ -568,6 +590,7 @@ export default function GroupFinder() {
           </motion.div>
         )}
       </AnimatePresence>
+      </Portal>
     </section>
   );
 }

@@ -1,7 +1,9 @@
 "use client";
 
+import { useEffect } from "react";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { useCountdown } from "@/hooks/useCountdown";
+import Portal from "@/components/Portal";
 
 const SCHEDULE = [
   {
@@ -98,11 +100,29 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
   const { days, hours, minutes, isExpired } = useCountdown("2026-05-01T00:00:00");
 
   const today = new Date(2026,4,3);
+
+  useEffect(() => {
+    if (open) {
+      const scrollY = window.scrollY;
+      document.body.style.overflow = "hidden";
+      document.body.style.position = "fixed";
+      document.body.style.width = "100%";
+      document.body.style.top = `-${scrollY}px`;
+      return () => {
+        document.body.style.overflow = "";
+        document.body.style.position = "";
+        document.body.style.width = "";
+        document.body.style.top = "";
+        window.scrollTo(0, scrollY);
+      };
+    }
+  }, [open]);
   const hasActiveGroup = SCHEDULE.some((s) => {
     return today >= parseDate(s.start) && today <= parseDate(s.end);
   });
 
   return (
+    <Portal>
     <AnimatePresence>
       {open && (
         <motion.div
@@ -121,7 +141,7 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            zIndex: 999,
+            zIndex: 9999,
             padding: "1rem",
           }}
         >
@@ -391,7 +411,7 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
                     }}
                   >
                     {isActive && (
-                      <div
+                      <div className="active-badge"
                         style={{
                           position: "absolute",
                           top: "8px",
@@ -578,5 +598,6 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
         </motion.div>
       )}
     </AnimatePresence>
+    </Portal>
   );
 }

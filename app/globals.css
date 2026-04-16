@@ -427,6 +427,7 @@ main {
   background: #0A1F44;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   min-height: 500px;
+   overflow: hidden;
 }
 @media (max-width: 900px) {
   .ghn-quote-section {
@@ -534,7 +535,31 @@ main {
   #race .ghn-grid-2col > :first-child { padding: 2.5rem 1.5rem !important; }
   #race .ghn-grid-2col > :last-child { padding: 2.5rem 1.5rem !important; }
 }
-
+@media (max-width: 900px) {
+  .race-left .ghn-block-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}
+@media (max-width: 900px) {
+  .race-left,
+  .race-right {
+    width: 100% !important;
+  }
+  
+  #race > div {
+    flex-direction: column;
+  }
+  
+  .race-left {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  
+  .race-right {
+    border-left: none !important;
+  }
+}
 /* ── AfterSection (Timeline) ── */
 .ghn-after-grid {
   display: grid;
@@ -626,5 +651,15 @@ main {
     flex-wrap: wrap !important;
     gap: 0.5rem !important;
     align-items: center !important;
+  }
+}
+.active-badge {
+  left: 10px;
+  right: auto;
+}
+
+@media (max-width: 768px) {
+  .active-badge {
+    display: none;
   }
 }

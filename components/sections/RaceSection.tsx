@@ -61,7 +61,7 @@ export default function RaceSection() {
             justifyContent: "space-between",
             position: "relative",
             overflow: "hidden",
-          }}
+          }} className="race-left"
         >
           {/* Grid texture */}
           <div
@@ -144,6 +144,7 @@ export default function RaceSection() {
                   Giải thưởng dành cho tập thể :
                 </div>
                 <div
+                className="ghn-block-grid"
                   style={{
                     display: "grid",
                     gridTemplateColumns: "1fr auto",
@@ -165,7 +166,7 @@ export default function RaceSection() {
                   <div style={{ display: "flex", gap: "1.5rem" }}>
                     {[
                       { value: "4", label: "Bảng thi đua" },
-                      { value: "25M", label: "Tổng giải thưởng" },
+                      { value: "30M", label: "Tổng giải thưởng" },
                     ].map(({ value, label }) => (
                       <div
                         key={value}
@@ -230,11 +231,13 @@ export default function RaceSection() {
                   Giải thưởng dành cho cá nhân :
                 </div>
                 <div
+                className="ghn-block-grid"
                   style={{
                     display: "grid",
                     gridTemplateColumns: "1fr",
                     gap: "2rem",
                     alignItems: "end",
+                    
                   }}
                 >
                   <p
@@ -263,7 +266,7 @@ export default function RaceSection() {
             borderLeft: "1px solid #E0DDD6",
             display: "flex",
             flexDirection: "column",
-          }}
+          }} className="race-right"
         >
           {/* Prize rows */}
           <div
@@ -286,7 +289,7 @@ export default function RaceSection() {
                   marginBottom: "1.5rem",
                 }}
               >
-                4 Bảng Thi Đua — Tổng Giải 25.000.000 VNĐ
+                4 Bảng Thi Đua — Tổng Giải 30.000.000 VNĐ
               </div>
 
               <div style={{ background: "linear-gradient(180deg, #FAFAF8 0%, #fff 100%)", borderRadius: "4px", overflow: "hidden" }}>
@@ -407,7 +410,7 @@ export default function RaceSection() {
                     color: "#fff",
                   }}
                 >
-                  25.000.000 VNĐ
+                  30.000.000 VNĐ
                 </span>
               </div>
             </ScrollReveal>
