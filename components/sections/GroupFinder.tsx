@@ -32,7 +32,7 @@ const GROUPS = [
     target: "Mục tiêu ≥70%",
     tabLabel: "Nhóm 1B",
     tabName: "Tài xế vận tải",
-    tabSub: "Tài xế vận tải",
+    tabSub: "Tài xế GXT & Tài Xế Xe Tải",
     link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
   },
   {
