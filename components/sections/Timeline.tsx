@@ -78,7 +78,7 @@ export default function AfterSection() {
       {/* Label */}
       <div
         style={{
-          fontSize: "0.75rem",
+          fontSize: "1.2rem",
           fontWeight: 900,
           letterSpacing: "0.18em",
           textTransform: "uppercase",

@@ -141,7 +141,7 @@ export default function FaqSection() {
       {/* Label */}
       <div
         style={{
-          fontSize: "0.65rem",
+          fontSize: "1.2rem",
           fontWeight: 700,
           letterSpacing: "0.18em",
           textTransform: "uppercase",

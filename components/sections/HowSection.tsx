@@ -36,7 +36,7 @@ export default function HowSection() {
       {/* Label */}
       <div
         style={{
-          fontSize: "0.75rem",
+          fontSize: "1.2rem",
           fontWeight: 700,
           letterSpacing: "0.18em",
           textTransform: "uppercase",
@@ -112,7 +112,7 @@ export default function HowSection() {
             <div
               style={{
                 display: "inline-block",
-                background: "#0A1F44",
+                background: "#007ED4",
                 color: "#fff",
                 fontSize: "0.62rem",
                 fontWeight: 700,
@@ -132,7 +132,7 @@ export default function HowSection() {
               style={{
                 fontSize: "1rem",
                 fontWeight: 700,
-                color: "#0A1F44",
+                color: "#007ED4",
                 letterSpacing: "-0.01em",
                 margin: "0.6rem 0 0.4rem",
               }}

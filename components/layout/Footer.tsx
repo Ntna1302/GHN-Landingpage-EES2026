@@ -28,7 +28,7 @@ export default function Footer() {
             }}
           >
             <span style={{ color: "#FF5200" }}>GHN</span>
-            <span style={{ color: "#0A1F44" }}> × EES RACE 2026</span>
+            <span style={{ color: "#0A1F44" }}> × EES 2026</span>
           </div>
           <p
             style={{
@@ -39,7 +39,7 @@ export default function Footer() {
               marginBottom: "1.25rem",
             }}
           >
-            Khảo sát gắn kết nhân viên thường niên của GiaoHangNhanh — tiếng
+            Khảo sát gắn kết nhân viên thường niên của GiaoHangNhanh với tiếng
             nói của 20.000+ nhân viên định hình tương lai công ty.
           </p>
           <div
@@ -184,9 +184,6 @@ export default function Footer() {
       >
         <span style={{ fontSize: "0.75rem", color: "#888" }}>
           © 2026 GiaoHangNhanh. Nội bộ — Không phát hành ra ngoài.
-        </span>
-        <span style={{ fontSize: "0.75rem", color: "#bbb" }}>
-          Cập nhật lần cuối: 12/04/2026
         </span>
       </div>
     </footer>

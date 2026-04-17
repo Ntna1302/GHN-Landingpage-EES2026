@@ -46,7 +46,7 @@ export default function AnonymitySection() {
           <ScrollReveal>
             <div
               style={{
-                fontSize: "0.75rem",
+                fontSize: "1.2rem",
                 fontWeight: 700,
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
@@ -104,7 +104,8 @@ export default function AnonymitySection() {
                 maxWidth: "380px",
               }}
             >
-              Câu trả lời được ẩn danh hoàn toàn ngay từ lúc gửi. Không tên, không mã NV. Dữ liệu chỉ báo cáo theo nhóm — tối thiểu 5 người — để không ai bị nhận diện cá nhân. Kể cả HR cũng không thấy câu trả lời của từng người.
+              Câu trả lời được ẩn danh. Không tên, không mã NV. Dữ liệu chỉ báo cáo theo nhóm 
+              tối thiểu 5 người để không ai bị nhận diện cá nhân. Kể cả HR cũng không thấy câu trả lời của từng người.
             </p>
 
             {/* Pills */}
@@ -141,7 +142,7 @@ export default function AnonymitySection() {
           <ScrollReveal delay={0.1}>
                   <div
                   style={{
-                    fontSize: "0.75rem",
+                    fontSize: "1.2rem",
                     fontWeight: 900,
                     letterSpacing: "0.18em",
                     textTransform: "uppercase",

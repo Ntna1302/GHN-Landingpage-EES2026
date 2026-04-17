@@ -7,39 +7,54 @@ import Portal from "@/components/Portal";
 const GROUPS = [
   {
     num: "01",
-    code: "Nhóm 1A & 1B",
-    name: "NVPTTT, NVGN (GXT) & Tài xế GXT, TXXT",
-    detail: "NVPTTT (Vùng), NVGN (Freight), Tài xế GXT, TXXT\nLàm khảo sát qua App Driver hoặc quét QR tại bưu cục / kho xuất phát.",
+    code: "Nhóm 1A", 
+    name: "NV Giao nhận",
+    detail: "NVPTTT, NVGN (GTX)\nLàm khảo sát qua App Driver hoặc quét QR tại bưu cục / kho xuất phát.",
     method: "App Driver + QR tại bưu cục",
     date: "08/05 – 20/05/2026",
     start: "2026-05-08",
     end: "2026-05-20",
     target: "Mục tiêu ≥70%",
-    tabLabel: "Nhóm 1A / 1B",
-    tabName: "NVPTTT, NVGN (GXT) & Tài xế GXT, TXXT",
-    tabSub: "NVPTTT, NVGN, Tài xế GXT, TXXT",
+    tabLabel: "Nhóm 1A",
+    tabName: "NV Giao nhận",
+    tabSub: "NVPTTT, NVGN (GTX)",
+    link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
+  },
+    {
+    num: "02",
+    code: "Nhóm 1B",
+    name: "Tài xế vận tải",
+    detail: "Tài xế GXT & Tài Xế Xe Tải\nLàm khảo sát qua App Driver hoặc quét QR tại bưu cục / kho xuất phát.",
+    method: "App Driver + QR tại bưu cục",
+    date: "08/05 – 20/05/2026",
+    start: "2026-05-08",
+    end: "2026-05-20",
+    target: "Mục tiêu ≥70%",
+    tabLabel: "Nhóm 1B",
+    tabName: "Tài xế vận tải",
+    tabSub: "Tài xế vận tải",
     link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
   },
   {
-    num: "02",
+    num: "03",
     code: "Nhóm 2A",
-    name: "Vận hành Kho / KTC",
-    detail: "NVXL, NVPH, Coordinator, Admin KHL, Điều phối\nLàm khảo sát tập trung on-site tại KTC theo ca — EX Team hỗ trợ trực tiếp.",
+    name: "Vận hành Kho",
+    detail: "NVXL (Vùng), NVPH (KTC), Admin (KHL), Warehouse\nLàm khảo sát tập trung on-site tại KTC theo ca — EX Team hỗ trợ trực tiếp.",
     method: "On-site KTC + Tablet + Google Form",
     date: "08/05 – 20/05/2026",
     start: "2026-05-08",
     end: "2026-05-20",
     target: "Mục tiêu ≥70%",
     tabLabel: "Nhóm 2A",
-    tabName: "Vận hành Kho / KTC",
-    tabSub: "NVXL, NVPH, Coordinator, Admin KHL",
+    tabName: "Vận hành Kho",
+    tabSub: "NVXL (Vùng), NVPH (KTC), Admin (KHL), Warehouse",
     link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
   },
   {
-    num: "03",
+    num: "04",
     code: "Nhóm 2B",
     name: "Quản lý Tuyến đầu",
-    detail: "AM, OM, Supervisor, TBC, Team Leader\nNhận link cá nhân qua email hoặc GTalk.",
+    detail: "AM, OM, Supervisor, TBC, Ops. Team Leaders\nNhận link cá nhân qua email hoặc GTalk.",
     method: "Email cá nhân + GTalk + Landing Page",
     date: "01/05 – 07/05/2026",
     start: "2026-05-01",
@@ -47,22 +62,37 @@ const GROUPS = [
     target: "Mục tiêu ≥85%",
     tabLabel: "Nhóm 2B",
     tabName: "Quản lý Tuyến đầu",
-    tabSub: "AM, OM, Supervisor, TBC, Team Leader",
+    tabSub: "AM, OM, Supervisor, TBC, Ops. Team Leaders",
     link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
   },
   {
-    num: "04",
-    code: "Nhóm 3A & 3B",
-    name: "Nhân viên & Quản lý HO",
-    detail: "NV Indirect HO tất cả Khối, Manager và Director\nNhận email cá nhân hóa + GTalk + Mini App.",
+    num: "05",
+    code: "Nhóm 3A",
+    name: "NV Văn phòng",
+    detail: "Khối Hỗ trợ, NV gián tiếp (Indirect)\nNhận email cá nhân hóa + GTalk + Mini App.",
     method: "Email mail-merge + GTalk + Mini App",
     date: "01/05 – 07/05/2026",
     start: "2026-05-01",
     end: "2026-05-07",
     target: "Mục tiêu ≥85%",
-    tabLabel: "Nhóm 3A / 3B",
+    tabLabel: "Nhóm 3A",
     tabName: "Văn phòng HO",
-    tabSub: "NV Indirect, Manager, Director tất cả Khối",
+    tabSub: "Khối Hỗ trợ, NV gián tiếp (Indirect)",
+    link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
+  },
+   {
+    num: "06",
+    code: "Nhóm 3B",
+    name: "Quản lý HO",
+    detail: "Manager & Director các phòng ban\nNhận email cá nhân hóa + GTalk + Mini App.",
+    method: "Email mail-merge + GTalk + Mini App",
+    date: "01/05 – 07/05/2026",
+    start: "2026-05-01",
+    end: "2026-05-07",
+    target: "Mục tiêu ≥85%",
+    tabLabel: "Nhóm 3B",
+    tabName: "Quản lý HO",
+    tabSub: "Manager & Director các phòng ban",
     link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
   },
 ];
@@ -133,7 +163,7 @@ export default function GroupFinder() {
       {/* Label */}
       <div
         style={{
-          fontSize: "0.75rem",
+          fontSize: "1.2rem",
           fontWeight: 700,
           letterSpacing: "0.18em",
           textTransform: "uppercase",
@@ -144,13 +174,14 @@ export default function GroupFinder() {
           marginBottom: "1.5rem",
         }}
       >
-        Bạn thuộc nhóm nào?
+        Bạn thuộc nhóm nào ?
         <span style={{ flex: 1, height: "1px", background: "#E0DDD6" }} />
       </div>
 
       {/* Intro */}
       <div className="ghn-finder-intro">
         <motion.div
+          className="ghn-finder-heading"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -163,12 +194,12 @@ export default function GroupFinder() {
             letterSpacing: "-0.03em",
             textTransform: "uppercase",
             color: "#006FAD",
+            display: "flex",
+            flexDirection: "column",
           }}
         >
-          Tìm
-          <br />
-          Nhóm
-          <br />
+          <span>Tìm</span>
+          <span>Nhóm</span>
           <span style={{ color: "#FF5200" }}>Của Tôi</span>
         </motion.div>
         <motion.div
@@ -182,7 +213,7 @@ export default function GroupFinder() {
             lineHeight: 1.65,
           }}
         >
-          GHN thiết kế 6 bộ câu hỏi khác nhau cho từng nhóm — đảm bảo bạn
+          GHN thiết kế 6 bộ câu hỏi khác nhau cho từng nhóm, đảm bảo bạn
           được hỏi đúng về công việc thực tế của mình. Chọn loại công việc
           của bạn bên dưới để xem lịch và cách làm khảo sát.
         </motion.div>
@@ -202,11 +233,12 @@ export default function GroupFinder() {
               onClick={() => handleSelect(i)}
               style={{
                 padding: "1.2rem 1rem",
-                borderRight: i < 3 ? "1px solid #E0DDD6" : "none",
+                borderRight: (i + 1) % 3 !== 0 ? "1px solid #E0DDD6" : "none",
                 cursor: "pointer",
                 background: isSel ? "#007ED4" : "#fff",
                 transition: "background 0.2s",
                 userSelect: "none",
+                borderBottom: i < 3 ? "1px solid #E0DDD6" : "none",
               }}
             >
               <div

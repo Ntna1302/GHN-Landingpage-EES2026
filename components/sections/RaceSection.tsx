@@ -12,7 +12,7 @@ const PRIZE_BOARDS = [
   },
   {
     letter: "B",
-    name: "Bảng B — Vùng(Bao gồm 14 vùng)",
+    name: "Bảng B — Vùng",
     unit: "Vùng + Freight Ops. HN",
     prize: "5.000.000 VNĐ",
     filled: false,
@@ -26,8 +26,8 @@ const PRIZE_BOARDS = [
   },
   {
     letter: "D",
-    name: "Bảng D — VP & KTC",
-    unit: "Văn phòng HO + Các nhánh Freight",
+    name: "Bảng D — VP",
+    unit: "Văn phòng HO",
     prize: "5.000.000 VNĐ",
     filled: false,
   },
@@ -38,8 +38,8 @@ const GIFT_IMAGES = [
   { src: "/img/gifts/gift-02.png", alt: "Áo khỉ" },
   { src: "/img/gifts/gift-03.png", alt: "Áo Polo Tay Dài" },
   { src: "/img/gifts/gift-04.png", alt: "Áo Polo Tay Ngắn" },
-  { src: "/img/gifts/gift-05.png", alt: "Túi Tote" },
-  { src: "/img/gifts/gift-06.png", alt: "Túi Bao Tử" },
+  { src: "/img/gifts/gift-05.png", alt: "Túi Bao Tử" },
+  // { src: "/img/gifts/gift-06.png", alt: "" },
 ];
 
 export default function RaceSection() {
@@ -59,7 +59,8 @@ export default function RaceSection() {
             padding: "3.5rem 3rem",
             display: "flex",
             flexDirection: "column",
-            justifyContent: "space-between",
+            justifyContent: "flex-start",
+            gap: "3rem",
             position: "relative",
             overflow: "hidden",
           }} className="race-left"
@@ -164,7 +165,7 @@ export default function RaceSection() {
                     Khối phòng ban đạt tỉ lệ tham gia cao nhất và làm khảo sát nhanh nhất sẽ có cơ hội nhận thưởng. <br />
                     Cùng nhau tạo nên sự khác biệt – mỗi phiếu khảo sát đều có giá trị.
                   </p>
-                  <div style={{ display: "flex", gap: "1.5rem" }}>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", minWidth: "260px" }}>
                     {[
                       { value: "4", label: "Bảng thi đua" },
                       { value: "30M", label: "Tổng giải thưởng" },
@@ -235,10 +236,9 @@ export default function RaceSection() {
                 className="ghn-block-grid"
                   style={{
                     display: "grid",
-                    gridTemplateColumns: "1fr",
+                    gridTemplateColumns: "1fr auto",
                     gap: "2rem",
                     alignItems: "end",
-                    
                   }}
                 >
                   <p
@@ -246,12 +246,50 @@ export default function RaceSection() {
                       fontSize: "0.9rem",
                       color: "#fff",
                       lineHeight: 1.7,
-                      maxWidth: "520px",
+                      maxWidth: "320px",
                     }}
                   >
                     Mỗi cá nhân tham gia khảo sát không chỉ góp phần tạo nên thành công chung, mà còn có cơ hội nhận những phần quà hấp dẫn. <br />
                     Tốc độ hoàn thành, mức độ tham gia và tinh thần đóng góp sẽ là yếu tố quyết định để ghi danh những cá nhân xuất sắc nhất.
                   </p>
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", minWidth: "260px" }}>
+                    <div
+                      style={{
+                        gridColumn: "1 / -1",
+                        textAlign: "center",
+                        background: "rgba(255,255,255,0.06)",
+                        border: "1px solid rgba(255,255,255,0.1)",
+                        borderRadius: "6px",
+                        padding: "1rem 1.25rem",
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontFamily: "var(--font-heading)",
+                          fontWeight: 700,
+                          fontSize: "clamp(2.8rem, 4vw, 3.5rem)",
+                          letterSpacing: "-0.04em",
+                          color: "#fff",
+                          lineHeight: 1,
+                          textShadow: "0 0 20px rgba(248,178,0,0.3)",
+                        }}
+                      >
+                        200
+                      </div>
+                      <div
+                        style={{
+                          fontSize: "0.65rem",
+                          color: "rgba(255,255,255,0.4)",
+                          textTransform: "uppercase",
+                          letterSpacing: "0.1em",
+                          fontWeight: 600,
+                          marginTop: "0.4rem",
+                        }}
+                      >
+                        Phần thưởng hấp dẫn
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>

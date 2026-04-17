@@ -63,8 +63,8 @@ export default function QuoteSection() {
               marginTop: "1rem",
             }}
           >
-            Kết quả EES là dữ liệu quý nhất tôi có để ra quyết định đúng.
-            Khi bạn điền thật — tôi hành động đúng chỗ. Khi không — tôi ra
+            Kết quả EES là dữ liệu quý nhất giúp tôi có để ra quyết định đúng.
+            Khi bạn điền thật tôi hành động đúng chỗ. Khi không,tôi ra
             quyết định dựa trên phỏng đoán. Và phỏng đoán thì ít khi đúng.
           </motion.div>
         </div>
@@ -79,13 +79,13 @@ export default function QuoteSection() {
             fontWeight: 700,
             letterSpacing: "0.12em",
             textTransform: "uppercase",
-            color: "rgba(255,255,255,0.35)",
+            color: "rgb(255, 255, 255)",
             marginTop: "2rem",
             paddingTop: "1.5rem",
             borderTop: "1px solid rgba(255,255,255,0.08)",
           }}
         >
-          CPO — GiaoHangNhanh · EES 2026
+          CPO — GiaoHangNhanh · LÊ THỊ ĐOAN TRINH
         </motion.div>
       </div>
 
@@ -129,7 +129,7 @@ export default function QuoteSection() {
             className="ghn-quote-stat-value"
             style={{
               fontFamily: "var(--font-heading)",
-              fontSize: "clamp(1.8rem, 4vw, 3rem)",
+              fontSize: "clamp(1.8rem, 4vw, 2.5rem)",
               fontWeight: 700,
               color: "#fff",
               letterSpacing: "-0.04em",

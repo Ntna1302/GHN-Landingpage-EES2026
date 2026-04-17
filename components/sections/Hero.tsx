@@ -254,7 +254,7 @@ export default function Hero() {
               >
                 {isExpired
                   ? "Trạng thái"
-                  : <>Cuộc đua tham gia khảo sát — Bộ phận nào sẽ về đích đầu tiên?<br /><span style={{ textTransform: "uppercase", fontWeight: 700, }}>Tổng giải thưởng 30 triệu đồng. </span></>}
+                  : <>Cuộc đua tham gia khảo sát. Bộ phận nào sẽ về đích đầu tiên ?<br /><span style={{ textTransform: "uppercase", fontWeight: 700, }}>Tổng giải thưởng 30 triệu đồng. </span></>}
               </motion.div>
 
               {isExpired ? (
@@ -283,13 +283,13 @@ export default function Hero() {
                     style={{
                       fontFamily: "var(--font-heading)",
                       fontWeight: 700,
-                      fontSize: "1rem",
+                      fontSize: "1.6rem",
                       textTransform: "uppercase",
                       letterSpacing: "0.05em",
                       color: "#fff",
                     }}
                   >
-                    ĐANG DIỄN RA
+                    CUỘC ĐUA ĐANG DIỄN RA
                   </span>
                 </motion.div>
               ) : (

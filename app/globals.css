@@ -311,7 +311,7 @@ main {
     display: none !important;
   }
 
-  .ghn-hero-right {
+  .ghn-hero-pad {
     order: -1;
   }
 
@@ -731,7 +731,7 @@ main {
 
 .ghn-finder-tabs {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   border: 1px solid var(--color-border);
 }
 
@@ -750,6 +750,13 @@ main {
   .ghn-finder-intro {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
+  }
+
+  .ghn-finder-heading {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 0 0.35em !important;
+    align-items: baseline !important;
   }
 
   .ghn-finder-tabs {
@@ -1071,7 +1078,7 @@ main {
 /* WhySection inner typography */
 @media (max-width: 900px) {
   #why .ghn-grid-3col>div:first-child .ghn-why-ees-title {
-    font-size: 2rem !important;
+    font-size: 1.5rem !important;
   }
 
   #why .ghn-grid-3col>div:first-child .ghn-why-inner-grid {
@@ -1085,16 +1092,34 @@ main {
     padding-right: 0 !important;
     border-bottom: 1px solid #E0DDD6 !important;
     padding-bottom: 1rem !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    gap: 0 0.35em !important;
+    align-items: baseline !important;
+  }
+  #why .ghn-grid-3col>div:first-child .ghn-why-sidebar div {
+    display: inline !important;
   }
 }
 
 @media (max-width: 640px) {
   #why .ghn-grid-3col>div:first-child .ghn-why-ees-title {
     font-size: 1.5rem !important;
+    margin-bottom: 0.5rem !important;
+
   }
 
   #why .ghn-grid-3col>div:first-child .ghn-why-sidebar {
     font-size: 1.4rem !important;
   }
+}
+.ghn-why-ees-title {
+  letter-spacing: -0.04em;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  text-overflow: ellipsis;
 }
 

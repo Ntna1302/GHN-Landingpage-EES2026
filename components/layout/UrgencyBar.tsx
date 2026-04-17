@@ -14,7 +14,7 @@ export default function UrgencyBar({ onScheduleClick }: Props) {
     <div
       className="ghn-urgency-bar"
       style={{
-        background: "#0A1F44",
+        background: "linear-gradient(90deg, #ffffff29 -200%, #006FAD 50%, #006FAD 200%)",
         color: "#fff",
         display: "flex",
         alignItems: "center",
@@ -53,7 +53,7 @@ export default function UrgencyBar({ onScheduleClick }: Props) {
           }}
         />
 
-        <span style={{ color: "rgba(255,255,255,0.5)" }}>EES Race 2026</span>
+        <span style={{ color: "rgba(255,255,255,0.5)" }}>EES 2026</span>
         <span style={{ color: "rgba(255,255,255,0.2)" }}>·</span>
 
         {isExpired ? (

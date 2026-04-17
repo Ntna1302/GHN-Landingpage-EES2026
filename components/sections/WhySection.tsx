@@ -168,7 +168,7 @@ export default function WhySection() {
     >
       <div
         style={{
-          fontSize: "0.75rem",
+          fontSize: "1.2rem",
           fontWeight: 900,
           letterSpacing: "0.18em",
           textTransform: "uppercase",
@@ -194,9 +194,6 @@ export default function WhySection() {
               fontWeight: 700,
               fontSize: "clamp(1rem, 2.8vw, 50px)",
               textTransform: "uppercase",
-              letterSpacing: "-0.04em",
-              lineHeight: 1.0,
-              marginBottom: "3rem",
             }}>
               <span style={{ color: "#FF5200" }}>EES</span>{" "}
               <span style={{ color: "#006FAD" }}>- Khảo sát gắn kết nhân viên.</span>

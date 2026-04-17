@@ -8,7 +8,7 @@ export default function CtaFinal() {
     <section
       id="cta"
       style={{
-        background: "#007ED4",
+        background: "linear-gradient(90deg, #cfccccb6 -100%, #007ED4 50%, #007ED4 100%)",
         borderBottom: "1px solid rgba(255,255,255,0.08)",
         position: "relative",
         overflow: "hidden",
@@ -35,11 +35,11 @@ export default function CtaFinal() {
               fontWeight: 700,
               letterSpacing: "0.14em",
               textTransform: "uppercase",
-              color: "rgba(255,255,255,0.35)",
+              color: "#FFF",
               marginBottom: "1.5rem",
             }}
           >
-            EES RACE 2026 · GiaoHangNhanh
+            EES 2026 · BẠN NÓI,GHN NGHE
           </div>
 
           <h2
@@ -56,7 +56,7 @@ export default function CtaFinal() {
           >
             <div style={{ color: "#fff" }}>Sẵn Sàng</div>
             <div style={{ color: "#fff" }}>Nói Thật</div>
-            <div style={{ color: "#FF5200" }}>Chưa?</div>
+            <div style={{ color: "#fc7739" }}>Chưa?</div>
           </h2>
 
           <p
