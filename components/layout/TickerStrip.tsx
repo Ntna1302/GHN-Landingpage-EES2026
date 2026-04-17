@@ -27,8 +27,9 @@ export default function TickerStrip() {
     <div
       className="ghn-ticker-wrap"
       style={{
-        background: "linear-gradient(90deg, #ffffff29 -200%, #006FAD 50%, #006FAD 200%)",
-        borderBottom: "1px solid rgba(255,255,255,0.08)",
+        background: "linear-gradient(90deg, #ff51009d -50%, #FF5200 50%, #FF5200 75.62%)",
+
+        borderBottom: "1px solid rgb(255, 255, 255)",
         overflow: "hidden",
         height: "35px",
         display: "flex",
@@ -58,7 +59,7 @@ export default function TickerStrip() {
                   color: (item as { isSep?: boolean }).isSep
                     ? "rgba(255,255,255,0.2)"
                     : item.accent
-                    ? "#f8b07a"
+                    ? "#fcb500"
                     : "rgb(255, 255, 255)",
                   padding: (item as { isSep?: boolean }).isSep
                     ? "0 0.75rem"

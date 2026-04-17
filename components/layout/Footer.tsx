@@ -28,7 +28,7 @@ export default function Footer() {
             }}
           >
             <span style={{ color: "#FF5200" }}>GHN</span>
-            <span style={{ color: "#0A1F44" }}> × EES 2026</span>
+            <span style={{ color: "#007ED4" }}> × EES 2026</span>
           </div>
           <p
             style={{
@@ -37,9 +37,10 @@ export default function Footer() {
               lineHeight: 1.65,
               maxWidth: "100%",
               marginBottom: "1.25rem",
+              textAlign: "justify",
             }}
           >
-            Khảo sát gắn kết nhân viên thường niên của GiaoHangNhanh với tiếng
+            Khảo sát gắn kết nhân viên thường niên của GiaoHangNhanh. <br /> Cùng với tiếng
             nói của 20.000+ nhân viên định hình tương lai công ty.
           </p>
           <div
@@ -121,7 +122,7 @@ export default function Footer() {
         </div>
 
         {/* Docs col */}
-        <div
+        {/* <div
           style={{
             borderLeft: "1px solid #E0DDD6",
             paddingLeft: "2rem",
@@ -166,7 +167,7 @@ export default function Footer() {
               → {item}
             </a>
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* Bottom bar */}

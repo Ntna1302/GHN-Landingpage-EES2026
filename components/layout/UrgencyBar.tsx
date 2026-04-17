@@ -14,7 +14,7 @@ export default function UrgencyBar({ onScheduleClick }: Props) {
     <div
       className="ghn-urgency-bar"
       style={{
-        background: "linear-gradient(90deg, #ffffff29 -200%, #006FAD 50%, #006FAD 200%)",
+        background: "linear-gradient(90deg, #ff51009d -50%, #FF5200 50%, #FF5200 75.62%)",
         color: "#fff",
         display: "flex",
         alignItems: "center",
@@ -45,7 +45,7 @@ export default function UrgencyBar({ onScheduleClick }: Props) {
           style={{
             width: "6px",
             height: "6px",
-            background: isExpired ? "#22C55E" : "#F8B200",
+            background: isExpired ? "#22C55E" : "#007ED4",
             borderRadius: "50%",
             display: "inline-block",
             animation: "blink 1.4s ease-in-out infinite",
@@ -53,18 +53,18 @@ export default function UrgencyBar({ onScheduleClick }: Props) {
           }}
         />
 
-        <span style={{ color: "rgba(255,255,255,0.5)" }}>EES 2026</span>
-        <span style={{ color: "rgba(255,255,255,0.2)" }}>·</span>
+        <span style={{ color: "#F5F2F2" }}>EES 2026</span>
+        <span style={{ color: "rgba(255, 255, 255, 0.86)" }}>·</span>
 
         {isExpired ? (
           <span style={{ color: "#F8B200" }}>Đang diễn ra</span>
         ) : (
           <>
-            <span style={{ color: "#fff" }}>Bắt đầu 02/05</span>
-            <span className="ghn-urgency-days"  style={{ color: "rgba(255,255,255,0.2)" }}>·</span>
+            <span style={{ color: "#F5F2F2" }}>Bắt đầu 02/05</span>
+            <span className="ghn-urgency-days"  style={{ color: "rgba(255, 255, 255, 0.73)" }}>·</span>
             <span
                className="ghn-urgency-days"
-              style={{ color: "#F8B200" }}
+              style={{ color: "#F5F2F2" }}
             >
               {days} ngày còn lại
             </span>
@@ -88,8 +88,8 @@ export default function UrgencyBar({ onScheduleClick }: Props) {
         whileTap={{ scale: 0.97 }}
         onClick={onScheduleClick}
         style={{
-          background: "#FF5200",
-          color: "#fff",
+          background: "#fff",
+          color: "#FF5200",
           padding: "0.3rem 0.9rem",
           fontSize: "0.65rem",
           fontWeight: 700,

@@ -85,7 +85,7 @@ export default function QuoteSection() {
             borderTop: "1px solid rgba(255,255,255,0.08)",
           }}
         >
-          CPO — GiaoHangNhanh · LÊ THỊ ĐOAN TRINH
+          CPO — Phó Tổng Giám Đốc Khối Nhân Lực · Bà LÊ THỊ ĐOAN TRINH
         </motion.div>
       </div>
 

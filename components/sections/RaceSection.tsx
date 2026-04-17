@@ -152,7 +152,7 @@ export default function RaceSection() {
                     display: "grid",
                     gridTemplateColumns: "1fr auto",
                     gap: "2rem",
-                    alignItems: "end",
+                    alignItems: "center",
                   }}
                 >
                   <p
@@ -161,11 +161,12 @@ export default function RaceSection() {
                       color: "#ffffff",
                       lineHeight: 1.7,
                       maxWidth: "320px",
+                      textAlign: "justify",
                     }}
                   >
                     Khối phòng ban đạt tỉ lệ tham gia cao nhất và làm khảo sát nhanh nhất sẽ có cơ hội nhận thưởng. <br />
                     Cùng nhau tạo nên sự khác biệt, mỗi phiếu khảo sát đều 
-                    <br />có giá trị.
+                    có giá trị.
                   </p>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", minWidth: "260px" }}>
                     {[
@@ -249,6 +250,7 @@ export default function RaceSection() {
                       color: "#fff",
                       lineHeight: 1.7,
                       maxWidth: "320px",
+                      textAlign: "justify",
                     }}
                   >
                     Mỗi cá nhân tham gia khảo sát không chỉ góp phần tạo nên thành công chung, mà còn có cơ hội nhận những phần quà hấp dẫn. <br />
