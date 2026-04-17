@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useCountdown } from "@/hooks/useCountdown";
+import { filter } from "framer-motion/m";
 
 const STATS = [
   { value: "≥ 75%", label: "Mục tiêu tham gia" },
@@ -180,7 +181,7 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.3, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           style={{
-            background: "#FF5200",
+            background: "linear-gradient(122.61deg, #DEF0FF -55%, #006FAD 36.56%, #006FAD 75.62%)",
             padding: "clamp(1.5rem, 3vw, 2.5rem)",
             display: "flex",
             flexDirection: "column",
@@ -203,6 +204,7 @@ export default function Hero() {
                 textTransform: "uppercase",
                 color: "rgba(255,255,255,0.65)",
                 marginBottom: "clamp(0.4rem, 1.5vh, 1.5rem)",
+                whiteSpace: "nowrap",
               }}
             >
               Bắt đầu 02/05/2026 — Kết thúc 20/05/2026
@@ -312,7 +314,7 @@ export default function Hero() {
                       key={label}
                       variants={countdownItem}
                       style={{
-                        background: "rgba(255,255,255,0.15)",
+                        background: "linear-gradient(-90deg, #fffbfb -100%, #FF5200 36.56%, #FF5200 75.62%)",
                         padding: "clamp(0.75rem, 1.5vw, 1.25rem) clamp(0.5rem, 1vw, 1rem)",
                         textAlign: "center",
                         borderRadius: "4px",
@@ -384,7 +386,7 @@ export default function Hero() {
               textTransform: "uppercase",
               letterSpacing: "0.06em",
               textDecoration: "none",
-              borderRadius: "6px",
+              borderRadius: "10px",
               alignSelf: "flex-start",
             }}
           >

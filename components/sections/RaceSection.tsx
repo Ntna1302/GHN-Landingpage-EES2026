@@ -60,7 +60,7 @@ export default function RaceSection() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "flex-start",
-            gap: "3rem",
+              // gap: "3rem",
             position: "relative",
             overflow: "hidden",
           }} className="race-left"
@@ -105,6 +105,7 @@ export default function RaceSection() {
               </div>
 
               <div
+              className="race-is-on"
                 style={{
                   fontFamily: "var(--font-heading)",
                   fontWeight: 700,
@@ -115,7 +116,7 @@ export default function RaceSection() {
                 }}
               >
                 <div style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)", color: "#fff" }}>THE</div>
-                <div style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)", color: "#FF5200" }}>RACE</div>
+                <div style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)", color: "#fc7739" }}>RACE</div>
                 <div style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)", color: "#fff" }}>IS ON</div>
               </div>
             </ScrollReveal>
@@ -163,7 +164,8 @@ export default function RaceSection() {
                     }}
                   >
                     Khối phòng ban đạt tỉ lệ tham gia cao nhất và làm khảo sát nhanh nhất sẽ có cơ hội nhận thưởng. <br />
-                    Cùng nhau tạo nên sự khác biệt – mỗi phiếu khảo sát đều có giá trị.
+                    Cùng nhau tạo nên sự khác biệt, mỗi phiếu khảo sát đều 
+                    <br />có giá trị.
                   </p>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", minWidth: "260px" }}>
                     {[
@@ -238,7 +240,7 @@ export default function RaceSection() {
                     display: "grid",
                     gridTemplateColumns: "1fr auto",
                     gap: "2rem",
-                    alignItems: "end",
+                    alignItems: "center",
                   }}
                 >
                   <p
@@ -250,12 +252,16 @@ export default function RaceSection() {
                     }}
                   >
                     Mỗi cá nhân tham gia khảo sát không chỉ góp phần tạo nên thành công chung, mà còn có cơ hội nhận những phần quà hấp dẫn. <br />
-                    Tốc độ hoàn thành, mức độ tham gia và tinh thần đóng góp sẽ là yếu tố quyết định để ghi danh những cá nhân xuất sắc nhất.
+                    Tốc độ hoàn thành, mức độ tham gia và tinh thần đóng góp sẽ là yếu tố quyết định để <br />ghi danh những cá nhân xuất sắc nhất.
                   </p>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", minWidth: "260px" }}>
                     <div
                       style={{
                         gridColumn: "1 / -1",
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
                         textAlign: "center",
                         background: "rgba(255,255,255,0.06)",
                         border: "1px solid rgba(255,255,255,0.1)",
@@ -274,7 +280,7 @@ export default function RaceSection() {
                           textShadow: "0 0 20px rgba(248,178,0,0.3)",
                         }}
                       >
-                        200
+                        + 200
                       </div>
                       <div
                         style={{
@@ -286,7 +292,7 @@ export default function RaceSection() {
                           marginTop: "0.4rem",
                         }}
                       >
-                        Phần thưởng hấp dẫn
+                        Phần Quà hấp dẫn
                       </div>
                     </div>
                   </div>

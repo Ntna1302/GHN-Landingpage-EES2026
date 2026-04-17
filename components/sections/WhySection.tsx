@@ -5,12 +5,12 @@ import { color, motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
 
 const EES_2025_RESULTS = [
-  "App Tài xế — nâng cấp giao diện.",
-  "Quy trình chụp POD — bớt 2 bước phức tạp.",
-  "Miền Bắc — chương trình giữ chân nhân sự đã chạy.",
+  "App Tài xế được nâng cấp giao diện.",
+  "Quy trình chụp POD đã lượt bỏ 2 bước phức tạp.",
+  "Miền Bắc với chương trình giữ chân nhân sự đã chạy.",
   "Cải thiện suất ăn và hỗ trợ thêm chi phí cho NV tại KTC.",
-  "Nâng cao sức khỏe tinh thần - thể chất cho nhóm NV gặp bất ổn về Sức khỏe.",
-  "Quy trình cấp thiết bị IT — đã có rà soát cùng Mua hàng & Tài chính.",
+  "Nâng cao sức khỏe tinh thần và thể chất cho nhóm NV gặp bất ổn về Sức khỏe.",
+  "Quy trình cấp thiết bị IT đã có rà soát cùng Mua hàng & Tài chính.",
 ];
 
 const EES_2026_USAGE = [
@@ -226,14 +226,14 @@ export default function WhySection() {
                 </p>
                 <p style={{ fontSize: "1.05rem", color: "#444", lineHeight: 1.7, margin: 0 }}>
                   EES không phải khảo sát hình thức. Kết quả năm 2025 trực tiếp
-                  tạo ra 5 hành động cụ thể — từ cải tiến App Tài xế đến chương
+                  tạo ra 5 hành động cụ thể từ cải tiến App Tài xế đến chương
                   trình giữ chân nhân sự Miền Bắc.{" "}
                   <strong style={{ color: "#0A1F44" }}>
-                    Với hơn 78% nhân viên đã tham gia trên toàn quốc.
+                    Với hơn 78% nhân viên toàn công ty đã tham gia.
                   </strong>
                   <br />
-                  <strong style={{ color: "#0A1F44" }}>Năm 2026</strong> — GHN
-                  muốn đi sâu hơn. Và điều đó bắt đầu từ tiếng nói của bạn.
+                  <strong style={{ color: "#0A1F44" }}>Năm 2026</strong> GHN
+                  muốn đi xa hơn. Và điều đó bắt đầu từ tiếng nói của bạn.
                 </p>
               </div>
             </div>

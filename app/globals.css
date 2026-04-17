@@ -480,7 +480,7 @@ main {
   }
 
   .ghn-logo-text {
-    font-size: 0.85rem !important;
+    font-size: 1.5rem !important;
   }
 
   .ghn-nav-cta {
@@ -512,7 +512,7 @@ main {
   padding: 0;
 }
 .ghn-hero-line-2 {
-  margin-top: 25px;
+  margin-top: 28px;
 }
 /* Màu xanh GHN cho BẠN / NÓI / NGHE */
 .ghn-hero-line-solid {
@@ -544,7 +544,13 @@ main {
 }
 @media (max-width: 440px) {
   .ghn-hero-line-2 {
-     margin-top: 5px;
+    margin-top: 5px;
+    padding-top: 5px;
+  }
+}
+@media (max-width: 640px) {
+  .ghn-hero-line-2 {
+     margin-top: 10px;
   }
 }
 @media (max-width: 400px) {
@@ -860,6 +866,7 @@ main {
 @media (max-width: 640px) {
   #race .ghn-grid-2col> :first-child {
     padding: 2.5rem 1.5rem !important;
+    
   }
 
   #race .ghn-grid-2col> :last-child {
@@ -890,6 +897,16 @@ main {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   }
 
+  .race-is-on {
+    text-align: center !important;
+    line-height: 3rem !important;
+  }
+
+  .race-is-on div {
+    font-size: clamp(1.5rem, 10vw, 5rem) !important;
+
+  }
+
   .race-right {
     border-left: none !important;
   }
@@ -910,7 +927,15 @@ main {
     height: 36px !important;
     font-size: 0.9rem !important;
   }
+.race-is-on {
+    text-align: center !important;
+    line-height: 3rem !important;
+  }
 
+  .race-is-on div {
+    font-size: clamp(1.5rem, 10vw, 5rem) !important;
+
+  }
   /* Prize amount full width */
   .race-right .ghn-prize-row>div:last-child {
     align-self: flex-end !important;
@@ -1119,7 +1144,8 @@ main {
   line-height: 1;
   white-space: nowrap;
   overflow: hidden;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+   padding-top: 0.5rem; 
   text-overflow: ellipsis;
 }
 

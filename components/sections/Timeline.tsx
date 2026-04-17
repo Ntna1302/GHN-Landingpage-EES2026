@@ -80,7 +80,7 @@ export default function AfterSection() {
         style={{
           fontSize: "1.2rem",
           fontWeight: 900,
-          letterSpacing: "0.18em",
+          letterSpacing: "0.15em",
           textTransform: "uppercase",
           color: "#FF5200",
           display: "flex",
@@ -89,7 +89,7 @@ export default function AfterSection() {
           marginBottom: "1.5rem",
         }}
       >
-        Sau khảo sát — GHN sẽ làm gì?
+        Sau khảo sát GHN sẽ làm gì?
         <span style={{ flex: 1, height: "1px", background: "#E0DDD6" }} />
       </div>
 

@@ -199,7 +199,7 @@ export default function AnonymitySection() {
                       fontSize: "1rem",
                       textTransform: "uppercase",
                       letterSpacing: "-0.01em",
-                      color: "#0A1F44",
+                      color: "#007ED4",
                       marginBottom: "0.5rem",
                     }}
                   >
