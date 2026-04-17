@@ -212,10 +212,10 @@ export default function WhySection() {
                 paddingRight: "2rem",
                 borderRight: "1px solid #E0DDD6",
               }}>
-                <div style={{ color: "#006FAD" }}>GHN</div>
-                <div style={{ color: "#006FAD" }}>Nghe</div>
-                <div style={{ color: "#FF5200" }}>Thật</div>
-                <div style={{ color: "#006FAD" }}>Làm Thật</div>
+                <div style={{ color: "#0A1F44" }}>GHN</div>
+                <div style={{ color: "#0A1F44" }}>Nghe</div>
+                <div style={{ color: "#0A1F44" }}>Thật</div>
+                <div style={{ color: "#0A1F44" }}>Làm Thật</div>
               </div>
 
               {/* Phải: text giải thích */}

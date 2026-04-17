@@ -14,29 +14,29 @@ const FAQ_LEFT = [
   },
   {
     q: "Tôi không có điện thoại thông minh thì làm sao?",
-    a: "EX Team/HRBP sẽ on-site trực tiếp tại các KTC và bưu cục lớn — mang theo tablet để hỗ trợ. Bạn cũng có thể nhờ quản lý/HRBP tại đơn vị hỗ trợ truy cập link từ máy tính để thực hiện khảo sát.",
+    a: "EX Team/HRBP sẽ on-site trực tiếp tại các KTC và bưu cục lớn, mang theo tablet để hỗ trợ. Bạn cũng có thể nhờ quản lý/HRBP tại đơn vị hỗ trợ truy cập link từ máy tính để thực hiện khảo sát.",
   },
   {
     q: "Tôi bỏ giữa chừng có sao không?",
-    a: "Khảo sát lưu tự động. Bạn có thể quay lại để tiếp tục làm khảo sát. Nếu thoát ra, bạn cần mở link mới từ đầu — nhưng chỉ mất thêm 10 phút.",
+    a: "Khảo sát lưu tự động. Bạn có thể quay lại để tiếp tục làm khảo sát. Nếu thoát ra, bạn cần mở link mới từ đầu và chỉ mất 10 phút để hoàn thành.",
   },
 ];
 
 const FAQ_RIGHT = [
   {
     q: "Kết quả EES được dùng như thế nào?",
-    a: "Kết quả được phân tích theo 5 tiêu chí gắn kết và tổng hợp thành báo cáo chi tiết cho từng Khối/Phòng ban. Action Plan được trình CPO/BOD tháng 6 và công bố toàn công ty tháng 7/2026.",
+    a: "Kết quả khảo sát được phân tích theo 5 tiêu chí gắn kết, từ đó xây dựng báo cáo chi tiết cho từng Khối/Phòng ban.Các kế hoạch hành động sẽ được trình Ban Điều hành trong tháng 6 và công bố rộng rãi toàn công ty vào tháng 7/2026..",
   },
   {
     q: "Tại sao có 6 bộ câu hỏi khác nhau?",
     a: "Vì công việc của shipper, nhân viên kho và nhân viên văn phòng hoàn toàn khác nhau. Dùng chung một bộ câu hỏi sẽ không phản ánh đúng thực tế của từng nhóm. Mỗi bộ có 25-26 câu phù hợp với trải nghiệm cụ thể của nhóm đó.",
   },
   {
-    q: "EES Race — nếu đơn vị tôi không thắng thì sao?",
+    q: "Nếu đơn vị tôi không thắng thì sao?",
     a: "EES Race là sân chơi để mỗi đơn vị bứt phá, nhưng giá trị không chỉ nằm ở vị trí dẫn đầu. Mỗi phản hồi đều góp phần giúp GHN cải thiện và phát triển tốt hơn. Và nếu đơn vị bạn chạm đích đầu tiên — phần thưởng sẽ là thành quả xứng đáng cho cả team.",
   },
   {
-    q: "Thắc mắc không có trong FAQ — liên hệ ai?",
+    q: "Thắc mắc không có trong FAQ thì liên hệ ai?",
     a: "Liên hệ trực tiếp HRBP của đơn vị bạn — họ được tập huấn đầy đủ về EES 2026. Hoặc nhắn GTalk @EX_Team nếu bạn có câu hỏi cần được giải đáp.",
   },
 ];

@@ -5,29 +5,29 @@ import ScrollReveal from "@/components/ScrollReveal";
 const PRIZE_BOARDS = [
   {
     letter: "A",
-    name: "Bảng A — GXT",
-    unit: "Tài xế vận tải toàn quốc",
-    prize: "5.000.000 VNĐ",
+    name: "Bảng A: Vận hành B2B - Giao Hàng Nặng",
+    unit: "(Các Bộ Phận Vận Hành - Trừ HN và HCM)",
+    prize: "3.000.000 VNĐ",
     filled: true,
   },
   {
     letter: "B",
-    name: "Bảng B — Vùng",
-    unit: "Vùng + Freight Ops. HN",
-    prize: "5.000.000 VNĐ",
+    name: "Bảng B: Vùng ",
+    unit: "(14 Vùng)",
+    prize: "15.000.000 VNĐ",
     filled: false,
   },
   {
     letter: "C",
-    name: "Bảng C — KTC",
-    unit: "Vùng + Freight Ops. HCM",
-    prize: "15.000.000 VNĐ",
+    name: "Bảng C: Kho Trung Chuyển",
+    unit: "(04 cụm KTC lớn)",
+    prize: "8.000.000 VNĐ",
     filled: true,
   },
   {
     letter: "D",
-    name: "Bảng D — VP",
-    unit: "Văn phòng HO",
+    name: "Bảng D: Văn Phòng",
+    unit: "(Các khối Phòng ban HO)",
     prize: "5.000.000 VNĐ",
     filled: false,
   },
@@ -82,7 +82,7 @@ export default function RaceSection() {
             <ScrollReveal>
               <div
                 style={{
-                  fontSize: "0.7rem",
+                  fontSize: "1rem",
                   fontWeight: 700,
                   letterSpacing: "0.14em",
                   textTransform: "uppercase",
@@ -111,13 +111,16 @@ export default function RaceSection() {
                   fontWeight: 700,
                   textTransform: "uppercase",
                   letterSpacing: "-0.05em",
-                  lineHeight: 0.85,
+                  lineHeight: 1.15,
                   marginBottom: "2rem",
                 }}
-              >
-                <div style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)", color: "#fff" }}>THE</div>
-                <div style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)", color: "#fc7739" }}>RACE</div>
-                <div style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)", color: "#fff" }}>IS ON</div>
+              > 
+                <div style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", color: "#fff" }}>HÀNH TRÌNH</div>
+                <div style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", color: "#fc7739" }}>BẮT ĐẦU</div>
+                <div style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", color: "#fff" }}></div>
+                <div style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", color: "#fff" }}></div>
+                <div style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", color: "#fff" }}>TỪ ĐÂY</div>
+
               </div>
             </ScrollReveal>
           </div>
@@ -151,7 +154,7 @@ export default function RaceSection() {
                   style={{
                     display: "grid",
                     gridTemplateColumns: "1fr auto",
-                    gap: "2rem",
+                    gap: "1rem",
                     alignItems: "center",
                   }}
                 >
@@ -254,7 +257,7 @@ export default function RaceSection() {
                     }}
                   >
                     Mỗi cá nhân tham gia khảo sát không chỉ góp phần tạo nên thành công chung, mà còn có cơ hội nhận những phần quà hấp dẫn. <br />
-                    Tốc độ hoàn thành, mức độ tham gia và tinh thần đóng góp sẽ là yếu tố quyết định để <br />ghi danh những cá nhân xuất sắc nhất.
+                    Tốc độ hoàn thành, mức độ tham gia và tinh thần đóng góp sẽ là yếu tố quyết định để ghi danh các cá nhân may mắn và xuất sắc nhất.
                   </p>
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", minWidth: "260px" }}>
                     <div
@@ -336,7 +339,7 @@ export default function RaceSection() {
                   marginBottom: "1.5rem",
                 }}
               >
-                4 Bảng Thi Đua — Tổng Giải 30.000.000 VNĐ
+                4 Bảng Thi Đua: Tổng Giải 30.000.000 VNĐ
               </div>
 
               <div style={{ background: "linear-gradient(180deg, #FAFAF8 0%, #fff 100%)", borderRadius: "4px", overflow: "hidden" }}>
@@ -493,18 +496,7 @@ export default function RaceSection() {
                   textShadow: "0 1px 4px rgba(0,0,0,0.2)",
                 }}
               >
-                Phần quà dành cho cá nhân xuất sắc nhất
-              </div>
-              <div
-                style={{
-                  fontSize: "0.65rem",
-                  fontWeight: 600,
-                  color: "rgba(255,255,255,0.5)",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                }}
-              >
-                Hoàn thành nhanh nhất
+                Phần quà dành cho các cá nhân xuất sắc và may mắn nhất
               </div>
             </div>
 

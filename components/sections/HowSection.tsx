@@ -12,8 +12,8 @@ const STEPS = [
   {
     num: "02",
     chip: "10 phút là xong",
-    title: "Điền thật — 26 câu hỏi",
-    body: "Mỗi nhóm có 25-26 câu được thiết kế riêng. Phần lớn là chọn từ 1-10. Có 2 câu hỏi mở để bạn nói thêm nếu muốn.",
+    title: "Điền thật 26 câu hỏi",
+    body: "Mỗi nhóm có 26 câu được thiết kế riêng. Phần lớn là chọn từ 1-10. Có 3 câu hỏi mở để bạn nói thêm nếu muốn.",
   },
   {
     num: "03",
@@ -112,7 +112,7 @@ export default function HowSection() {
             <div
               style={{
                 display: "inline-block",
-                background: "#007ED4",
+                background: "#006FAD",
                 color: "#fff",
                 fontSize: "0.62rem",
                 fontWeight: 700,

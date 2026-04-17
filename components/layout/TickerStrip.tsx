@@ -10,7 +10,7 @@ const ITEMS = [
   { text: "6 NHÓM THAM GIA", accent: false },
   { text: "TIẾNG NÓI CỦA BẠN", accent: true },
   { text: "HOÀN THÀNH TRONG 10'", accent: false },
-  { text: "100% ẨN DANH", accent: true },
+  { text: "100% Bảo mật", accent: true },
   { text: "GHN × EES 2026", accent: false },
   { text: "RACE IS ON", accent: true },
 ];
@@ -27,9 +27,10 @@ export default function TickerStrip() {
     <div
       className="ghn-ticker-wrap"
       style={{
-        background: "linear-gradient(90deg, #ff51009d -50%, #FF5200 50%, #FF5200 75.62%)",
+            background: "linear-gradient(122.61deg, #DEF0FF -55%, #006FAD 36.56%, #DEF0FF 200.62%)",
 
-        borderBottom: "1px solid rgb(255, 255, 255)",
+        borderBottom: "2.5px solid rgb(239, 160, 14)",
+        borderTop: "2.5px solid rgb(239, 160, 14)",
         overflow: "hidden",
         height: "35px",
         display: "flex",
@@ -59,7 +60,7 @@ export default function TickerStrip() {
                   color: (item as { isSep?: boolean }).isSep
                     ? "rgba(255,255,255,0.2)"
                     : item.accent
-                    ? "#fcb500"
+                    ? "#d2cfcf"
                     : "rgb(255, 255, 255)",
                   padding: (item as { isSep?: boolean }).isSep
                     ? "0 0.75rem"

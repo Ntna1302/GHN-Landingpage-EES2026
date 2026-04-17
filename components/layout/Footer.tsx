@@ -92,10 +92,10 @@ export default function Footer() {
             Liên hệ hỗ trợ
           </div>
           {[
-            { label: "HR Business Partner", value: "hr.bp@ghn.vn" },
-            { label: "Đội EES 2026", value: "ees2026@ghn.vn" },
-            { label: "Hotline nội bộ", value: "1900-GHN" },
-          ].map(({ label, value }) => (
+            { label: "HRBP-Bộ phận Đối tác nhân sự", value: "" },
+            { label: "Ban Tổ Chức EES 2026", value: "people@ghn.vn" },
+            { label: "Ứng dụng GTalk", value: "gtalk.ghn.vn", href: "https://gtalk.ghn.vn/" },
+          ].map(({ label, value, href }) => (
             <div key={label} style={{ marginBottom: "0.75rem" }}>
               <div
                 style={{
@@ -108,15 +108,25 @@ export default function Footer() {
               >
                 {label}
               </div>
-              <div
-                style={{
-                  fontSize: "0.85rem",
-                  color: "#0A1F44",
-                  fontWeight: 500,
-                }}
-              >
-                {value}
-              </div>
+              {href ? (
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    fontSize: "0.85rem",
+                    color: "#FF5200",
+                    fontWeight: 500,
+                    textDecoration: "underline",
+                  }}
+                >
+                  {value}
+                </a>
+              ) : (
+                <div style={{ fontSize: "0.85rem", color: "#0A1F44", fontWeight: 500 }}>
+                  {value}
+                </div>
+              )}
             </div>
           ))}
         </div>

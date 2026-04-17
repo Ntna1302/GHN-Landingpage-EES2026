@@ -485,15 +485,7 @@ export default function GroupSchedulePopup({ open, onClose }: Props) {
                       </div>
                     </div>
 
-                    <div
-                      className="ghn-sched-dates"
-                      style={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "flex-end",
-                        gap: "0.4rem",
-                      }}
-                    >
+                    <div className="ghn-sched-dates">
                       <div
                         style={{
                           fontSize: "0.6rem",

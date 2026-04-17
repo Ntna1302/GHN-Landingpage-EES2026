@@ -64,7 +64,7 @@ export default function QuoteSection() {
             }}
           >
             Kết quả EES là dữ liệu quý nhất giúp tôi có để ra quyết định đúng.
-            Khi bạn điền thật tôi hành động đúng chỗ. Khi không,tôi ra
+            Khi bạn điền thật tôi hành động đúng chỗ. Khi không, tôi ra
             quyết định dựa trên phỏng đoán. Và phỏng đoán thì ít khi đúng.
           </motion.div>
         </div>
@@ -85,7 +85,7 @@ export default function QuoteSection() {
             borderTop: "1px solid rgba(255,255,255,0.08)",
           }}
         >
-          CPO — Phó Tổng Giám Đốc Khối Nhân Lực · Bà LÊ THỊ ĐOAN TRINH
+          CPO Phó Tổng Giám Đốc Khối Nhân Lực: Bà LÊ THỊ ĐOAN TRINH
         </motion.div>
       </div>
 
@@ -140,8 +140,8 @@ export default function QuoteSection() {
           </div>
           <div
             style={{
-              fontSize: "0.78rem",
-              color: "rgba(255,255,255,0.4)",
+              fontSize: "0.95rem",
+              color: "#d4d1d1",
               marginTop: "0.3rem",
               lineHeight: 1.4,
             }}

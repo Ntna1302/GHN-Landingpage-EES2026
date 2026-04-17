@@ -197,14 +197,13 @@ export default function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.45, duration: 0.5 }}
+              className="ghn-hero-date-label"
               style={{
-                fontSize: "0.85rem",
                 fontWeight: 500,
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
-                color: "rgba(255,255,255,0.65)",
+                color: "rgba(255, 255, 255, 0.83)",
                 marginBottom: "clamp(0.4rem, 1.5vh, 1.5rem)",
-                whiteSpace: "nowrap",
               }}
             >
               Bắt đầu 02/05/2026 — Kết thúc 20/05/2026

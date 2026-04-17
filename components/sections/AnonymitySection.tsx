@@ -6,7 +6,7 @@ const PILLS = [
   "Không có tên",
   "Không có mã NV",
   "Chỉ báo cáo nhóm ≥5",
-  "100% ẩn danh",
+  "100% bảo mật",
 ];
 
 const FACTS = [
@@ -104,7 +104,7 @@ export default function AnonymitySection() {
                 maxWidth: "380px",
               }}
             >
-              Câu trả lời được ẩn danh. Không tên, không mã NV. Dữ liệu chỉ báo cáo theo nhóm 
+              Câu trả lời được bảo mật. Không tên, không mã NV. Dữ liệu chỉ báo cáo theo nhóm 
               tối thiểu 5 người để không ai bị nhận diện cá nhân. Kể cả HR cũng không thấy câu trả lời của từng người.
             </p>
 
