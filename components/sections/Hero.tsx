@@ -128,6 +128,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0, duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            className="ghn-hero-stats"
             style={{
               display: "grid",
               gridTemplateColumns: "repeat(3, 1fr)",

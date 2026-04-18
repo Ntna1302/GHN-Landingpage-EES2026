@@ -33,7 +33,7 @@ const GROUPS = [
     tabLabel: "Nhóm 1B",
     tabName: "Tài xế vận tải",
     tabSub: "Tài xế GXT & Tài Xế Xe Tải (KTC)",
-    link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
+    link: "https://forms.gle/jfar4njijTKCT2J37",
   },
   {
     num: "03",
@@ -98,7 +98,7 @@ const GROUPS = [
 ];
 
 function getStatus(start: string, end: string) {
-  const now = new Date();
+  const now = new Date(2026,4,20);
   const s = new Date(start + "T00:00:00");
   const e = new Date(end + "T23:59:59");
   if (now < s) return "upcoming";
@@ -485,7 +485,7 @@ export default function GroupFinder() {
                   <span style={{ fontSize: 12, color: "#6E6E73", fontWeight: 500 }}>
                     docs.google.com /{" "}
                     <span style={{ color: "#1C1C1E", fontWeight: 600 }}>
-                      {group.code} — {group.name}
+                      {group.code}: {group.name}
                     </span>
                   </span>
                 </div>

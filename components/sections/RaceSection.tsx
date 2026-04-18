@@ -147,7 +147,7 @@ export default function RaceSection() {
                     marginBottom: "0.75rem",
                   }}
                 >
-                  Giải thưởng dành cho tập thể :
+                  Giải thưởng dành cho tập&nbsp;thể:
                 </div>
                 <div
                 className="ghn-block-grid"
@@ -171,7 +171,7 @@ export default function RaceSection() {
                     Cùng nhau tạo nên sự khác biệt, mỗi phiếu khảo sát đều 
                     có giá trị.
                   </p>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", minWidth: "260px" }}>
+                  <div className="ghn-race-stats-col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", minWidth: "260px" }}>
                     {[
                       { value: "4", label: "Bảng thi đua" },
                       { value: "30M", label: "Tổng giải thưởng" },
@@ -236,7 +236,7 @@ export default function RaceSection() {
                     marginBottom: "0.75rem",
                   }}
                 >
-                  Giải thưởng dành cho cá nhân :
+                  Giải thưởng dành cho cá&nbsp;nhân:
                 </div>
                 <div
                 className="ghn-block-grid"
@@ -259,7 +259,7 @@ export default function RaceSection() {
                     Mỗi cá nhân tham gia khảo sát không chỉ góp phần tạo nên thành công chung, mà còn có cơ hội nhận những phần quà hấp dẫn. <br />
                     Tốc độ hoàn thành, mức độ tham gia và tinh thần đóng góp sẽ là yếu tố quyết định để ghi danh các cá nhân may mắn và xuất sắc nhất.
                   </p>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", minWidth: "260px" }}>
+                  <div className="ghn-race-stats-col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", minWidth: "260px" }}>
                     <div
                       style={{
                         gridColumn: "1 / -1",
@@ -320,6 +320,7 @@ export default function RaceSection() {
         >
           {/* Prize rows */}
           <div
+            className="ghn-race-board-inner"
             style={{
               padding: "3.5rem 3rem",
               flex: 1,
@@ -330,6 +331,7 @@ export default function RaceSection() {
           >
             <ScrollReveal delay={0.1}>
               <div
+                className="ghn-race-board-intro"
                 style={{
                   fontSize: "0.7rem",
                   fontWeight: 700,
@@ -429,16 +431,17 @@ export default function RaceSection() {
 
               {/* Total bar */}
               <div
+                className="ghn-race-total-bar"
                 style={{
-                  
                   background: "linear-gradient(90deg, #FF5200, #FF6B00)",
-                    padding: "1.1rem 1.25rem",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    marginTop: "1.5rem",
-                    borderRadius: "4px",
-                    boxShadow: "0 4px 16px rgba(255,82,0,0.25)",
+                  padding: "1.1rem 1.25rem",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  gap: "0.75rem",
+                  marginTop: "1.5rem",
+                  borderRadius: "4px",
+                  boxShadow: "0 4px 16px rgba(255,82,0,0.25)",
                 }}
               >
                 <span
@@ -478,6 +481,7 @@ export default function RaceSection() {
           >
             {/* Label */}
             <div
+              className="ghn-race-gift-label"
               style={{
                 padding: "1rem 3rem 0",
                 display: "flex",

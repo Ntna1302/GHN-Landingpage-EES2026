@@ -75,16 +75,17 @@ export default function QuoteSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.5 }}
           style={{
-            fontSize: "0.85rem",
+            fontSize: "clamp(0.55rem, 2.4vw, 0.85rem)",
             fontWeight: 700,
-            letterSpacing: "0.12em",
-            // textTransform: "uppercase",
+            letterSpacing: "0.08em",
             color: "rgb(255, 255, 255)",
             marginTop: "2rem",
             paddingTop: "1.5rem",
             borderTop: "1px solid rgba(255,255,255,0.08)",
-             whiteSpace: "nowrap",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
           }}
+          className="ghn-quote-credit"
         >
           CPO - P.TGĐ Khối Nhân Lực - Lê Thị Đoan Trinh
                   </motion.div>

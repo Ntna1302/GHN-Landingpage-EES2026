@@ -855,24 +855,30 @@ main {
 
 /* ── RaceSection ── */
 @media (max-width: 900px) {
-  #race .ghn-grid-2col> :first-child {
+  .race-left {
     padding: 3rem 2rem !important;
   }
 
-  #race .ghn-grid-2col> :last-child {
+  .ghn-race-board-inner {
     padding: 3rem 2rem !important;
-    border-left: none !important;
+  }
+
+  .ghn-race-gift-label {
+    padding: 1rem 2rem 0 !important;
   }
 }
 
 @media (max-width: 640px) {
-  #race .ghn-grid-2col> :first-child {
+  .race-left {
     padding: 2.5rem 1.5rem !important;
-    
   }
 
-  #race .ghn-grid-2col> :last-child {
+  .ghn-race-board-inner {
     padding: 2.5rem 1.5rem !important;
+  }
+
+  .ghn-race-gift-label {
+    padding: 1rem 1.5rem 0 !important;
   }
 }
 
@@ -1157,12 +1163,26 @@ main {
 }
 .ghn-why-ees-title {
   letter-spacing: -0.04em;
-  line-height: 1;
-  white-space: nowrap;
-  overflow: hidden;
+  line-height: 1.15;
   margin-bottom: 3rem;
-   padding-top: 0.5rem; 
-  text-overflow: ellipsis;
+  padding-top: 0.5rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Body paragraphs inside Why section — ensure clean wrap on narrow screens */
+#why p {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* Ensure grid/flex children can shrink below their min-content size (fixes overflow cascading from long words) */
+#why .ghn-grid-3col > div,
+#why .ghn-why-inner-grid,
+#why .ghn-why-inner-grid > div {
+  min-width: 0;
 }
 
 
@@ -1220,5 +1240,200 @@ main {
   .ghn-nav-cta {
     font-size: 0.6rem !important;
     padding: 0.3rem 0.5rem !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   ULTRA-NARROW BREAKPOINT ≤ 400px
+   Prevents overlap / clipping on very small phones
+   ═══════════════════════════════════════════════════ */
+@media (max-width: 400px) {
+
+  /* ── Section padding — tighten globally ── */
+  .ghn-section-pad {
+    padding: 2.25rem 1rem !important;
+  }
+
+  /* ── Hero ── */
+  .ghn-hero-stats {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+  }
+  .ghn-hero-stats > div {
+    padding-right: 0 !important;
+    padding-left: 0.75rem !important;
+    border-left-width: 2px !important;
+  }
+  .ghn-hero-headline {
+    font-size: clamp(2.4rem, 15vw, 3.5rem) !important;
+    word-break: break-word;
+  }
+
+  /* ── Quote credit (CPO line) — must stay on one line at all widths ── */
+  .ghn-quote-credit {
+    letter-spacing: 0.04em !important;
+    line-height: 1.6 !important;
+  }
+  .ghn-quote-big-mark {
+    font-size: 2.5rem !important;
+  }
+  .ghn-quote-stat-value {
+    font-size: clamp(1.1rem, 6vw, 1.6rem) !important;
+  }
+
+  /* ── RaceSection ── */
+  .race-is-on div {
+    font-size: clamp(1.6rem, 9vw, 2.4rem) !important;
+    line-height: 1.1 !important;
+  }
+  .race-left {
+    padding: 2rem 1rem !important;
+  }
+  .ghn-race-board-inner {
+    padding: 2rem 1rem !important;
+  }
+  .ghn-race-gift-label {
+    padding: 1rem 1rem 0 !important;
+  }
+  .ghn-race-gift-label > div {
+    font-size: 0.72rem !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1.4 !important;
+  }
+
+  /* 4 Bảng Thi Đua intro — loosen tracking, allow wrap */
+  .ghn-race-board-intro {
+    font-size: 0.62rem !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Total bar — stack label + amount to avoid cramming on narrow rows */
+  .ghn-race-total-bar {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.35rem !important;
+    padding: 0.9rem 1rem !important;
+  }
+  .ghn-race-total-bar > span:last-child {
+    font-size: 1rem !important;
+  }
+  /* Stats inside race blocks — stack on tiny screens */
+  .ghn-race-stats-col {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+    min-width: 0 !important;
+    width: 100%;
+  }
+  .ghn-race-stats-col > div {
+    padding: 0.75rem 0.85rem !important;
+  }
+  /* Big "+200" number shouldn't overflow */
+  .race-left .ghn-race-stats-col div[style*="gridColumn"] > div:first-child {
+    font-size: clamp(1.8rem, 9vw, 2.5rem) !important;
+  }
+  /* Shrink paragraphs inside race blocks */
+  .race-left p {
+    max-width: 100% !important;
+    font-size: 0.82rem !important;
+  }
+  /* Prize name + unit — shrink for tighter fit */
+  .race-right .ghn-prize-row > div[style*="flex: 1"] > div:first-child,
+  .race-right div.ghn-prize-row[style*="fontWeight"] {
+    font-size: 0.82rem !important;
+    white-space: normal !important;
+  }
+  .race-right .ghn-prize-row {
+    padding: 1rem 0.6rem !important;
+    gap: 0.8rem !important;
+  }
+  .race-right .ghn-prize-row > div[style*="whiteSpace"] {
+    font-size: 0.9rem !important;
+    padding: 0.35rem 0.55rem !important;
+  }
+
+  /* ── GroupFinder card detail — allow wrap ── */
+  .ghn-finder-card {
+    padding: 1.1rem !important;
+    gap: 0.75rem !important;
+  }
+  .ghn-finder-card > div > div[style*="whiteSpace"] {
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+
+  /* ── WhySection inner typography ── */
+  #why .ghn-grid-3col > div:first-child .ghn-why-sidebar {
+    font-size: 1.15rem !important;
+  }
+  #why .ghn-grid-3col > div:first-child .ghn-why-ees-title {
+    font-size: 1.2rem !important;
+    white-space: normal !important;
+    margin-bottom: 1.25rem !important;
+  }
+  #why .section-label {
+    padding: 1.5rem 1rem 0 !important;
+  }
+  #why .ghn-grid-3col > div {
+    padding: 1.5rem 1rem !important;
+  }
+
+  /* ── AnonymitySection ── */
+  #anonymity .ghn-grid-2col > :first-child,
+  #anonymity .ghn-grid-2col > :last-child {
+    padding: 1.75rem 1.1rem !important;
+  }
+  .ghn-fact-val {
+    font-size: 1.7rem !important;
+    min-width: 48px !important;
+  }
+
+  /* ── Timeline / After ── */
+  #after {
+    padding: 2rem 1rem !important;
+  }
+  .ghn-after-grid > * {
+    padding: 1.1rem !important;
+  }
+  .ghn-phase-num {
+    font-size: 1.75rem !important;
+  }
+
+  /* ── How ── */
+  #how {
+    padding: 2rem 1rem !important;
+  }
+  .ghn-step-num {
+    font-size: 2.25rem !important;
+  }
+
+  /* ── CTA Final ── */
+  .ghn-cta-inner {
+    padding: 2rem 1.1rem !important;
+  }
+
+  /* ── Footer ── */
+  .ghn-footer-grid {
+    padding: 1.75rem 1rem !important;
+  }
+  .ghn-footer-bottom {
+    padding: 0.9rem 1rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  /* ── Groups section ── */
+  #groups {
+    padding: 2rem 1rem !important;
+  }
+
+  /* ── UrgencyBar ── */
+  .ghn-urgency-bar {
+    padding: 0 0.6rem !important;
+    height: 30px !important;
+  }
+  .ghn-urgency-btn {
+    font-size: 0.55rem !important;
+    padding: 0.18rem 0.5rem !important;
   }
 }
