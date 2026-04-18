@@ -255,7 +255,7 @@ export default function Hero() {
               >
                 {isExpired
                   ? "Trạng thái"
-                  : <>Cuộc đua tham gia khảo sát. Bộ phận nào sẽ về đích đầu tiên?<br /><span style={{ textTransform: "uppercase", fontWeight: 700, }}>Tổng giải thưởng 30 triệu đồng. </span></>}
+                  : <>Cuộc đua tham gia khảo sát. Bộ phận nào sẽ về đích đầu tiên.<br /><span style={{ textTransform: "uppercase", fontWeight: 700, }}>Tổng giải thưởng 30 triệu đồng. </span></>}
               </motion.div>
 
               {isExpired ? (

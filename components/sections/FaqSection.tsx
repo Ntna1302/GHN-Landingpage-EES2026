@@ -25,7 +25,7 @@ const FAQ_LEFT = [
 const FAQ_RIGHT = [
   {
     q: "Kết quả EES được dùng như thế nào?",
-    a: "Kết quả khảo sát được phân tích theo 5 tiêu chí gắn kết, từ đó xây dựng báo cáo chi tiết cho từng Khối/Phòng ban.Các kế hoạch hành động sẽ được trình Ban Điều hành trong tháng 6 và công bố rộng rãi toàn công ty vào tháng 7/2026..",
+    a: "Kết quả khảo sát được phân tích theo 5 tiêu chí gắn kết, từ đó xây dựng báo cáo chi tiết cho từng Khối/Phòng ban. Các kế hoạch hành động sẽ được trình Ban Điều hành trong tháng 6 và công bố rộng rãi toàn công ty vào tháng 7/2026..",
   },
   {
     q: "Tại sao có 6 bộ câu hỏi khác nhau?",
