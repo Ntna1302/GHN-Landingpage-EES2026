@@ -39,7 +39,7 @@ const GROUPS = [
     num: "03",
     code: "Nhóm 2A",
     name: "Vận hành Kho",
-    detail: "NVXL (Vùng), NVPH (KTC), Admin (KHL), Warehouse\nLàm khảo sát tập trung on-site tại KTC theo ca — EX Team hỗ trợ trực tiếp.",
+    detail: "NVXL (Vùng), NVPH (KTC), KHL, Warehouse\nLàm khảo sát tập trung on-site tại KTC theo ca — EX Team hỗ trợ trực tiếp.",
     method: "On-site KTC + Tablet + Google Form",
     date: "08/05 – 20/05/2026",
     start: "2026-05-08",
@@ -47,7 +47,7 @@ const GROUPS = [
     target: "Mục tiêu ≥70%",
     tabLabel: "Nhóm 2A",
     tabName: "Vận hành Kho",
-    tabSub: "NVXL (Vùng), NVPH (KTC), Admin (KHL), Warehouse",
+    tabSub: "NVXL (Vùng), NVPH (KTC), KHL, Warehouse",
     link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
   },
   {
