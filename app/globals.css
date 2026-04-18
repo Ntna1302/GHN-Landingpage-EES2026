@@ -854,6 +854,22 @@ main {
 }
 
 /* ── RaceSection ── */
+/* ── RaceSection: tablet landscape (iPad Pro portrait = 1024px) ── */
+@media (max-width: 1104px) {
+  .race-left .ghn-block-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+  
+  .race-left .ghn-block-grid > p {
+    max-width: 100% !important;
+  }
+  
+  .race-left .ghn-race-stats-col {
+    min-width: 0 !important;
+    width: 100%;
+  }
+}
 @media (max-width: 900px) {
   .race-left {
     padding: 3rem 2rem !important;
