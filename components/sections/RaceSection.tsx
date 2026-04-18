@@ -391,8 +391,8 @@ export default function RaceSection() {
                     >
                       {board.letter}
                     </div>
-                    <div style={{ flex: 1, minWidth: 0 }}>
-                      <div className="ghn-prize-row"
+                    <div className="ghn-prize-body" style={{ flex: 1, minWidth: 0 }}>
+                      <div className="ghn-prize-name"
                         style={{
                             fontWeight: 700,
                             fontSize: "0.92rem",
@@ -405,11 +405,11 @@ export default function RaceSection() {
                       >
                         {board.name}
                       </div>
-                      <div style={{ fontSize: "0.75rem", color: "#888" }}>
+                      <div className="ghn-prize-unit" style={{ fontSize: "0.75rem", color: "#888" }}>
                         {board.unit}
                       </div>
                     </div>
-                    <div className="ghn-prize-row"
+                    <div className="ghn-prize-amount"
                       style={{
                         fontFamily: "var(--font-heading)",
                         fontWeight: 700,
@@ -434,11 +434,13 @@ export default function RaceSection() {
                 className="ghn-race-total-bar"
                 style={{
                   background: "linear-gradient(90deg, #FF5200, #FF6B00)",
-                  padding: "1.1rem 1.25rem",
+                  padding: "clamp(0.75rem, 2vw, 1.1rem) clamp(0.85rem, 2.5vw, 1.25rem)",
                   display: "flex",
+                  flexDirection: "row",
+                  flexWrap: "nowrap",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  gap: "0.75rem",
+                  gap: "0.6rem",
                   marginTop: "1.5rem",
                   borderRadius: "4px",
                   boxShadow: "0 4px 16px rgba(255,82,0,0.25)",
@@ -446,11 +448,13 @@ export default function RaceSection() {
               >
                 <span
                   style={{
-                    fontSize: "0.75rem",
+                    fontSize: "clamp(0.55rem, 2.4vw, 0.75rem)",
                     fontWeight: 700,
-                    letterSpacing: "0.1em",
+                    letterSpacing: "0.06em",
                     textTransform: "uppercase",
-                    color: "rgba(255,255,255,0.75)",
+                    color: "rgba(255,255,255,0.85)",
+                    whiteSpace: "nowrap",
+                    flexShrink: 0,
                   }}
                 >
                   Tổng giải thưởng
@@ -459,9 +463,11 @@ export default function RaceSection() {
                   style={{
                     fontFamily: "var(--font-heading)",
                     fontWeight: 700,
-                    fontSize: "1.1rem",
-                    letterSpacing: "-0.02em",
+                    fontSize: "clamp(0.78rem, 3.2vw, 1.1rem)",
+                    letterSpacing: "-0.01em",
                     color: "#fff",
+                    whiteSpace: "nowrap",
+                    flexShrink: 0,
                   }}
                 >
                   30.000.000 VNĐ

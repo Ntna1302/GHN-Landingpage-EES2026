@@ -922,31 +922,32 @@ main {
 
 @media (max-width: 640px) {
 
-  /* Prize rows — stack dọc trên mobile nhỏ */
-  .race-right .ghn-prize-row {
+  /* Prize rows — stack dọc trên mobile nhỏ (outer row only) */
+  .race-right > div > .ghn-prize-row {
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 0.75rem !important;
   }
 
   /* Prize badge nhỏ hơn */
-  .race-right .ghn-prize-row>div:first-child {
+  .race-right > div > .ghn-prize-row > div:first-child {
     width: 36px !important;
     height: 36px !important;
     font-size: 0.9rem !important;
   }
-.race-is-on {
+
+  /* Prize amount aligned right */
+  .race-right .ghn-prize-amount {
+    align-self: flex-end !important;
+  }
+
+  .race-is-on {
     text-align: center !important;
     line-height: 3.5rem !important;
   }
 
   .race-is-on div {
     font-size: clamp(1.5rem, 10vw, 5rem) !important;
-
-  }
-  /* Prize amount full width */
-  .race-right .ghn-prize-row>div:last-child {
-    align-self: flex-end !important;
   }
 }
 
@@ -1309,16 +1310,7 @@ main {
     margin-bottom: 1rem !important;
   }
 
-  /* Total bar — stack label + amount to avoid cramming on narrow rows */
-  .ghn-race-total-bar {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 0.35rem !important;
-    padding: 0.9rem 1rem !important;
-  }
-  .ghn-race-total-bar > span:last-child {
-    font-size: 1rem !important;
-  }
+  /* Total bar — rules applied inline on the component for reliability */
   /* Stats inside race blocks — stack on tiny screens */
   .ghn-race-stats-col {
     grid-template-columns: 1fr !important;
@@ -1338,19 +1330,27 @@ main {
     max-width: 100% !important;
     font-size: 0.82rem !important;
   }
-  /* Prize name + unit — shrink for tighter fit */
-  .race-right .ghn-prize-row > div[style*="flex: 1"] > div:first-child,
-  .race-right div.ghn-prize-row[style*="fontWeight"] {
+  /* Prize row — outer only */
+  .race-right > div > .ghn-prize-row {
+    padding: 1rem 0.75rem !important;
+    gap: 0.75rem !important;
+  }
+  /* Name — wrap + shrink */
+  .race-right .ghn-prize-name {
     font-size: 0.82rem !important;
     white-space: normal !important;
+    word-break: break-word !important;
+    line-height: 1.3 !important;
   }
-  .race-right .ghn-prize-row {
-    padding: 1rem 0.6rem !important;
-    gap: 0.8rem !important;
+  /* Unit — shrink */
+  .race-right .ghn-prize-unit {
+    font-size: 0.7rem !important;
+    line-height: 1.4 !important;
   }
-  .race-right .ghn-prize-row > div[style*="whiteSpace"] {
+  /* Amount pill */
+  .race-right .ghn-prize-amount {
     font-size: 0.9rem !important;
-    padding: 0.35rem 0.55rem !important;
+    padding: 0.35rem 0.6rem !important;
   }
 
   /* ── GroupFinder card detail — allow wrap ── */

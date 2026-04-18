@@ -75,7 +75,7 @@ export default function QuoteSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.5 }}
           style={{
-            fontSize: "clamp(0.55rem, 2.4vw, 0.85rem)",
+            fontSize: "clamp(0.85rem, 2.4vw, 0.85rem)",
             fontWeight: 700,
             letterSpacing: "0.08em",
             color: "rgb(255, 255, 255)",

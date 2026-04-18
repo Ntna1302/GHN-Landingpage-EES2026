@@ -98,7 +98,7 @@ const GROUPS = [
 ];
 
 function getStatus(start: string, end: string) {
-  const now = new Date(2026,4,20);
+  const now = new Date();
   const s = new Date(start + "T00:00:00");
   const e = new Date(end + "T23:59:59");
   if (now < s) return "upcoming";

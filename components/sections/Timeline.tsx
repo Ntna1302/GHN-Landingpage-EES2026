@@ -77,20 +77,29 @@ export default function AfterSection() {
     >
       {/* Label */}
       <div
+        className="ghn-timeline-heading"
         style={{
-          fontSize: "1.2rem",
           fontWeight: 900,
-          letterSpacing: "0.15em",
           textTransform: "uppercase",
           color: "#FF5200",
           display: "flex",
           alignItems: "center",
           gap: "0.7rem",
           marginBottom: "1.5rem",
+          minWidth: 0,
         }}
       >
-        Sau khảo sát GHN sẽ làm gì?
-        <span style={{ flex: 1, height: "1px", background: "#E0DDD6" }} />
+        <span
+          style={{
+            whiteSpace: "nowrap",
+            fontSize: "clamp(1.1rem, 3vw, 1.2rem)",
+            letterSpacing: "0.08em",
+            flexShrink: 0,
+          }}
+        >
+          Sau khảo sát GHN sẽ làm gì?
+        </span>
+        <span style={{ flex: 1, height: "1px", background: "#E0DDD6", minWidth: 0 }} />
       </div>
 
       {/* 4-col grid */}
