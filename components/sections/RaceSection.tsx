@@ -111,11 +111,11 @@ export default function RaceSection() {
                   fontWeight: 700,
                   textTransform: "uppercase",
                   letterSpacing: "-0.05em",
-                  lineHeight: 1.15,
+                  lineHeight: 1.25,
                   marginBottom: "2rem",
                 }}
               > 
-                <div style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", color: "#fff" }}>HÀNH TRÌNH</div>
+                <div style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", color: "#fff" }}>CHƯƠNG TRÌNH</div>
                 <div style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", color: "#fc7739" }}>BẮT ĐẦU</div>
                 <div style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", color: "#fff" }}></div>
                 <div style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", color: "#fff" }}></div>

@@ -68,7 +68,7 @@ export default function Footer() {
                 animation: "fadeIn 1s ease infinite alternate",
               }}
             />
-            Khảo sát mở: 01/05/2026
+            Khảo sát mở: 02/05/2026
           </div>
         </div>
 
@@ -194,7 +194,7 @@ export default function Footer() {
         }}
       >
         <span style={{ fontSize: "0.75rem", color: "#888" }}>
-          © 2026 GiaoHangNhanh. Nội bộ — Không phát hành ra ngoài.
+          © 2026 GiaoHangNhanh. Nội bộ, không phát hành ra ngoài.
         </span>
       </div>
     </footer>

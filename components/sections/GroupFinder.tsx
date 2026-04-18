@@ -32,7 +32,7 @@ const GROUPS = [
     target: "Mục tiêu ≥70%",
     tabLabel: "Nhóm 1B",
     tabName: "Tài xế vận tải",
-    tabSub: "Tài xế GXT & Tài Xế Xe Tải",
+    tabSub: "Tài xế GXT & Tài Xế Xe Tải(KTC)",
     link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
   },
   {
@@ -57,12 +57,12 @@ const GROUPS = [
     detail: "AM, OM, Supervisor, TBC, Ops. Team Leaders\nNhận link cá nhân qua email hoặc GTalk.",
     method: "Email cá nhân + GTalk + Landing Page",
     date: "01/05 – 07/05/2026",
-    start: "2026-05-01",
+    start: "2026-05-02",
     end: "2026-05-07",
     target: "Mục tiêu ≥85%",
     tabLabel: "Nhóm 2B",
     tabName: "Quản lý Tuyến đầu",
-    tabSub: "AM, OM, Supervisor, TBC, Ops. Team Leaders",
+    tabSub: "AM, OM, Supervisor, TBC, Team Leaders",
     link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
   },
   {
@@ -72,7 +72,7 @@ const GROUPS = [
     detail: "Khối Hỗ trợ, NV gián tiếp (Indirect)\nNhận email cá nhân hóa + GTalk + Mini App.",
     method: "Email mail-merge + GTalk + Mini App",
     date: "01/05 – 07/05/2026",
-    start: "2026-05-01",
+    start: "2026-05-02",
     end: "2026-05-07",
     target: "Mục tiêu ≥85%",
     tabLabel: "Nhóm 3A",
@@ -87,7 +87,7 @@ const GROUPS = [
     detail: "Manager & Director các phòng ban\nNhận email cá nhân hóa + GTalk + Mini App.",
     method: "Email mail-merge + GTalk + Mini App",
     date: "01/05 – 07/05/2026",
-    start: "2026-05-01",
+    start: "2026-05-02",
     end: "2026-05-07",
     target: "Mục tiêu ≥85%",
     tabLabel: "Nhóm 3B",
@@ -98,7 +98,7 @@ const GROUPS = [
 ];
 
 function getStatus(start: string, end: string) {
-  const now = new Date(2026,5,1);
+  const now = new Date();
   const s = new Date(start + "T00:00:00");
   const e = new Date(end + "T23:59:59");
   if (now < s) return "upcoming";
@@ -214,7 +214,7 @@ export default function GroupFinder() {
           }}
         >
           GHN thiết kế 6 bộ câu hỏi khác nhau cho từng nhóm, đảm bảo bạn
-          được hỏi đúng về công việc thực tế của mình. Chọn loại công việc
+          được hỏi đúng về công việc thực tế của mình. Chọn nhóm
           của bạn bên dưới để xem lịch và cách làm khảo sát.
         </motion.div>
       </div>
