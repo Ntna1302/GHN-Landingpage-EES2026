@@ -54,7 +54,7 @@ export default function CtaFinal() {
               marginBottom: "1.5rem",
             }}
           >
-            <div style={{ color: "#fff" }}>Sẵn Sàng</div>
+            <div style={{ color: "#fff" }}>Bạn Sẵn Sàng</div>
             <div style={{ color: "#fff" }}>Nói Thật</div>
             <div style={{ color: "#fc7739" }}>Chưa?</div>
           </h2>

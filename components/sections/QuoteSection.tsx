@@ -5,15 +5,15 @@ import { motion } from "framer-motion";
 const STATS = [
   {
     value: "12.500",
-    lines: ["Nhân viên GHN tham gia EES 2025", "Mục tiêu 2026: tăng ≥10%"],
+    lines: ["Nhân viên đã tham gia EES 2025." ,"Mục tiêu 2026: tăng ≥10%"],
   },
   {
     value: "5",
-    lines: ["Hành động cụ thể được triển khai", "sau kết quả EES 2025"],
+    lines: ["Hành động cụ thể được triển khai sau kết quả EES."],
   },
   {
     value: "T7",
-    lines: ["Kết quả phân tích & hành động chiến lược", "công bố toàn công ty vào tháng 7/2026"],
+    lines: ["Kết quả phân tích & hành động thực tế, công bố toàn công ty vào tháng 7/2026"],
   },
 ];
 
@@ -75,18 +75,19 @@ export default function QuoteSection() {
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.5 }}
           style={{
-            fontSize: "0.75rem",
+            fontSize: "0.85rem",
             fontWeight: 700,
             letterSpacing: "0.12em",
-            textTransform: "uppercase",
+            // textTransform: "uppercase",
             color: "rgb(255, 255, 255)",
             marginTop: "2rem",
             paddingTop: "1.5rem",
             borderTop: "1px solid rgba(255,255,255,0.08)",
+             whitespace: "nowrap",
           }}
         >
-          CPO Phó Tổng Giám Đốc Khối Nhân Lực: Bà LÊ THỊ ĐOAN TRINH
-        </motion.div>
+          CPO - P.TGĐ Khối Nhân Lực - Lê Thị Đoan Trinh
+                  </motion.div>
       </div>
 
       {/* RIGHT */}
@@ -132,7 +133,7 @@ export default function QuoteSection() {
               fontSize: "clamp(1.8rem, 4vw, 2.5rem)",
               fontWeight: 700,
               color: "#fff",
-              letterSpacing: "-0.04em",
+              letterSpacing: "-0.04 em",
               lineHeight: 1,
             }}
           >

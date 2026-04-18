@@ -7,18 +7,18 @@ const STEPS = [
     num: "01",
     chip: "Bất kỳ lúc nào",
     title: "Nhận link / Quét QR",
-    body: "Link khảo sát được gửi qua email, GTalk OG, App Driver hoặc dán QR tại bưu cục/KTC của bạn. Không cần đăng nhập thêm.",
+    body: "Link khảo sát được gửi qua email, GTalk OG (Thông báo - Broadcast, Ứng dụng - MiniApp), App Tài xế hoặc dán QR tại bưu cục/KTC của bạn. Không cần đăng nhập thêm.",
   },
   {
     num: "02",
     chip: "10 phút là xong",
     title: "Điền thật 26 câu hỏi",
-    body: "Mỗi nhóm có 26 câu được thiết kế riêng. Phần lớn là chọn từ 1-10. Có 3 câu hỏi mở để bạn nói thêm nếu muốn.",
+    body: "Mỗi nhóm có 25-26 câu được thiết kế riêng. Có 3 câu hỏi mở để bạn nói lên ý kiến riêng của mình.",
   },
   {
     num: "03",
     chip: "Tháng 7/2026",
-    title: "GHN chia sẻ lại với bạn",
+    title: "GHN chia sẻ lại kết quả với bạn",
     body: 'Kết quả phân tích và kế hoạch hành động sẽ được công bố toàn công ty. Ý kiến của bạn sẽ được chuyển thành những thay đổi cụ thể.',
   },
 ];

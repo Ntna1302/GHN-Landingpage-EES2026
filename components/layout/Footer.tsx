@@ -41,7 +41,7 @@ export default function Footer() {
             }}
           >
             Khảo sát gắn kết nhân viên thường niên của GiaoHangNhanh. <br /> Cùng với tiếng
-            nói của 20.000+ nhân viên định hình tương lai công ty.
+            nói của 20.000+ xây dựng môi trường và <br / >trải nghiệm nhân viên cho Công ty.
           </p>
           <div
             style={{
@@ -92,7 +92,7 @@ export default function Footer() {
             Liên hệ hỗ trợ
           </div>
           {[
-            { label: "HRBP-Bộ phận Đối tác nhân sự", value: "" },
+            { label: "HRBP - Bộ phận Đối tác nhân sự", value: "" },
             { label: "Ban Tổ Chức EES 2026", value: "people@ghn.vn" },
             { label: "Ứng dụng GTalk", value: "gtalk.ghn.vn", href: "https://gtalk.ghn.vn/" },
           ].map(({ label, value, href }) => (

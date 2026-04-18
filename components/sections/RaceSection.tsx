@@ -13,7 +13,7 @@ const PRIZE_BOARDS = [
   {
     letter: "B",
     name: "Bảng B: Vùng ",
-    unit: "(14 Vùng)",
+    unit: "(14 Vùng bao gồm Bộ phận Vận hành B2B HN và HCM)",
     prize: "15.000.000 VNĐ",
     filled: false,
   },
@@ -115,7 +115,7 @@ export default function RaceSection() {
                   marginBottom: "2rem",
                 }}
               > 
-                <div style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", color: "#fff" }}>CHƯƠNG TRÌNH</div>
+                <div style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", color: "#fff" }}>CUỘC ĐUA</div>
                 <div style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", color: "#fc7739" }}>BẮT ĐẦU</div>
                 <div style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", color: "#fff" }}></div>
                 <div style={{ fontSize: "clamp(2.5rem, 6vw, 3.5rem)", color: "#fff" }}></div>

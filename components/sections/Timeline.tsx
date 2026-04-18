@@ -56,7 +56,7 @@ const PHASES = [
 ];
 
 function getActivePhase(): number {
-  const now = new Date(2026,4,30);
+  const now = new Date();
   for (let i = 0; i < PHASES.length; i++) {
     if (now >= PHASES[i].startDate && now <= PHASES[i].endDate) return i;
   }
@@ -212,27 +212,7 @@ export default function AfterSection() {
                 ))}
               </div>
 
-              {/* Active badge */}
-              {isActive && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  style={{
-                    marginTop: "1rem",
-                    display: "inline-block",
-                    background: "rgba(255,255,255,0.2)",
-                    color: "#ffffff",
-                    fontSize: "0.62rem",
-                    fontWeight: 700,
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    padding: "0.25rem 0.6rem",
-                    borderRadius: "2px",
-                  }}
-                >
-                  ● Đang diễn ra
-                </motion.div>
-              )}
+             
             </motion.div>
           );
         })}

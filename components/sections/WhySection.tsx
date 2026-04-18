@@ -244,7 +244,7 @@ export default function WhySection() {
         <div style={{ padding: "3rem 2rem", borderRight: "1px solid #E0DDD6" }}>
           <ScrollReveal delay={0.1}>
             <InteractiveList
-              title="Kết quả EES 2025"
+              title="Kết quả EES 2025:"
               items={EES_2025_RESULTS}
               colors={WARM_COLORS}
             />
@@ -255,7 +255,7 @@ export default function WhySection() {
         <div style={{ padding: "3rem 2rem" }}>
           <ScrollReveal delay={0.2}>
             <InteractiveList
-              title="Kết quả EES 2026 sẽ dùng để"
+              title="Kết quả EES 2026 sẽ dùng để:"
               items={EES_2026_USAGE}
               colors={COOL_COLORS}
             />
