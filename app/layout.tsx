@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "EES RACE 2026 — GiaoHangNhanh",
   description:
-    "Khảo sát gắn kết nhân viên GHN 2026. Tiếng nói của bạn định hình tương lai GHN. Tổng giải thưởng 25.000.000 VNĐ.",
+    "Khảo sát gắn kết nhân viên GHN 2026. Tiếng nói của bạn định hình tương lai GHN. Tổng giải thưởng 30.000.000 VNĐ.",
 };
 
 export default function RootLayout({
