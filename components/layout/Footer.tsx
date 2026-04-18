@@ -41,7 +41,7 @@ export default function Footer() {
             }}
           >
             Khảo sát gắn kết nhân viên thường niên của GiaoHangNhanh. <br /> Cùng với tiếng
-            nói của 20.000+ xây dựng môi trường và <br / >trải nghiệm nhân viên cho Công ty GHN.
+            nói của 20.000+ xây dựng môi trường và <br / >trải nghiệm nhân viên cho Công ty.
           </p>
           <div
             style={{
