@@ -109,7 +109,7 @@ export default function CtaFinal() {
                 textAlign: "center",
               }}
             >
-              Hoàn thành trong 10 phút · 100% ẩn danh
+              Hoàn thành trong 10 phút - 100% bảo mật
             </div>
           </div>
         </ScrollReveal>

@@ -1345,6 +1345,7 @@ main {
   .race-right .ghn-prize-unit {
     font-size: 0.7rem !important;
     line-height: 1.4 !important;
+;
   }
   /* Amount pill */
   .race-right .ghn-prize-amount {

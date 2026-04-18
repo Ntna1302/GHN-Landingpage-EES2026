@@ -405,7 +405,7 @@ export default function RaceSection() {
                       >
                         {board.name}
                       </div>
-                      <div className="ghn-prize-unit" style={{ fontSize: "0.75rem", color: "#888" }}>
+                      <div className="ghn-prize-unit" style={{ fontSize: "0.75rem", color: "#888", whiteSpace: "normal" }}>
                         {board.unit}
                       </div>
                     </div>
