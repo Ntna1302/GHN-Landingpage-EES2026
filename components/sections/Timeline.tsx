@@ -97,7 +97,7 @@ export default function AfterSection() {
             flexShrink: 0,
           }}
         >
-          Sau khảo sát GHN sẽ làm gì?
+          Sau khảo sát GHN sẽ làm gì
         </span>
         <span style={{ flex: 1, height: "1px", background: "#E0DDD6", minWidth: 0 }} />
       </div>
@@ -156,7 +156,7 @@ export default function AfterSection() {
                   fontSize: "3rem",
                   fontWeight: 700,
                   letterSpacing: "-0.05em",
-                  color: isActive ? "rgb(255, 255, 255)" : "#E0DDD6",
+                  color: isActive ? "rgb(255, 255, 255)" : "#006FAD",
                   lineHeight: 1,
                 }}
               >

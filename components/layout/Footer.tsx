@@ -76,7 +76,7 @@ export default function Footer() {
         <div
           style={{
             borderLeft: "1px solid #E0DDD6",
-            paddingLeft: "2rem",
+            paddingLeft: "1rem",
           }}
         >
           <div

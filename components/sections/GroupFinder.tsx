@@ -174,7 +174,7 @@ export default function GroupFinder() {
           marginBottom: "1.5rem",
         }}
       >
-        Bạn thuộc nhóm nào ?
+        Bạn thuộc nhóm nào
         <span style={{ flex: 1, height: "1px", background: "#E0DDD6" }} />
       </div>
 
@@ -233,12 +233,13 @@ export default function GroupFinder() {
               onClick={() => handleSelect(i)}
               style={{
                 padding: "1.2rem 1rem",
-                borderRight: (i + 1) % 3 !== 0 ? "1px solid #E0DDD6" : "none",
+                borderRight: (i + 1) % 3 !== 0 ? "3px solid #ff7300" : "none",
                 cursor: "pointer",
-                background: isSel ? "#007ED4" : "#fff",
+                background: isSel ? "#007ED4" : "linear-gradient(122.61deg, #DEF0FF -55%, #85cffa4c 36.56%, #DEF0FF 200%)",
                 transition: "background 0.2s",
                 userSelect: "none",
-                borderBottom: i < 3 ? "1px solid #E0DDD6" : "none",
+                borderRadius: "3px",
+                borderLeft: i < 3 ? "1px solid #faf9f9" : "none",
               }}
             >
               <div

@@ -2,7 +2,6 @@
 
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { useCountdown } from "@/hooks/useCountdown";
-import { filter } from "framer-motion/m";
 
 const STATS = [
   { value: "≥ 75%", label: "Mục tiêu tham gia" },
@@ -46,7 +45,7 @@ const countdownItem: Variants = {
 
 export default function Hero() {
   const { days, hours, minutes } = useCountdown("2026-05-02T00:00:00");
-  const isExpired = new Date() >= new Date("2026-05-01T00:00:00");
+  const isExpired = new Date("") >= new Date("2026-05-02T00:00:00");
 
   return (
     <section
@@ -239,7 +238,7 @@ export default function Hero() {
               ))}
             </motion.div>
 
-            {/* Countdown */}
+            {/* Countdown — luôn hiển thị */}
             <div style={{ marginBottom: "clamp(0.4rem, 1.2vh, 1.5rem)" }}>
               <motion.div
                 initial={{ opacity: 0 }}
@@ -254,118 +253,93 @@ export default function Hero() {
                   lineHeight: 1.6,
                 }}
               >
-                {isExpired
-                  ? "Trạng thái"
-                  : <>Cuộc đua tham gia khảo sát. Bộ phận nào sẽ về đích đầu tiên.<br /><span style={{ textTransform: "uppercase", fontWeight: 700, whiteSpace: "nowrap", display: "block", fontSize: "clamp(0.5rem, 2.3vw, 0.88rem)", letterSpacing: "0", marginTop: "0.25rem" }}>Tổng&nbsp;giải&nbsp;thưởng&nbsp;30&nbsp;triệu&nbsp;đồng.</span></>}
+                Cuộc đua tham gia khảo sát. Bộ phận nào sẽ về đích đầu tiên.
+                <br />
+                <span
+                  style={{
+                    textTransform: "uppercase",
+                    fontWeight: 700,
+                    whiteSpace: "nowrap",
+                    display: "block",
+                    fontSize: "clamp(0.5rem, 2.3vw, 0.88rem)",
+                    letterSpacing: "0",
+                    marginTop: "0.25rem",
+                  }}
+                >
+                  Tổng&nbsp;giải&nbsp;thưởng&nbsp;30&nbsp;triệu&nbsp;đồng.
+                </span>
               </motion.div>
 
-              {isExpired ? (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.95, duration: 0.5 }}
-                  style={{
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "0.6rem",
-                    background: "rgba(255,255,255,0.15)",
-                    padding: "0.6rem 1rem",
-                    borderRadius: "2px",
-                  }}
-                >
-                  <span
+              <motion.div
+                variants={countdownContainer}
+                initial="hidden"
+                animate="visible"
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "repeat(3, 1fr)",
+                  gap: "clamp(0.3rem, 0.8vw, 1rem)",
+                }}
+              >
+                {[
+                  { value: days, label: "Ngày" },
+                  { value: hours, label: "Giờ" },
+                  { value: minutes, label: "Phút" },
+                ].map(({ value, label }) => (
+                  <motion.div
+                    key={label}
+                    variants={countdownItem}
                     style={{
-                      width: "8px",
-                      height: "8px",
-                      borderRadius: "50%",
-                      background: "#F8B200",
-                    }}
-                  />
-                  <span
-                    style={{
-                      fontFamily: "var(--font-heading)",
-                      fontWeight: 700,
-                      fontSize: "1.6rem",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.05em",
-                      color: "#fff",
+                      background: "linear-gradient(-90deg, #fffbfb -100%, #FF5200 36.56%, #FF5200 75.62%)",
+                      padding: "clamp(0.75rem, 1.5vw, 1.25rem) clamp(0.5rem, 1vw, 1rem)",
+                      textAlign: "center",
+                      borderRadius: "4px",
                     }}
                   >
-                    CUỘC ĐUA ĐANG DIỄN RA
-                  </span>
-                </motion.div>
-              ) : (
-                <motion.div
-                  variants={countdownContainer}
-                  initial="hidden"
-                  animate="visible"
-                  style={{
-                    display: "grid",
-                    gridTemplateColumns: "repeat(3, 1fr)",
-                    gap: "clamp(0.3rem, 0.8vw, 1rem)",
-                  }}
-                >
-                  {[
-                    { value: days, label: "Ngày" },
-                    { value: hours, label: "Giờ" },
-                    { value: minutes, label: "Phút" },
-                  ].map(({ value, label }) => (
-                    <motion.div
-                      key={label}
-                      variants={countdownItem}
+                    <div
                       style={{
-                        background: "linear-gradient(-90deg, #fffbfb -100%, #FF5200 36.56%, #FF5200 75.62%)",
-                        padding: "clamp(0.75rem, 1.5vw, 1.25rem) clamp(0.5rem, 1vw, 1rem)",
-                        textAlign: "center",
-                        borderRadius: "4px",
+                        fontFamily: "var(--font-heading)",
+                        fontWeight: 700,
+                        fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
+                        letterSpacing: "-0.03em",
+                        color: "#fff",
+                        lineHeight: 1.2,
+                        overflow: "hidden",
+                        minHeight: "1.2em",
+                        position: "relative",
                       }}
                     >
-                      <div
-                        style={{
-                          fontFamily: "var(--font-heading)",
-                          fontWeight: 700,
-                          fontSize: "clamp(1.5rem, 3vw, 2.5rem)",
-                          letterSpacing: "-0.03em",
-                          color: "#fff",
-                          lineHeight: 1.2,
-                          overflow: "hidden",
-                          minHeight: "1.2em",
-                          position: "relative",
-                        }}
-                      >
-                        <AnimatePresence mode="popLayout">
-                          <motion.span
-                            key={value}
-                            initial={{ y: 10, opacity: 0, scale: 0.8 }}
-                            animate={{ y: 0, opacity: 1, scale: 1 }}
-                            exit={{ y: -10, opacity: 0, scale: 0.8 }}
-                            transition={{ duration: 0.25, ease: "easeOut" }}
-                            style={{ display: "block", lineHeight: 1.15 }}
-                          >
-                            {String(value).padStart(2, "0")}
-                          </motion.span>
-                        </AnimatePresence>
-                      </div>
-                      <div
-                        style={{
-                          fontSize: "clamp(0.6rem, 0.8vw, 0.75rem)",
-                          fontWeight: 700,
-                          letterSpacing: "0.12em",
-                          textTransform: "uppercase",
-                          color: "rgba(255,255,255,0.7)",
-                          marginTop: "0.35rem",
-                        }}
-                      >
-                        {label}
-                      </div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              )}
+                      <AnimatePresence mode="popLayout">
+                        <motion.span
+                          key={value}
+                          initial={{ y: 10, opacity: 0, scale: 0.8 }}
+                          animate={{ y: 0, opacity: 1, scale: 1 }}
+                          exit={{ y: -10, opacity: 0, scale: 0.8 }}
+                          transition={{ duration: 0.25, ease: "easeOut" }}
+                          style={{ display: "block", lineHeight: 1.15 }}
+                        >
+                          {String(value).padStart(2, "0")}
+                        </motion.span>
+                      </AnimatePresence>
+                    </div>
+                    <div
+                      style={{
+                        fontSize: "clamp(0.6rem, 0.8vw, 0.75rem)",
+                        fontWeight: 700,
+                        letterSpacing: "0.12em",
+                        textTransform: "uppercase",
+                        color: "rgba(255,255,255,0.7)",
+                        marginTop: "0.35rem",
+                      }}
+                    >
+                      {label}
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
           </div>
 
-          {/* CTA button */}
+          {/* CTA button — đổi nội dung khi isExpired */}
           <motion.a
             href="#race"
             initial={{ opacity: 0, y: 20 }}
@@ -390,7 +364,26 @@ export default function Hero() {
               alignSelf: "flex-start",
             }}
           >
-            Tìm hiểu ngay <span>→</span>
+            {isExpired ? (
+              <>
+                <span
+                  style={{
+                    display: "inline-block",
+                    width: "8px",
+                    height: "8px",
+                    borderRadius: "50%",
+                    background: "#FF5200",
+                    boxShadow: "0 0 8px rgba(255,82,0,0.8)",
+                    animation: "pulseDot 1.6s ease-in-out infinite",
+                  }}
+                />
+                Cuộc đua đang diễn ra <span>→</span>
+              </>
+            ) : (
+              <>
+                Tìm hiểu ngay <span>→</span>
+              </>
+            )}
           </motion.a>
         </motion.div>
       </div>

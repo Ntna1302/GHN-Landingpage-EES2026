@@ -180,7 +180,7 @@ export default function WhySection() {
           paddingLeft: "2.5rem",
         }}
       >
-        EES LÀ GÌ ?
+        EES LÀ GÌ 
         <span style={{ flex: 1, height: "1px", background: "#E0DDD6" }} />
       </div>
 
@@ -192,7 +192,7 @@ export default function WhySection() {
             <div className="ghn-why-ees-title" style={{
               fontFamily: "var(--font-heading)",
               fontWeight: 700,
-              fontSize: "clamp(0.72rem, 3vw, 50px)",
+              fontSize: "clamp(0.72rem, 3vw, 34px)",
               textTransform: "uppercase",
               whiteSpace: "nowrap",
             }}>

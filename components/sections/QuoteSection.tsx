@@ -61,6 +61,10 @@ export default function QuoteSection() {
               color: "#fff",
               letterSpacing: "-0.02em",
               marginTop: "1rem",
+                  letterSpacing: "-0.02em",
+    marginTop: "1rem",
+    textAlign: "justify",           // ← thêm dòng này
+    textJustify: "inter-word",
             }}
           >
             Kết quả EES là dữ liệu quý nhất giúp tôi có để ra quyết định đúng.
