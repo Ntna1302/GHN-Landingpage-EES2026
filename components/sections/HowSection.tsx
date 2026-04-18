@@ -13,7 +13,7 @@ const STEPS = [
     num: "02",
     chip: "10 phút là xong",
     title: "Điền thật 26 câu hỏi",
-    body: "Mỗi nhóm có 25-26 câu được thiết kế riêng. Có 3 câu hỏi mở để bạn nói lên ý kiến riêng của mình.",
+    body: "Mỗi nhóm có 25-26 câu được thiết kế riêng. Có 3 câu hỏi mở để bạn chia sẻ thêm ý kiến của cá nhân mình.",
   },
   {
     num: "03",
