@@ -83,7 +83,7 @@ export default function QuoteSection() {
             marginTop: "2rem",
             paddingTop: "1.5rem",
             borderTop: "1px solid rgba(255,255,255,0.08)",
-             whitespace: "nowrap",
+             whiteSpace: "nowrap",
           }}
         >
           CPO - P.TGĐ Khối Nhân Lực - Lê Thị Đoan Trinh
