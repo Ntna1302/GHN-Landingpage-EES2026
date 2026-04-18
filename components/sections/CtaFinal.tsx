@@ -39,7 +39,7 @@ export default function CtaFinal() {
               marginBottom: "1.5rem",
             }}
           >
-            EES 2026 · BẠN NÓI,GHN NGHE
+            EES 2026 - BẠN NÓI, GHN NGHE
           </div>
 
           <h2
