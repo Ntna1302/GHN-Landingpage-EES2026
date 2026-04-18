@@ -1167,9 +1167,8 @@ main {
   line-height: 1.15;
   margin-bottom: 3rem;
   padding-top: 0.5rem;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /* Body paragraphs inside Why section — ensure clean wrap on narrow screens */
@@ -1369,7 +1368,7 @@ main {
   }
   #why .ghn-grid-3col > div:first-child .ghn-why-ees-title {
     font-size: 1.2rem !important;
-    white-space: normal !important;
+    white-space: nowrap !important;
     margin-bottom: 1.25rem !important;
   }
   #why .section-label {

@@ -192,8 +192,9 @@ export default function WhySection() {
             <div className="ghn-why-ees-title" style={{
               fontFamily: "var(--font-heading)",
               fontWeight: 700,
-              fontSize: "clamp(1rem, 2.8vw, 50px)",
+              fontSize: "clamp(0.72rem, 3vw, 50px)",
               textTransform: "uppercase",
+              whiteSpace: "nowrap",
             }}>
               <span style={{ color: "#FF5200" }}>EES</span>{" "}
               <span style={{ color: "#006FAD" }}>- Khảo sát gắn kết nhân viên.</span>
