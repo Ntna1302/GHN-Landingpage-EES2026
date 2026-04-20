@@ -58,9 +58,9 @@ export default function TickerStrip() {
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
                   color: (item as { isSep?: boolean }).isSep
-                    ? "rgba(255,255,255,0.2)"
+                    ? "rgba(255, 255, 255, 0.65)"
                     : item.accent
-                    ? "#d2cfcf"
+                    ? "rgb(253, 206, 64)"
                     : "rgb(255, 255, 255)",
                   padding: (item as { isSep?: boolean }).isSep
                     ? "0 0.75rem"

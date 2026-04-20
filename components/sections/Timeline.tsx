@@ -136,7 +136,7 @@ export default function AfterSection() {
                     top: "1.5rem",
                     width: "18px",
                     height: "18px",
-                    background: isActive ? "#ff5e00"  : "#E0DDD6",
+                    background: isActive ? "#ff5e00"  : "#006FAD",
                     clipPath: "polygon(0 0, 100% 50%, 0 100%)",
                     zIndex: 1,
                     transition: "background 0.3s",

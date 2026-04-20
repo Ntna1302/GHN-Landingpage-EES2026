@@ -80,7 +80,7 @@ export default function HowSection() {
                   right: "-1px",
                   top: "50%",
                   transform: "translateY(-50%)",
-                  background: "#E0DDD6",
+                  background: "#006FAD",
                   width: "20px",
                   height: "20px",
                   clipPath: "polygon(0 0, 100% 50%, 0 100%)",

@@ -333,15 +333,15 @@ export default function RaceSection() {
               <div
                 className="ghn-race-board-intro"
                 style={{
-                  fontSize: "0.7rem",
+                  fontSize: "2rem",
                   fontWeight: 700,
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  color: "#888",
+                  color: "#006FAD",
                   marginBottom: "1.5rem",
                 }}
               >
-                4 Bảng Thi Đua: Tổng Giải 30.000.000 VNĐ
+                4 Bảng Thi Đua
               </div>
 
               <div style={{ background: "linear-gradient(180deg, #FAFAF8 0%, #fff 100%)", borderRadius: "4px", overflow: "hidden" }}>
