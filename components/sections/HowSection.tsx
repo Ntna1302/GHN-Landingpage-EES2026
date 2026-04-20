@@ -146,6 +146,7 @@ export default function HowSection() {
                 fontSize: "0.82rem",
                 color: "#888",
                 lineHeight: 1.55,
+                textAlign: "justify",
               }}
             >
               {step.body}

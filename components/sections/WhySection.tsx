@@ -192,7 +192,7 @@ export default function WhySection() {
             <div className="ghn-why-ees-title" style={{
               fontFamily: "var(--font-heading)",
               fontWeight: 700,
-              fontSize: "clamp(0.72rem, 3vw, 34px)",
+              fontSize: "clamp(0.72rem, 2.7vw, 45px)",
               textTransform: "uppercase",
               whiteSpace: "nowrap",
             }}>
@@ -220,7 +220,7 @@ export default function WhySection() {
               </div>
 
               {/* Phải: text giải thích */}
-              <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: "1rem" }}>
+              <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", gap: "1rem",textAlign: "justify"  }}>
                 <p style={{ fontSize: "1.05rem", color: "#444", lineHeight: 1.7, margin: 0 }}>
                   Khảo sát để lắng nghe tâm tư anh chị em đang cảm thấy thế nào khi làm việc tại GHN.
                   Không phải để đánh giá ai mà để hiểu điều gì đang ổn và điều gì cần tốt hơn.
@@ -242,7 +242,7 @@ export default function WhySection() {
         </div>
 
         {/* Col 2 — Past results: warm palette */}
-        <div style={{ padding: "3rem 2rem", borderRight: "1px solid #E0DDD6" }}>
+        <div style={{ padding: "3rem 2rem", borderRight: "1px solid #E0DDD6", textAlign: "justify" }}>
           <ScrollReveal delay={0.1}>
             <InteractiveList
               title="Kết quả EES 2025:"
@@ -253,7 +253,7 @@ export default function WhySection() {
         </div>
 
         {/* Col 3 — 2026 usage: cool palette */}
-        <div style={{ padding: "3rem 2rem" }}>
+        <div style={{ padding: "3rem 2rem",textAlign: "justify"  }}>
           <ScrollReveal delay={0.2}>
             <InteractiveList
               title="Kết quả EES 2026 sẽ dùng để:"

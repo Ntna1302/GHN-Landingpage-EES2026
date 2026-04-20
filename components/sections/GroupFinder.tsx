@@ -211,6 +211,7 @@ export default function GroupFinder() {
             fontSize: "0.92rem",
             color: "#444",
             lineHeight: 1.65,
+            textAlign: "justify",
           }}
         >
           GHN thiết kế 6 bộ câu hỏi khác nhau cho từng nhóm, đảm bảo bạn

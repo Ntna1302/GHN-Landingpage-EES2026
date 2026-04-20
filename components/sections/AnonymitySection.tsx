@@ -67,7 +67,7 @@ export default function AnonymitySection() {
                 fontFamily:
                   "var(--font-heading)",
                 fontWeight: 700,
-                fontSize: "clamp(1.3rem, 2.5vw, 2.25rem)",
+                fontSize: "clamp(1.25rem, 2.5vw, 2.25rem)",
                 textTransform: "uppercase",
                 letterSpacing: "-0.03em",
                 color: "#006FAD",
@@ -102,6 +102,7 @@ export default function AnonymitySection() {
                 lineHeight: 1.7,
                 marginBottom: "2rem",
                 maxWidth: "380px",
+                textAlign: "justify",
               }}
             >
               Câu trả lời được bảo mật. Không tên, không mã NV. Dữ liệu chỉ báo cáo theo nhóm 
@@ -169,6 +170,7 @@ export default function AnonymitySection() {
                       ? "1px solid #E0DDD6"
                       : "none",
                   alignItems: "flex-start",
+                  textAlign: "justify",
                 }}
               >
                 {/* Big value */}

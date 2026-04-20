@@ -3,7 +3,7 @@
 import { useScrolled } from "@/hooks/useScrolled";
 
 const NAV_LINKS = [
-  { href: "#why", label: "EES là gì?" },
+  { href: "#why", label: "EES là gì" },
   { href: "#groups", label: "Nhóm Tham Gia" },
   { href: "#race", label: "EES RACE 2026" },
   { href: "#after", label: "Sự kiện diễn ra" },
@@ -30,38 +30,53 @@ export default function Navbar({ onGateClick }: NavbarProps) {
         alignItems: "center",
         justifyContent: "space-between",
         padding: "0 2.5rem",
-        height: "68px",
+        height: "80px",
         boxShadow: scrolled ? "0 2px 12px rgba(10,31,68,0.06)" : "none",
         transition: "box-shadow 0.3s ease",
       }}
     >
-      {/* Logo */}
-      <div
-  style={{
-    display: "flex",
-    alignItems: "center",
-    gap: "0.4rem",
-    fontFamily: "var(--font-heading)",
-    fontWeight: 700,
-    fontSize: "clamp(0.9rem, 2.5vw, 1.8rem)",
-    letterSpacing: "-0.02em",
-    textTransform: "uppercase",
-    userSelect: "none",
-  }}
->
+        {/* Logo */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.4rem",
+            fontFamily: "var(--font-heading)",
+            fontWeight: 700,
+            fontSize: "clamp(0.9rem, 2.5vw, 1.8rem)",
+            letterSpacing: "-0.02em",
+            textTransform: "uppercase",
+            userSelect: "none",
+          }}
+        >
   <img
     className="ghn-logo-img"
     src="/img/GHN_logo.png"
     alt="GHN"
     style={{
-      height: "50px",
+      height: "63px",
       width: "auto",
       borderRadius: "10px",
       objectFit: "contain",
       display: "block",
     }}
   />
-  <span className="ghn-logo-text" style={{ color: "#006FAD", fontSize: "clamp(0.85rem, 2.5vw, 1.75rem)" }}>× EES <span className="ghn-logo-text" style={{ color: "#FF5200", fontSize: "clamp(0.85rem, 2.5vw, 1.75rem)" }}>2026</span></span>
+   {/* <span className="ghn-logo-text" style={{ color: "#006FAD",}}>|</span> */}
+   {/* <div className="line"></div> */}
+  <img
+    className="ghn-logo-img-1"
+    src="/img/race-logo.png"
+    alt="GHN"
+    style={{
+      height: "112px",
+      width: "auto",
+      borderRadius: "10px",
+      objectFit: "contain",
+      display: "block",
+      marginLeft: "-8px",
+    }}
+  />
+  {/* <span className="ghn-logo-text" style={{ color: "#006FAD", fontSize: "clamp(0.85rem, 2.5vw, 1.75rem)" }}>× EES <span className="ghn-logo-text" style={{ color: "#FF5200", fontSize: "clamp(0.85rem, 2.5vw, 1.75rem)" }}>2026</span></span> */}
 </div>
 
       {/* Nav links — hidden on mobile */}
@@ -74,7 +89,7 @@ export default function Navbar({ onGateClick }: NavbarProps) {
             key={href}
             href={href}
             style={{
-              fontSize: "1rem",
+              fontSize: "1.1rem",
               textTransform: "uppercase",
               letterSpacing: "0.05em",
               color: "#444444",
@@ -106,7 +121,7 @@ export default function Navbar({ onGateClick }: NavbarProps) {
           background: "#FF5200",
           color: "#fff",
           padding: "0.5rem 1.25rem",
-          fontSize: "0.8rem",
+          fontSize: "0.95rem",
           fontWeight: 700,
           textTransform: "uppercase",
           letterSpacing: "0.06em",

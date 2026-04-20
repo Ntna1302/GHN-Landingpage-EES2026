@@ -65,6 +65,7 @@ export default function CtaFinal() {
               color: "#fff",
               lineHeight: 1.65,
               maxWidth: "440px",
+              textAlign: "justify",
             }}
           >
               
