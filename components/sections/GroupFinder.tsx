@@ -39,7 +39,7 @@ const GROUPS = [
     num: "03",
     code: "Nhóm 2A",
     name: "Vận hành Kho",
-    detail: "NVXL (Vùng), NVPH (KTC), KHL, Warehouse\nLàm khảo sát tập trung on-site tại KTC theo ca — EX Team hỗ trợ trực tiếp.",
+    detail: "NVXL (Vùng), NVPH (KTC), KHL, Warehouse\nLàm khảo sát tập trung on-site tại KTC theo ca. EX Team hỗ trợ trực tiếp.",
     method: "On-site KTC + Tablet + Google Form",
     date: "12/05 – 20/05/2026",
     start: "2026-05-12",
