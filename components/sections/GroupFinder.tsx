@@ -9,7 +9,7 @@ const GROUPS = [
     num: "01",
     code: "Nhóm 1A", 
     name: "NV Giao nhận",
-    detail: "NVPTTT, NVGN (GTX)\nLàm khảo sát qua App Driver hoặc quét QR tại bưu cục / kho xuất phát.",
+    detail: "NVPTTT, NVGH\nLàm khảo sát qua App Driver hoặc quét QR tại bưu cục / kho xuất phát.",
     method: "App Driver + QR tại bưu cục",
     date: "12/05 – 20/05/2026",
     start: "2026-05-12",
@@ -17,7 +17,7 @@ const GROUPS = [
     target: "Mục tiêu ≥70%",
     tabLabel: "Nhóm 1A",
     tabName: "NV Giao nhận",
-    tabSub: "NVPTTT, NVGN (GTX)",
+    tabSub: "NVPTTT, NVGH",
     link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
   },
     {
