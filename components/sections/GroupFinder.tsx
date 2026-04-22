@@ -16,7 +16,7 @@ const GROUPS = [
     end: "2026-05-20",
     target: "Mục tiêu ≥70%",
     tabLabel: "Nhóm 1A",
-    tabName: "NV Giao nhận",
+    tabName: "NV Giao hàng",
     tabSub: "NVPTTT, NVGH",
     link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
   },
