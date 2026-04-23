@@ -558,20 +558,26 @@ main {
     font-size: clamp(2.5rem, 8vw, 7rem);
   }
 }
+
+@media (max-width: 640px) {
+  .ghn-hero-line-2 {
+     margin-top: 8px;
+  }
+}
 @media (max-width: 440px) {
   .ghn-hero-line-2 {
     margin-top: 5px;
     padding-top: 5px;
   }
 }
-@media (max-width: 640px) {
-  .ghn-hero-line-2 {
-     margin-top: 8px;
-  }
-}
 @media (max-width: 400px) {
   .ghn-hero-headline {
-    font-size: clamp(2.8rem, 17vw, 4rem);
+    font-size: clamp(2.8rem, 10vw, 4rem);
+  }
+}
+@media (max-width: 366px) {
+  .ghn-hero-headline {
+    font-size: clamp(2.5rem, 17vw, 4rem);
   }
 }
 
@@ -1352,7 +1358,7 @@ main {
     border-left-width: 2px !important;
   }
   .ghn-hero-headline {
-    font-size: clamp(2.4rem, 15vw, 3.5rem) !important;
+    font-size: clamp(2.4rem, 10vw, 3.5rem) !important;
     word-break: break-word;
   }
 

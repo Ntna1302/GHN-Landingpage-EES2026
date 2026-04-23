@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Portal from "@/components/Portal";
 
@@ -16,11 +16,11 @@ const GROUPS = [
     end: "2026-05-20",
     target: "Mục tiêu ≥70%",
     tabLabel: "Nhóm 1A",
-    tabName: "NV Giao hàng",
-    tabSub: "NVPTTT, NVGH",
+    tabName: "NV Giao nhận",
+    tabSub: "NVPTTT, NVGH (GTX)",
     link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
   },
-    {
+  {
     num: "02",
     code: "Nhóm 1B",
     name: "Tài xế vận tải",
@@ -53,17 +53,17 @@ const GROUPS = [
   {
     num: "04",
     code: "Nhóm 2B",
-    name: "Quản lý Tuyến đầu",
-    detail: "AM, OM, Supervisor, TBC, Team Leaders\nNhận link cá nhân qua email hoặc GTalk.",
+    name: "Quản lý vận hành Tuyến đầu",
+    detail: "Manager, Deputy Manager, Supervisor, Team Leaders\nNhận link cá nhân qua email hoặc GTalk.",
     method: "Email cá nhân + GTalk + Landing Page",
     date: "02/05 – 05/05/2026",
     start: "2026-05-02",
     end: "2026-05-05",
     target: "Mục tiêu ≥85%",
     tabLabel: "Nhóm 2B",
-    tabName: "Quản lý Tuyến đầu",
-    tabSub: "AM, OM, Supervisor, TBC, Team Leaders",
-    link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
+    tabName: "Quản lý vận hành Tuyến đầu",
+    tabSub: "Manager, Deputy Manager, Supervisor, Team Leaders",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfEYvS_ENT42nPUVnCrzGL6NDjIdjJMaqoBIRmlng4XruMYMA/viewform",
   },
   {
     num: "05",
@@ -80,7 +80,7 @@ const GROUPS = [
     tabSub: "Khối Hỗ trợ, NV gián tiếp (Indirect)",
     link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
   },
-   {
+  {
     num: "06",
     code: "Nhóm 3B",
     name: "Quản lý HO",
@@ -98,7 +98,7 @@ const GROUPS = [
 ];
 
 function getStatus(start: string, end: string) {
-  const now = new Date();
+  const now = new Date(); // Simulated current time for testing
   const s = new Date(start + "T00:00:00");
   const e = new Date(end + "T23:59:59");
   if (now < s) return "upcoming";
@@ -112,11 +112,23 @@ export default function GroupFinder() {
   const [iframeLoaded, setIframeLoaded] = useState(false);
   const [progress, setProgress] = useState(0);
 
+  // Ref attached to the animated wrapper around the result card
+  const cardRef = useRef<HTMLDivElement>(null);
+
   const group = selected !== null ? GROUPS[selected] : null;
   const status = group ? getStatus(group.start, group.end) : null;
 
   const handleSelect = (i: number) => {
-    setSelected(selected === i ? null : i);
+    const isDeselecting = selected === i;
+    setSelected(isDeselecting ? null : i);
+
+    // Mobile only (< 900px): scroll the result card into view after it animates open.
+    // The 350ms delay matches the AnimatePresence height animation duration (0.35s).
+    if (!isDeselecting && typeof window !== "undefined" && window.innerWidth < 900) {
+      setTimeout(() => {
+        cardRef.current?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      }, 200);
+    }
   };
 
   const handleSurvey = () => {
@@ -134,7 +146,6 @@ export default function GroupFinder() {
     setProgress(0);
   };
 
-  // Lock body scroll while modal is open (preserves scroll position on close)
   useEffect(() => {
     if (modalOpen) {
       const scrollY = window.scrollY;
@@ -224,6 +235,7 @@ export default function GroupFinder() {
       <div className="ghn-finder-tabs">
         {GROUPS.map((g, i) => {
           const isSel = selected === i;
+
           return (
             <motion.div
               key={g.num}
@@ -233,39 +245,72 @@ export default function GroupFinder() {
               transition={{ delay: i * 0.06, duration: 0.4 }}
               onClick={() => handleSelect(i)}
               style={{
-                padding: "1.2rem 1rem",
+                padding: "1rem 1rem 1.2rem",
                 borderRight: (i + 1) % 3 !== 0 ? "3px solid #ff7300" : "none",
                 cursor: "pointer",
-                background: isSel ? "#007ED4" : "linear-gradient(122.61deg, #DEF0FF -55%, #85cffa4c 36.56%, #DEF0FF 200%)",
+                background: isSel
+                  ? "#007ED4"
+                  : "linear-gradient(122.61deg, #DEF0FF -55%, #85cffa4c 36.56%, #DEF0FF 200%)",
                 transition: "background 0.2s",
                 userSelect: "none",
                 borderRadius: "3px",
                 borderLeft: i < 3 ? "1px solid #faf9f9" : "none",
+                display: "flex",
+                flexDirection: "column",
+                gap: 0,
               }}
             >
+              {/* Top row: label left, date right */}
               <div
                 style={{
-                  fontSize: "0.8rem",
-                  fontWeight: 700,
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  color: isSel ? "#F8B200" : "#FF5200",
-                  marginBottom: "0.4rem",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "flex-start",
+                  marginBottom: "0.45rem",
+                  gap: "0.5rem",
                 }}
               >
-                {g.tabLabel}
+                <div
+                  style={{
+                    fontSize: "0.8rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.12em",
+                    textTransform: "uppercase",
+                    color: isSel ? "#F8B200" : "#FF5200",
+                    flexShrink: 0,
+                  }}
+                >
+                  {g.tabLabel}
+                </div>
+                <div
+                  style={{
+                    fontSize: "0.78rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.04em",
+                    color: isSel ? "#F8B200" : "#FF5200",
+                    whiteSpace: "nowrap",
+                    lineHeight: 1.2,
+                    paddingTop: "0.05rem",
+                  }}
+                >
+                  {g.date}
+                </div>
               </div>
+
+              {/* Group name */}
               <div
                 style={{
                   fontSize: "0.95rem",
                   fontWeight: 700,
                   lineHeight: 1.2,
                   color: isSel ? "#fff" : "#007ED4",
-                  marginBottom: "0.2rem",
+                  marginBottom: "0.25rem",
                 }}
               >
                 {g.tabName}
               </div>
+
+              {/* Sub label */}
               <div
                 style={{
                   fontSize: "0.72rem",
@@ -280,10 +325,11 @@ export default function GroupFinder() {
         })}
       </div>
 
-      {/* Result card */}
+      {/* Result card — ref here is the mobile scroll target */}
       <AnimatePresence>
         {group && (
           <motion.div
+            ref={cardRef}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -409,222 +455,222 @@ export default function GroupFinder() {
         )}
       </AnimatePresence>
 
-      {/* ── Survey Modal (inline, không cần SurveyModal component) ── */}
+      {/* ── Survey Modal ── */}
       <Portal>
-      <AnimatePresence>
-        {modalOpen && group && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            onClick={closeModal}
-            style={{
-              position: "fixed",
-              inset: 0,
-              background: "rgba(10, 31, 68, 0.75)",
-              backdropFilter: "blur(12px)",
-              WebkitBackdropFilter: "blur(12px)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              zIndex: 9999,
-              padding: "1rem",
-            }}
-          >
+        <AnimatePresence>
+          {modalOpen && group && (
             <motion.div
-              initial={{ opacity: 0, y: 30, scale: 0.96 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 20, scale: 0.97 }}
-              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              onClick={closeModal}
               style={{
-                background: "#fff",
-                width: "96vw",
-                maxWidth: "1100px",
-                height: "92vh",
-                maxHeight: "92vh",
-                borderRadius: "8px",
-                overflow: "hidden",
+                position: "fixed",
+                inset: 0,
+                background: "rgba(10, 31, 68, 0.75)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
                 display: "flex",
-                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                zIndex: 9999,
+                padding: "1rem",
               }}
             >
-              {/* Accent bar */}
-              <div style={{ height: 4, background: "linear-gradient(90deg, #FF5200, #FF8C00, #FFB347)", flexShrink: 0 }} />
-
-              {/* Chrome bar */}
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 30, scale: 0.96 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 20, scale: 0.97 }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                onClick={(e) => e.stopPropagation()}
                 style={{
+                  background: "#fff",
+                  width: "96vw",
+                  maxWidth: "1100px",
+                  height: "92vh",
+                  maxHeight: "92vh",
+                  borderRadius: "8px",
+                  overflow: "hidden",
                   display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  padding: "10px 16px",
-                  borderBottom: "1px solid #F0F0F0",
-                  background: "#FAFAFA",
-                  flexShrink: 0,
+                  flexDirection: "column",
                 }}
               >
-                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <div
-                    style={{
-                      width: 20,
-                      height: 20,
-                      borderRadius: 5,
-                      background: "linear-gradient(135deg, #FF5200, #FF8C00)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
-                      <rect x="1" y="1" width="4" height="4" rx="1" fill="white" />
-                      <rect x="6" y="1" width="4" height="4" rx="1" fill="white" opacity=".6" />
-                      <rect x="1" y="6" width="4" height="4" rx="1" fill="white" opacity=".6" />
-                      <rect x="6" y="6" width="4" height="4" rx="1" fill="white" opacity=".35" />
-                    </svg>
-                  </div>
-                  <span style={{ fontSize: 12, color: "#6E6E73", fontWeight: 500 }}>
-                    docs.google.com /{" "}
-                    <span style={{ color: "#1C1C1E", fontWeight: 600 }}>
-                      {group.code}: {group.name}
-                    </span>
-                  </span>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 4,
-                      background: "#F0FDF4",
-                      border: "1px solid #BBF7D0",
-                      borderRadius: 100,
-                      padding: "3px 10px",
-                      fontSize: 10,
-                      fontWeight: 700,
-                      color: "#166534",
-                    }}
-                  >
-                    <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#22C55E" }} />
-                    Ẩn danh
-                  </div>
-                  <button
-                    onClick={closeModal}
-                    style={{
-                      width: 28,
-                      height: 28,
-                      borderRadius: 8,
-                      border: "1px solid #E8E8E8",
-                      background: "#fff",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      cursor: "pointer",
-                      fontSize: "14px",
-                      color: "#6E6E73",
-                    }}
-                  >
-                    ✕
-                  </button>
-                </div>
-              </div>
+                {/* Accent bar */}
+                <div style={{ height: 4, background: "linear-gradient(90deg, #FF5200, #FF8C00, #FFB347)", flexShrink: 0 }} />
 
-              {/* Progress */}
-              <div style={{ padding: "10px 16px 0", background: "#fff", flexShrink: 0 }}>
-                <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 5 }}>
-                  <span style={{ fontSize: 11, color: "#8E8E93", fontWeight: 500 }}>
-                    {iframeLoaded ? "Form đã tải xong" : "Đang tải khảo sát..."}
-                  </span>
-                  <span style={{ fontSize: 11, fontWeight: 700, color: "#FF5200" }}>
-                    {iframeLoaded ? 100 : progress}%
-                  </span>
+                {/* Chrome bar */}
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "10px 16px",
+                    borderBottom: "1px solid #F0F0F0",
+                    background: "#FAFAFA",
+                    flexShrink: 0,
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <div
+                      style={{
+                        width: 20,
+                        height: 20,
+                        borderRadius: 5,
+                        background: "linear-gradient(135deg, #FF5200, #FF8C00)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+                        <rect x="1" y="1" width="4" height="4" rx="1" fill="white" />
+                        <rect x="6" y="1" width="4" height="4" rx="1" fill="white" opacity=".6" />
+                        <rect x="1" y="6" width="4" height="4" rx="1" fill="white" opacity=".6" />
+                        <rect x="6" y="6" width="4" height="4" rx="1" fill="white" opacity=".35" />
+                      </svg>
+                    </div>
+                    <span style={{ fontSize: 12, color: "#6E6E73", fontWeight: 500 }}>
+                      docs.google.com /{" "}
+                      <span style={{ color: "#1C1C1E", fontWeight: 600 }}>
+                        {group.code}: {group.name}
+                      </span>
+                    </span>
+                  </div>
+                  <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 4,
+                        background: "#F0FDF4",
+                        border: "1px solid #BBF7D0",
+                        borderRadius: 100,
+                        padding: "3px 10px",
+                        fontSize: 10,
+                        fontWeight: 700,
+                        color: "#166534",
+                      }}
+                    >
+                      <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#22C55E" }} />
+                      Ẩn danh
+                    </div>
+                    <button
+                      onClick={closeModal}
+                      style={{
+                        width: 28,
+                        height: 28,
+                        borderRadius: 8,
+                        border: "1px solid #E8E8E8",
+                        background: "#fff",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        cursor: "pointer",
+                        fontSize: "14px",
+                        color: "#6E6E73",
+                      }}
+                    >
+                      ✕
+                    </button>
+                  </div>
                 </div>
-                <div style={{ height: 4, background: "#F0F0F0", borderRadius: 4, overflow: "hidden" }}>
-                  <div
+
+                {/* Progress */}
+                <div style={{ padding: "10px 16px 0", background: "#fff", flexShrink: 0 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 5 }}>
+                    <span style={{ fontSize: 11, color: "#8E8E93", fontWeight: 500 }}>
+                      {iframeLoaded ? "Form đã tải xong" : "Đang tải khảo sát..."}
+                    </span>
+                    <span style={{ fontSize: 11, fontWeight: 700, color: "#FF5200" }}>
+                      {iframeLoaded ? 100 : progress}%
+                    </span>
+                  </div>
+                  <div style={{ height: 4, background: "#F0F0F0", borderRadius: 4, overflow: "hidden" }}>
+                    <div
+                      style={{
+                        height: "100%",
+                        width: `${iframeLoaded ? 100 : progress}%`,
+                        background: "linear-gradient(90deg, #FF5200, #FF8C00, #FFB347)",
+                        borderRadius: 4,
+                        transition: "width 0.6s cubic-bezier(.4,0,.2,1)",
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {/* Iframe */}
+                <div style={{ position: "relative", background: "#F9F9FB", flex: 1, minHeight: 0, overflow: "auto" }}>
+                  {!iframeLoaded && (
+                    <div
+                      style={{
+                        position: "absolute",
+                        inset: 0,
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        gap: 12,
+                        background: "#F9F9FB",
+                        zIndex: 1,
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: 36,
+                          height: 36,
+                          borderRadius: "50%",
+                          border: "3px solid #FFF0EB",
+                          borderTopColor: "#FF5200",
+                          animation: "spin 0.8s linear infinite",
+                        }}
+                      />
+                      <span style={{ fontSize: 13, color: "#8E8E93", fontWeight: 500 }}>
+                        Đang tải form khảo sát...
+                      </span>
+                      <style>{`@keyframes spin { to { transform: rotate(360deg) } }`}</style>
+                    </div>
+                  )}
+                  <iframe
+                    src={`${group.link}?embedded=true`}
                     style={{
+                      width: "100%",
                       height: "100%",
-                      width: `${iframeLoaded ? 100 : progress}%`,
-                      background: "linear-gradient(90deg, #FF5200, #FF8C00, #FFB347)",
-                      borderRadius: 4,
-                      transition: "width 0.6s cubic-bezier(.4,0,.2,1)",
+                      minHeight: "400px",
+                      border: "none",
+                      display: "block",
+                      opacity: iframeLoaded ? 1 : 0,
+                      transition: "opacity 0.4s ease",
+                    }}
+                    onLoad={() => {
+                      setIframeLoaded(true);
+                      setProgress(100);
                     }}
                   />
                 </div>
-              </div>
 
-              {/* Iframe */}
-              <div style={{ position: "relative", background: "#F9F9FB", flex: 1, minHeight: 0, overflow: "auto" }}>
-                {!iframeLoaded && (
-                  <div
-                    style={{
-                      position: "absolute",
-                      inset: 0,
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: 12,
-                      background: "#F9F9FB",
-                      zIndex: 1,
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: 36,
-                        height: 36,
-                        borderRadius: "50%",
-                        border: "3px solid #FFF0EB",
-                        borderTopColor: "#FF5200",
-                        animation: "spin 0.8s linear infinite",
-                      }}
-                    />
-                    <span style={{ fontSize: 13, color: "#8E8E93", fontWeight: 500 }}>
-                      Đang tải form khảo sát...
-                    </span>
-                    <style>{`@keyframes spin { to { transform: rotate(360deg) } }`}</style>
-                  </div>
-                )}
-                <iframe
-                  src={`${group.link}?embedded=true`}
+                {/* Footer */}
+                <div
                   style={{
-                    width: "100%",
-                    height: "100%",
-                    minHeight: "400px",
-                    border: "none",
-                    display: "block",
-                    opacity: iframeLoaded ? 1 : 0,
-                    transition: "opacity 0.4s ease",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "12px 16px",
+                    borderTop: "1px solid #F0F0F0",
+                    background: "#fff",
+                    flexShrink: 0,
                   }}
-                  onLoad={() => {
-                    setIframeLoaded(true);
-                    setProgress(100);
-                  }}
-                />
-              </div>
-
-              {/* Footer */}
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  padding: "12px 16px",
-                  borderTop: "1px solid #F0F0F0",
-                  background: "#fff",
-                  flexShrink: 0,
-                }}
-              >
-                <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, color: "#8E8E93" }}>
-                  <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#22C55E" }} />
-                  Ẩn danh hoàn toàn · Không lưu thông tin cá nhân
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 11, color: "#8E8E93" }}>
+                    <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#22C55E" }} />
+                    Ẩn danh hoàn toàn · Không lưu thông tin cá nhân
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </AnimatePresence>
       </Portal>
     </section>
   );
-}
+} 
