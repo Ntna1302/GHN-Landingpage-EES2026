@@ -11,6 +11,9 @@ const STATS = [
 
 const RACE_TITLE_LINES = ["EES", "RACE", "2026"];
 
+const START_DATE = "2026-05-02T00:00:00";
+const END_DATE   = "2026-05-20T23:59:59";
+
 const raceTitleContainer: Variants = {
   hidden: {},
   visible: {
@@ -44,8 +47,31 @@ const countdownItem: Variants = {
 };
 
 export default function Hero() {
-  const { days, hours, minutes } = useCountdown("2026-05-02T00:00:00");
-  const isExpired = new Date() >= new Date("2026-05-02T00:00:00");
+  const now = new Date(); // đổi thành new Date("2026-05-01T12:00:00") để test
+  const startDate = new Date(START_DATE);
+  const endDate = new Date(END_DATE);
+
+  // Ba trạng thái:
+  //   "pre"    — trước 02/05  → đếm ngược đến ngày bắt đầu
+  //   "active" — 02/05–20/05  → hiện 00 00 00
+  //   "ended"  — sau 20/05    → hiện 00 00 00
+  const phase: "pre" | "active" | "ended" =
+    now < startDate ? "pre" : now <= endDate ? "active" : "ended";
+
+  // Hook chỉ đếm khi phase === "pre", các phase khác truyền START_DATE nhưng bị ghi đè bởi display values
+  const { days, hours, minutes } = useCountdown(START_DATE);
+
+  // Chỉ hiện số thật khi đang đếm ngược (pre), còn lại luôn là 0
+  const displayDays    = phase === "pre" ? days    : 0;
+  const displayHours   = phase === "pre" ? hours   : 0;
+  const displayMinutes = phase === "pre" ? minutes : 0;
+
+  const countdownLabel =
+    phase === "pre"
+      ? "Cuộc đua sẽ bắt đầu sau"
+      : phase === "active"
+      ? "Cuộc đua đang diễn ra"
+      : null;
 
   return (
     <section
@@ -238,7 +264,7 @@ export default function Hero() {
               ))}
             </motion.div>
 
-            {/* Countdown — luôn hiển thị */}
+            {/* Countdown */}
             <div style={{ marginBottom: "clamp(0.4rem, 1.2vh, 1.5rem)" }}>
               <motion.div
                 initial={{ opacity: 0 }}
@@ -253,23 +279,60 @@ export default function Hero() {
                   lineHeight: 1.6,
                 }}
               >
-                Cuộc đua tham gia khảo sát. Bộ phận nào sẽ về đích đầu tiên.
-                <br />
-                <span
-                  style={{
-                    textTransform: "uppercase",
-                    fontWeight: 700,
-                    whiteSpace: "nowrap",
-                    display: "block",
-                    fontSize: "clamp(0.5rem, 2.3vw, 0.88rem)",
-                    letterSpacing: "0",
-                    marginTop: "0.25rem",
-                  }}
-                >
-                  Tổng&nbsp;giải&nbsp;thưởng&nbsp;30&nbsp;triệu&nbsp;đồng.
-                </span>
+                {phase === "ended" ? (
+                  <span style={{ fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em" }}>
+                    Khảo sát đã kết thúc.
+                                        <span
+                      style={{
+                        textTransform: "uppercase",
+                        fontWeight: 700,
+                        whiteSpace: "nowrap",
+                        display: "block",
+                        fontSize: "clamp(0.5rem, 2.3vw, 0.88rem)",
+                        letterSpacing: "0",
+                        marginTop: "0.25rem",
+                      }}
+                    >
+                      Cảm&nbsp;ơn&nbsp;bạn&nbsp;đã&nbsp;tham&nbsp;gia. Hẹn Gặp lại bạn vào EES 2027!
+                    </span>
+                  </span>
+                ) : (
+                  <>
+                    {countdownLabel && (
+                      <span
+                        style={{
+                          display: "block",
+                          textTransform: "uppercase",
+                          fontWeight: 700,
+                          fontSize: "clamp(0.5rem, 2.3vw, 0.78rem)",
+                          letterSpacing: "0.12em",
+                          marginBottom: "0.3rem",
+                          color: "rgba(255,255,255,0.65)",
+                        }}
+                      >
+                        {countdownLabel}
+                      </span>
+                    )}
+                    Cuộc đua tham gia khảo sát. Bộ phận nào sẽ về đích đầu tiên.
+                    <br />
+                    <span
+                      style={{
+                        textTransform: "uppercase",
+                        fontWeight: 700,
+                        whiteSpace: "nowrap",
+                        display: "block",
+                        fontSize: "clamp(0.5rem, 2.3vw, 0.88rem)",
+                        letterSpacing: "0",
+                        marginTop: "0.25rem",
+                      }}
+                    >
+                      Tổng&nbsp;giải&nbsp;thưởng&nbsp;30&nbsp;triệu&nbsp;đồng.
+                    </span>
+                  </>
+                )}
               </motion.div>
 
+              {/* Countdown tiles — luôn hiện, 00 khi active hoặc ended */}
               <motion.div
                 variants={countdownContainer}
                 initial="hidden"
@@ -281,9 +344,9 @@ export default function Hero() {
                 }}
               >
                 {[
-                  { value: days, label: "Ngày" },
-                  { value: hours, label: "Giờ" },
-                  { value: minutes, label: "Phút" },
+                  { value: displayDays,    label: "Ngày" },
+                  { value: displayHours,   label: "Giờ"  },
+                  { value: displayMinutes, label: "Phút" },
                 ].map(({ value, label }) => (
                   <motion.div
                     key={label}
@@ -339,7 +402,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* CTA button — đổi nội dung khi isExpired */}
+          {/* CTA button */}
           <motion.a
             href="#race"
             initial={{ opacity: 0, y: 20 }}
@@ -364,7 +427,7 @@ export default function Hero() {
               alignSelf: "flex-start",
             }}
           >
-            {isExpired ? (
+            {phase === "active" ? (
               <>
                 <span
                   style={{
@@ -379,10 +442,10 @@ export default function Hero() {
                 />
                 Cuộc đua đang diễn ra <span>→</span>
               </>
+            ) : phase === "pre" ? (
+              <>Tìm hiểu ngay <span>→</span></>
             ) : (
-              <>
-                Tìm hiểu ngay <span>→</span>
-              </>
+              <>Đã kết thúc </>
             )}
           </motion.a>
         </motion.div>

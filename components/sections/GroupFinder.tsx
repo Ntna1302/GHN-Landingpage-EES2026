@@ -62,7 +62,7 @@ const GROUPS = [
     target: "Mục tiêu ≥85%",
     tabLabel: "Nhóm 2B",
     tabName: "Quản lý vận hành Tuyến đầu",
-    tabSub: "Manager, Deputy Manager, Supervisor, Team Leaders",
+    tabSub: "Manager/Deputy Manager, Supervisor, Team Leaders",
     link: "https://docs.google.com/forms/d/e/1FAIpQLSfEYvS_ENT42nPUVnCrzGL6NDjIdjJMaqoBIRmlng4XruMYMA/viewform",
   },
   {
