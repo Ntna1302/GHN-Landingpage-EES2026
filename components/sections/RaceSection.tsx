@@ -334,7 +334,7 @@ export default function RaceSection() {
                   marginBottom: "1.5rem",
                 }}
               >
-                4 Bảng Thi Đua
+                3 Bảng Thi Đua
               </div>
 
               <div style={{ background: "linear-gradient(180deg, #FAFAF8 0%, #fff 100%)", borderRadius: "4px", overflow: "hidden" }}>
