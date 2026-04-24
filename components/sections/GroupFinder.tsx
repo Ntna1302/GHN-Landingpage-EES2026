@@ -17,7 +17,7 @@ const GROUPS = [
     target: "Mục tiêu ≥70%",
     tabLabel: "Nhóm 1A",
     tabName: "NV Giao nhận",
-    tabSub: "NVPTTT, NVGH (GTX)",
+    tabSub: "NVPTTT, NVGH (GTX), NV Lấy Hàng (pickup)",
     link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
   },
   {

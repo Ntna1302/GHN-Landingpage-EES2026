@@ -7,7 +7,7 @@ const PRIZE_BOARDS = [
     letter: "A",
     name: "Bảng A: Vận hành B2B - Giao Hàng Nặng",
     unit: "(Các Bộ Phận Vận Hành - Trừ HN và HCM)",
-    prize: "3.000.000 VNĐ",
+    prize: "5.000.000 VNĐ",
     filled: true,
   },
   {
@@ -21,15 +21,8 @@ const PRIZE_BOARDS = [
     letter: "C",
     name: "Bảng C: Kho Trung Chuyển",
     unit: "(04 cụm KTC lớn)",
-    prize: "8.000.000 VNĐ",
+    prize: "10.000.000 VNĐ",
     filled: true,
-  },
-  {
-    letter: "D",
-    name: "Bảng D: Văn Phòng",
-    unit: "(Các khối Phòng ban HO)",
-    prize: "5.000.000 VNĐ",
-    filled: false,
   },
 ];
 
