@@ -166,7 +166,7 @@ export default function RaceSection() {
                   </p>
                   <div className="ghn-race-stats-col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.5rem", minWidth: "260px" }}>
                     {[
-                      { value: "4", label: "Bảng thi đua" },
+                      { value: "3", label: "Bảng thi đua" },
                       { value: "30M", label: "Tổng giải thưởng" },
                     ].map(({ value, label }) => (
                       <div
