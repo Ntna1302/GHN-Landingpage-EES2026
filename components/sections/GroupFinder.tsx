@@ -98,7 +98,7 @@ const GROUPS = [
 ];
 
 function getStatus(start: string, end: string) {
-  const now = new Date("2026-05-02"); // Simulated current time for testing
+  const now = new Date(); // Simulated current time for testing
   const s = new Date(start + "T00:00:00");
   const e = new Date(end + "T23:59:59");
   if (now < s) return "upcoming";
