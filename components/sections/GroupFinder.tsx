@@ -78,7 +78,7 @@ const GROUPS = [
     tabLabel: "Nhóm 3A",
     tabName: "Văn phòng HO",
     tabSub: "Khối Hỗ trợ, NV gián tiếp (Indirect)",
-    link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
+    link: "https://forms.gle/iLct1dN5Gzz6z5cQ6",
   },
   {
     num: "06",
@@ -93,7 +93,7 @@ const GROUPS = [
     tabLabel: "Nhóm 3B",
     tabName: "Quản lý HO",
     tabSub: "Manager & Director các phòng ban",
-    link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
+    link: "https://forms.gle/wiShekfWHFQRFbyH8",
   },
 ];
 
