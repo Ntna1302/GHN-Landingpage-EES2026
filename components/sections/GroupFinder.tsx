@@ -48,7 +48,7 @@ const GROUPS = [
     tabLabel: "Nhóm 2A",
     tabName: "Vận hành Kho",
     tabSub: "NVXL (Vùng), NVPH (KTC), KHL, Warehouse",
-    link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
+    link: "https://forms.gle/gv4Ly97s8NCLh4eH8",
   },
   {
     num: "04",
