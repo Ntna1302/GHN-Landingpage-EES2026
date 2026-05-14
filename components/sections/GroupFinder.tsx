@@ -18,7 +18,7 @@ const GROUPS = [
     tabLabel: "Nhóm 1A",
     tabName: "NV Giao nhận",
     tabSub: "NVPTTT, NVGH (GTX), NV Lấy Hàng (pickup)",
-    link: "https://docs.google.com/forms/d/e/xxxxx/viewform",
+    link: "https://app-driver-web.ghn.vn/survey-detail?surveyId=6a00086d1fba8a442a87e31e",
   },
   {
     num: "02",
@@ -33,7 +33,7 @@ const GROUPS = [
     tabLabel: "Nhóm 1B",
     tabName: "Tài xế vận tải",
     tabSub: "Tài xế GXT & Tài Xế Xe Tải (KTC)",
-    link: "https://forms.gle/jfar4njijTKCT2J37",
+    link: "https://app-driver-web.ghn.vn/survey-detail?surveyId=6a000c783684ecd355082fc7",
   },
   {
     num: "03",
